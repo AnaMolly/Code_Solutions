@@ -1,17 +1,44 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
-  type Profile {
+  type Developer {
     _id: ID
-    name: String
-    email: String
-    password: String
+    username: String!
+    email: String!
+    password: String!
+    fullName: String!
+    company: String
+    userDescription: String
+    sampleProjectName: String
+    sampleProjectURL: String
+    resumeURL: String
+    primaryFocus: String
+    skillSet: [String]
+    hourlyRate: Number
+    phoneNumber: String
+    servicesOffered: String
   }
 
+  type Buyer {
+    _id: ID
+    username: String!
+    email: String!
+    password: String!
+    fullName: String!
+    company: String
+  }
 
   type Query {
-    profiles: [Profile]!
-    profile(profileId: ID!): Profile
+    developers: [Developer]
+    buyers: [Buyers]
+    developer(developerId: ID!): Developer
+    buyer(buyerId: ID!): Buyer
+  }
+
+  type Mutation {
+    # NEED TO ADD DETAILS FOR addDeveloper
+    addDeveloper(): Developer
+    addBuyer(username: String!, email: String!, password: String!, fullName: String): Buyer
   }
 `;
 

@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
-const profileSchema = new Schema({
-  name: {
+const buyerSchema = new Schema({
+  username: {
     type: String,
     required: true,
     unique: true,
@@ -17,10 +17,18 @@ const profileSchema = new Schema({
     type: String,
     required: true,
     minlength: 5,
+  },
+  fullName: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  company: {
+    type: String,
+    trim: true,
   }
 });
 
+const Buyer = model('Buyer', buyerSchema);
 
-const Profile = model('Profile', profileSchema);
-
-module.exports = Profile;
+module.exports = Buyer;
