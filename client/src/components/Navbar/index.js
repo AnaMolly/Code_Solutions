@@ -11,8 +11,7 @@ const AppNavbar = () => {
     <ReactBootStrap.Navbar.Toggle aria-controls="basic-navbar-nav" />
     <ReactBootStrap.Navbar.Collapse id="basic-navbar-nav">
       <ReactBootStrap.Nav className="me-auto">
-        <ReactBootStrap.Nav.Link href="#home">Home</ReactBootStrap.Nav.Link>
-        <ReactBootStrap.Nav.Link href="#link">Link</ReactBootStrap.Nav.Link>
+        <ReactBootStrap.Nav.Link href="#home">Home</ReactBootStrap.Nav.Link>        
         <ReactBootStrap.Nav.Link href="#link">About</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link href="#link">Login</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link href="#link">Sign Up</ReactBootStrap.Nav.Link>
