@@ -1,4 +1,4 @@
-const Developer = require('../models/Developer');
+const { Developer, Buyer} = require('../models/')
 
 const resolvers = {
     Query: {
@@ -20,17 +20,14 @@ const resolvers = {
     },
 
     Mutation: {
-      // NEED TO FILL IN {} or just 'args'
-      addDeveloper: async (parent, { }) => {
-        return Developer.create({ });
-      },
-      // Check values in {}
-      addBuyer: async (parent, { }) => {
-        return Buyer.create({ username, email, password, fullName });
+    addDeveloper: async (parent, { username, email, password, fullName, company }) => {
+      return Developer.create({username, email, password, fullName, company });
+    },
+    
+    addBuyer: async (parent, { username, email, password, fullName, company }) => {
+      return Buyer.create({ username, email, password, fullName, company });
       },
     }
-  
-  
 };
   
 module.exports = resolvers;
