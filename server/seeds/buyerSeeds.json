@@ -1,0 +1,30 @@
+[
+  {
+    "username": "fbillow",
+    "email": "fbillow@gmail.com",
+    "password": "password12345",
+    "fullName": "Frank Billow",
+    "company": "Franks Repairs"
+  },
+  {
+    "username": "sbistle",
+    "email": "sbistle@gmail.com",
+    "password": "password12345",
+    "fullName": "Samantha Bistle",
+    "company": "IBM"
+  },
+  {
+    "username": "jboyer",
+    "email": "jboyer@gmail.com",
+    "password": "password12345",
+    "fullName": "John Boyer",
+    "company": "Remax"
+  },
+  {
+    "username": "abowers",
+    "email": "abowers@gmail.com",
+    "password": "password12345",
+    "fullName": "Amanda Bowers",
+    "company": "Amanda's Daycare"
+  }
+]
