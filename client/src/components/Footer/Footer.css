@@ -1,0 +1,17 @@
+:root {
+--seagreen: #4AB8B1;;
+--marigold: #f0a202ff;
+--indigo-dye: #294a66ff;
+--mint-cream: #f2f7f2ff;
+}
+
+
+.main-footer{
+    color: #ffff;
+    background-color: var(--seagreen);
+    padding-top: 3em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
+}
