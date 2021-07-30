@@ -5,9 +5,9 @@ const AppNavbar = () => {
   
     return (
       <>
-        <ReactBootStrap.Navbar bg="danger" expand="lg">
+        <ReactBootStrap.Navbar style={{backgroundColor:'#4AB8B1'}}>
   <ReactBootStrap.Container>
-    <ReactBootStrap.Navbar.Brand href="#home">Code Solutions</ReactBootStrap.Navbar.Brand>
+    <ReactBootStrap.Navbar.Brand href="#home">Find My Coder</ReactBootStrap.Navbar.Brand>
     <ReactBootStrap.Navbar.Toggle aria-controls="basic-navbar-nav" />
     <ReactBootStrap.Navbar.Collapse id="basic-navbar-nav">
       <ReactBootStrap.Nav className="me-auto">
