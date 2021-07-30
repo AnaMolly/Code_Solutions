@@ -2,21 +2,22 @@ const { argsToArgsConfig } = require("graphql/type/definition");
 const { Developer, Buyer } = require("../models/");
 
 const resolvers = {
+
 	Query: {
 		developers: async () => {
-			return Developer.find();
+			return await Developer.find();
 		},
 
 		developer: async (parent, { developerId }) => {
-			return Developer.findOne({ _id: developerId });
+			return await Developer.findOne({ _id: developerId });
 		},
 
 		buyers: async () => {
-			return Buyer.find();
+			return await Buyer.find();
 		},
 
 		buyer: async (parent, { buyerId }) => {
-			return Buyer.findOne({ _id: buyerId });
+			return await Buyer.findOne({ _id: buyerId });
 		},
 	},
 
@@ -25,14 +26,14 @@ const resolvers = {
 			parent,
 			{ username, email, password, fullName, company }
 		) => {
-			return Developer.create({ username, email, password, fullName, company });
+			return await Developer.create({ username, email, password, fullName, company });
 		},
 
 		addBuyer: async (
 			parent,
 			{ username, email, password, fullName, company }
 		) => {
-			return Buyer.create({ username, email, password, fullName, company });
+			return await Buyer.create({ username, email, password, fullName, company });
 		},
 
     updateDeveloper: async (

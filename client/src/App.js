@@ -26,8 +26,10 @@ function App() {
     <div className='page-container'>
     <div className='content-wrap'>
     <Navbar />
-    <Login />
+    <Main />
+    </div>
     </div>    
+
     <Footer />
     </div>
   </ApolloProvider>
