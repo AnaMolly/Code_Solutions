@@ -80,6 +80,9 @@ code {
   letter-spacing: 2px;
 }
 .devmain{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
   background-color: var(--indigo-dye);
   color:white;
   padding: 50px;

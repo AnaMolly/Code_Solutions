@@ -1,13 +1,24 @@
 import React from 'react';
-import { Form, Col, Row, Button} from "react-bootstrap"
+import { useState } from 'react';
+import { Form, Col, Row, Button, Modal} from "react-bootstrap"
 
 
 export default function ProfileDev() {
+    const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
     return (
         <div className='profiledevcont' style={{backgroundColor:'#f2f7f2'}}>
         <h1 className="mainh1">YOUR PROFILE:</h1>
         <img src="https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg" style={{maxWidth:"500px"}}></img>
-        <button className='editprofile'>Edit Profile</button>
+        <Button  variant="primary" onClick={handleShow} style={{backgroundColor:'#4AB8B1', border:'none', fontSize:'20px',padding:'12px 24px',marginTop:'15px'}}>Edit Profile</Button>
+     
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Contact Developer</Modal.Title>
+        </Modal.Header>
         <Form className="profileform">            
             <Form.Group controlId="formFile" className="mb-3">
                 <Form.Label className="formlabel">Choose a Profile picture to display: </Form.Label>
@@ -118,8 +129,11 @@ export default function ProfileDev() {
                 <Form.Control type="skills" placeholder="Services you offer" />
                 </Col>
             </Form.Group>
-            <Button style={{backgroundColor:'#4AB8B1', border:'none', fontSize:'20px',padding:'12px 24px',marginTop:'15px'}}>Save Changes</Button>
-    </Form>
+        </Form>
+          <Button variant="primary" onClick={handleClose} style={{margin:'0px 45px 45px 45px', backgroundColor:'#4AB8B1', border:'none'}}>
+            Save Changes
+          </Button>
+      </Modal>
      
         </div>
        
