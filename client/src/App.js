@@ -1,10 +1,15 @@
 import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './App.css'
-import Header from './components/Header/index';
+//import Header from './components/Header/index';
 import Navbar from './components/Navbar/index';
 import Footer from './components/Footer/Footer';
+
+import Main from './pages/Main'
+import ProfileDev from './pages/ProfileDev'
+import ProfileBuyer from './pages/ProfileBuyer'
 
 
 const client = new ApolloClient({
@@ -19,7 +24,7 @@ function App() {
     <div className='page-container'>
     <div className='content-wrap'>
     <Navbar />
-      <Header />            
+    <ProfileBuyer />
     </div>
     
     <Footer />
