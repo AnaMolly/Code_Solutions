@@ -15,13 +15,13 @@ const AppNavbar = () => {
         <ReactBootStrap.Nav.Link href="#link">About</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link href="#link">Login</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link href="#link">Sign Up</ReactBootStrap.Nav.Link>
-        <ReactBootStrap.NavDropdown title="Dropdown" id="basic-nav-dropdown">
+        {/* <ReactBootStrap.NavDropdown title="Dropdown" id="basic-nav-dropdown">
           <ReactBootStrap.NavDropdown.Item href="#action/3.1">Action</ReactBootStrap.NavDropdown.Item>
           <ReactBootStrap.NavDropdown.Item href="#action/3.2">Another action</ReactBootStrap.NavDropdown.Item>
           <ReactBootStrap.NavDropdown.Item href="#action/3.3">Something</ReactBootStrap.NavDropdown.Item>
           <ReactBootStrap.NavDropdown.Divider />
           <ReactBootStrap.NavDropdown.Item href="#action/3.4">Separated link</ReactBootStrap.NavDropdown.Item>
-        </ReactBootStrap.NavDropdown>
+        </ReactBootStrap.NavDropdown> */}
       </ReactBootStrap.Nav>
     </ReactBootStrap.Navbar.Collapse>
   </ReactBootStrap.Container>
