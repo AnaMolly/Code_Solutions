@@ -37,6 +37,24 @@ const typeDefs = gql`
         buyer(buyerId: ID!): Buyer
     }
 
+    input DeveloperInput {
+            username: String
+            email: String
+            fullName: String
+            company: String
+            profileImage: String
+            userDescription: String
+            sampleProjectName: String
+            sampleProjectURL: String
+            resumeURL: String
+            primaryFocus: String
+            skillSet: [String]
+            hourlyRate: Int
+            linkedIn: String
+            gitHub: String
+            servicesOffered: String
+    }
+
     type Mutation {
         addDeveloper(
             username: String!
@@ -52,6 +70,10 @@ const typeDefs = gql`
             fullName: String
             company: String
         ): Buyer
+        updateDeveloper(
+            developerId: ID!
+            developerData:DeveloperInput
+        ): Developer
     }
 `;
 
