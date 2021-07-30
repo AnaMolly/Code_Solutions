@@ -59,7 +59,7 @@ export const QUERY_BUYERS = gql`
 
 export const QUERY_SINGLE_BUYER = gql`
   query {
-    buyer(buyerId: ID!) {
+    buyer(buyerId: ID) {
       username
       email
       fullName

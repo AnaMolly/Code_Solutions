@@ -1,10 +1,18 @@
 import React from 'react';
 import heroimg from '../images/codesolutions.png'
-import { Card, Row, Button } from "react-bootstrap"
 
+import { useQuery } from '@apollo/client';
+import {QUERY_DEVELOPERS } from '../utils/queries';
+import DeveloperList from '../components/DeveloperList';
 
 
 export default function Main() {
+
+    const { loading, data } = useQuery(QUERY_DEVELOPERS);
+    console.log(data)
+    const developers = data?.developers || [];
+   
+
     return (
       <div className="contentpages">
         <div className="hero" style={{ position:'relative', textAlign:'center', backgroundColor: '#F0A202'}}> 
@@ -21,31 +29,17 @@ export default function Main() {
             <p className='pmain' style={{color:'#f0a202'}}> Here at  <span style={{fontStyle:"italic", fontWeight:'400'}}>Find My Coder</span>, we've got tons of front-end, back-end and full-stack developers with impressive credentials and lots of experience! </p>
             <hr style={{opacity:'0.1'}}/>
             <p className='pmain' style={{textAlign:'center', paddingTop:'20px'}}>Here are some of our talented developers ready for hire:</p>
-            <Row className="developersmain" style={{padding:'10px 30px 30px 30px'}}> 
-       
-            <Card className="m-4" style={{ width: "18em" }}>
-                <Card.Body style={{ textAlign:'center'}}>
-                    <Card.Title  style={{ color:'black', padding:'10px'}}>Sandy Sally</Card.Title>
-                    <Card.Img variant="top" src="https://cdn.psychologytoday.com/sites/default/files/styles/article-inline-half-caption/public/field_blog_entry_images/2018-09/shutterstock_648907024.jpg?itok=0hb44OrI" style={{maxWidth:'284px'}}/>
-                    <Card.Text  style={{ color:'black', paddingTop:'16px'}}>I can build front-end websites with React!</Card.Text>
-                    <Card.Subtitle className="mb-2 text-muted">Hourly rate:</Card.Subtitle>
-                    <Button variant="primary" target="_blank" style={{ margin: '10px',backgroundColor:'#F0A202', border:'none'}}>
-                    More Info
-                    </Button>
-                </Card.Body>
-            </Card>
-            <Card className="m-4" style={{ width: "18em" }}>
-                <Card.Body style={{ textAlign:'center'}}>
-                    <Card.Title  style={{ color:'black', padding:'10px'}}>Rocky Randall</Card.Title>
-                    <Card.Img variant="top" src="https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg" style={{maxWidth:'284px'}}/>
-                    <Card.Text  style={{ color:'black', paddingTop:'16px'}}>I can build a rockin' back end with my Node and Express skills!</Card.Text>
-                    <Card.Subtitle className="mb-2 text-muted">Hourly rate:</Card.Subtitle>
-                    <Button variant="primary" target="_blank" style={{ margin: '10px',backgroundColor:'#F0A202', border:'none'}}>
-                    More Info
-                    </Button>
-                </Card.Body>
-            </Card>  
-            </Row>
+            <div className="col-12 col-md-10 my-3">
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <DeveloperList
+              developers={developers}
+            />
+          )}
+        </div>
+            
+            
            
         </div>
         <div className="testimonials">

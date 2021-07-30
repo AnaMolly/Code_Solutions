@@ -24,7 +24,7 @@ function App() {
     <div className='page-container'>
     <div className='content-wrap'>
     <Navbar />
-    <ProfileBuyer />
+    <Main />
     </div>
     
     <Footer />
