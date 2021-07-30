@@ -28,7 +28,6 @@ function App() {
     <Navbar />
     <Main />
     </div>
-    </div>    
 
     <Footer />
     </div>
