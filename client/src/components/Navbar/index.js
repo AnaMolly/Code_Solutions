@@ -7,14 +7,16 @@ const AppNavbar = () => {
       <>
         <ReactBootStrap.Navbar style={{backgroundColor:'#4AB8B1'}}>
   <ReactBootStrap.Container>
-    <ReactBootStrap.Navbar.Brand href="#home">Find My Coder</ReactBootStrap.Navbar.Brand>
+    <ReactBootStrap.Navbar.Brand href="/">Find My Coder</ReactBootStrap.Navbar.Brand>
     <ReactBootStrap.Navbar.Toggle aria-controls="basic-navbar-nav" />
     <ReactBootStrap.Navbar.Collapse id="basic-navbar-nav">
       <ReactBootStrap.Nav className="me-auto">
-        <ReactBootStrap.Nav.Link href="#home">Home</ReactBootStrap.Nav.Link>        
-        <ReactBootStrap.Nav.Link href="#link">About</ReactBootStrap.Nav.Link>
-        <ReactBootStrap.Nav.Link href="#link">Login</ReactBootStrap.Nav.Link>
-        <ReactBootStrap.Nav.Link href="#link">Sign Up</ReactBootStrap.Nav.Link>
+        <ReactBootStrap.Nav.Link href="/">Home</ReactBootStrap.Nav.Link>        
+        <ReactBootStrap.Nav.Link href="/about">About</ReactBootStrap.Nav.Link>
+        <ReactBootStrap.Nav.Link href="/login">Login</ReactBootStrap.Nav.Link>
+        <ReactBootStrap.Nav.Link href="/signup">Sign Up</ReactBootStrap.Nav.Link>
+        <ReactBootStrap.Nav.Link href="/profiledev">Profile1</ReactBootStrap.Nav.Link>
+        <ReactBootStrap.Nav.Link href="/profilebuyer">Profile2</ReactBootStrap.Nav.Link>
         {/* <ReactBootStrap.NavDropdown title="Dropdown" id="basic-nav-dropdown">
           <ReactBootStrap.NavDropdown.Item href="#action/3.1">Action</ReactBootStrap.NavDropdown.Item>
           <ReactBootStrap.NavDropdown.Item href="#action/3.2">Another action</ReactBootStrap.NavDropdown.Item>

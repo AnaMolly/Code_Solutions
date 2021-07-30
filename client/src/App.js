@@ -1,9 +1,9 @@
 import React from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import './App.css'
-//import Header from './components/Header/index';
 import Navbar from './components/Navbar/index';
 import Footer from './components/Footer/Footer';
 
@@ -23,14 +23,17 @@ const client = new ApolloClient({
 function App() {
   return(
   <ApolloProvider client={client}>   
-    <div className='page-container'>
-    <div className='content-wrap'>
-    <Navbar />
-    <Main />
-    </div>
-
-    <Footer />
-    </div>
+      <Router>
+      <div>
+        <Navbar />
+        <Route exact path="/" component={Main} />
+        <Route exact path="/login" component={Login} />  
+        <Route path="/signup" component={Signup} />
+        <Route exact path="/profiledev" component={ProfileDev} />
+        <Route exact path="/profilebuyer" component={ProfileBuyer} />
+        <Footer />
+      </div>
+    </Router>
   </ApolloProvider>
   )
 }
