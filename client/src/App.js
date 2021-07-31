@@ -32,6 +32,6 @@ function App() {
     </div>
   </ApolloProvider>
   )
-}
+};
 
 export default App;

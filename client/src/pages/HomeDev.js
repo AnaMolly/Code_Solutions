@@ -1,1 +1,1 @@
-//renders profile list
+import React from 'react';
