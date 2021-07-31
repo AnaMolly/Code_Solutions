@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import Main from './pages/Main'
 import ProfileDev from './pages/ProfileDev'
 import ProfileBuyer from './pages/ProfileBuyer'
+import HomeDev from './pages/HomeDev'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 
@@ -22,10 +23,11 @@ const client = new ApolloClient({
 
 function App() {
   return(
-  <ApolloProvider client={client}>   
+  <ApolloProvider client={client}>      
       <Router>
       <div>
         <Navbar />
+        {/* <HomeDev />  */}
         <Route exact path="/" component={Main} />
         <Route exact path="/login" component={Login} />  
         <Route path="/signup" component={Signup} />

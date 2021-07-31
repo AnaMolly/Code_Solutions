@@ -87,10 +87,11 @@ code {
   color:white;
   padding: 50px;
 }
-.testimonials{
+.testimonials, .articleSection{
   background-color: var(--marigold);
   color:white;
   padding: 50px;
+  width: 100%;
 }
 .pmain{
   padding:0px 100px 10px 100px;
@@ -106,7 +107,7 @@ code {
 
 }
 
-.profiledevcont{
+.profiledevcont, .contentPage{
   display: flex;
   flex-direction: column;
   align-items: center;
