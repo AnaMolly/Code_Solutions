@@ -24,7 +24,7 @@ export const QUERY_DEVELOPERS = gql`
 `;
 
 export const QUERY_SINGLE_DEVELOPER = gql`
-  query {
+  query getSingleDeveloper($developerId: ID!) {
     developer(developerId: $developerId) {
       _id
       username
