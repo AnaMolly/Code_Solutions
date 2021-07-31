@@ -13,7 +13,7 @@ import ProfileBuyer from './pages/ProfileBuyer'
 import HomeDev from './pages/HomeDev'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
-
+import About from './pages/About'
 
 const client = new ApolloClient({
     uri: '/graphql',
@@ -27,7 +27,7 @@ function App() {
       <Router>
       <div>
         <Navbar />
-        {/* <HomeDev />  */}
+        {/* <About />  */}
         <Route exact path="/" component={Main} />
         <Route exact path="/login" component={Login} />  
         <Route path="/signup" component={Signup} />
