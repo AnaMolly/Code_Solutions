@@ -27,12 +27,12 @@ function App() {
       <Router>
       <div>
         <Navbar />
-        <About /> 
-        {/* <Route exact path="/" component={Main} />
+        {/* <About />  */}
+        <Route exact path="/" component={Main} />
         <Route exact path="/login" component={Login} />  
         <Route path="/signup" component={Signup} />
         <Route exact path="/profiledev" component={ProfileDev} />
-        <Route exact path="/profilebuyer" component={ProfileBuyer} /> */}
+        <Route exact path="/profilebuyer" component={ProfileBuyer} />
         <Footer />
       </div>
     </Router>
