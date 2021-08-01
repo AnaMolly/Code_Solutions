@@ -43,8 +43,9 @@ function App() {
         <Navbar />
         {/* <HomeDev />  */}
         <Route exact path="/" component={Main} />
+        <Route exact path="/homedev" component={HomeDev} />
         <Route exact path="/login" component={Login} />  
-        <Route path="/signup" component={Signup} />
+        <Route exact path="/signup" component={Signup} />
         <Route exact path="/profiledev/:developerId" component={ProfileDev} />
         <Route exact path="/profilebuyer" component={ProfileBuyer} />
         <Footer />
