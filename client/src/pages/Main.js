@@ -30,14 +30,14 @@ export default function Main() {
             <hr style={{opacity:'0.1'}}/>
             <p className='pmain' style={{textAlign:'center', paddingTop:'20px'}}>Here are some of our talented developers ready for hire:</p>
             <div className="col-12 col-md-10 my-3">
-          {loading ? (
-            <div>Loading...</div>
-          ) : (
-            <DeveloperList
-              developers={developers}
-            />
-          )}
-        </div>
+              {loading ? (
+                <div>Loading...</div>
+              ) : (
+                <DeveloperList
+                  developers={developers}
+                />
+              )}
+            </div>
             
             
            

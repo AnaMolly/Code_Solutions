@@ -1,5 +1,6 @@
 import React from 'react';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -10,27 +11,42 @@ import Footer from './components/Footer/Footer';
 import Main from './pages/Main'
 import ProfileDev from './pages/ProfileDev'
 import ProfileBuyer from './pages/ProfileBuyer'
+import HomeDev from './pages/HomeDev'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import SearchDev from './pages/Search'
+import About from './pages/About'
 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
 
 const client = new ApolloClient({
-    uri: '/graphql',
-    cache: new InMemoryCache(),
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
 });
-  
 
 function App() {
   return(
-  <ApolloProvider client={client}>   
+  <ApolloProvider client={client}>      
       <Router>
       <div>
         <Navbar />
+        {/* <About />  */}
         <Route exact path="/" component={Main} />
         <Route exact path="/login" component={Login} />  
         <Route path="/signup" component={Signup} />
-        <Route exact path="/profiledev" component={ProfileDev} />
+        <Route exact path="/profiledev/:developerId" component={ProfileDev} />
         <Route exact path="/profilebuyer" component={ProfileBuyer} />
         <Route exact path="/search" component={SearchDev} />
         <Footer />
@@ -38,6 +54,6 @@ function App() {
     </Router>
   </ApolloProvider>
   )
-}
+};
 
 export default App;

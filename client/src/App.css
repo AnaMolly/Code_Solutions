@@ -88,10 +88,11 @@ code {
   color:white;
   padding: 50px;
 }
-.testimonials{
+.testimonials, .articleSection, .aboutDev{
   background-color: var(--marigold);
   color:white;
   padding: 50px;
+  width: 100%;
 }
 .pmain{
   padding:0px 100px 10px 100px;
@@ -107,7 +108,7 @@ code {
 
 }
 
-.profiledevcont{
+.profiledevcont, .contentPage{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,19 +126,11 @@ code {
 }
 
 /* Login Form Styling */
-.login-container{
+.login-container, .login-form {
   width: 100%;
   max-width: 330px;
   padding: 15px;
-  margin: auto;
-  height: 100%;
-}
-
-.login-form {
-  width: 100%;
-  max-width: 330px;
-  padding: 15px;
-  margin: auto;
+  margin: auto;  
   height: 100%;
 }
 .searchdiv{

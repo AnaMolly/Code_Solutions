@@ -30,11 +30,21 @@ const typeDefs = gql`
         company: String
     }
 
+    type AuthDeveloper {
+      token: ID!
+      developer: Developer
+    }
+    
+    type AuthBuyer {
+      token: ID!
+      buyer: Buyer
+    }
+
     type Query {
-        developers: [Developer]
-        buyers: [Buyer]
-        developer(developerId: ID!): Developer
-        buyer(buyerId: ID!): Buyer
+      developers: [Developer]
+      buyers: [Buyer]
+      developer(developerId: ID!): Developer
+      buyer(buyerId: ID!): Buyer
     }
 
     input DeveloperInput {
@@ -56,24 +66,30 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        addDeveloper(
+      addDeveloper(
             username: String!
             email: String!
             password: String!
             fullName: String
             company: String
-        ): Developer
-        addBuyer(
-            username: String!
-            email: String!
-            password: String!
-            fullName: String
-            company: String
-        ): Buyer
-        updateDeveloper(
-            developerId: ID!
-            developerData:DeveloperInput
-        ): Developer
+        ): AuthDeveloper
+        
+      loginDeveloper(email: String!, password:String!): AuthDeveloper
+
+      addBuyer(
+          username: String!
+          email: String!
+          password: String!
+          fullName: String
+          company: String
+      ): AuthBuyer
+
+      loginBuyer(email: String!, password:String!): AuthBuyer
+      
+      updateDeveloper(
+          developerId: ID!
+          developerData:DeveloperInput
+      ): Developer
     }
 `;
 
