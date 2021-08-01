@@ -10,21 +10,21 @@ export default function Signup() {
         </p>
         <Form className='login-form' style={{backgroundColor:'#F0A202'}}>            
             <Form.Group>
-                <Form.Label>First Name</Form.Label>
+                <Form.Label style={{margin: '3px 0'}}>First Name</Form.Label>
                 <Form.Control type='first name' placeholder='first name'></Form.Control>            
-                <Form.Label>Last Name</Form.Label>
+                <Form.Label style={{margin: '5px 0'}}>Last Name</Form.Label>
                 <Form.Control type='last name' placeholder='last name'></Form.Control>
-                <Form.Label>Email</Form.Label>
+                <Form.Label style={{margin: '5px 0'}}>Email</Form.Label>
                 <Form.Control type='email' placeholder='email'></Form.Control>
-                <Form.Label>Username</Form.Label>
+                <Form.Label style={{margin: '5px 0'}}>Username</Form.Label>
                 <Form.Control type='username' placeholder='username'></Form.Control>
-                <Form.Label>User Type</Form.Label>
+                <Form.Label style={{margin: '5px 0'}}>User Type</Form.Label>
                 <Form.Select>
                     <option>Select user type</option>
                     <option value="dev">Developer</option>
                     <option value="buyer">Buyer</option>
                 </Form.Select>
-                <Form.Label>Business Name (Optional)</Form.Label>
+                <Form.Label style={{margin: '5px 0'}}>Company Name <span style={{fontStyle: 'italic'}}>(Optional)</span></Form.Label>
                 <Form.Control type='business name' placeholder='business name'></Form.Control>                    
                   
             </Form.Group>

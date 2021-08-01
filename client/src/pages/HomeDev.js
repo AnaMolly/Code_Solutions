@@ -15,10 +15,12 @@ export default function HomeDev() {
     return (
         <div className='contentPage'>
             <div className='developer-section'>
-                <Button>
+                <div style={{textAlign: 'center', padding: '20px 0'}}>
+                <Button style={{backgroundColor:'#F0A202'}}>
                     Finish Your Profile
                 </Button>
-                <h2>
+                </div>
+                <h2 style={{textAlign: 'center'}}>
                     Developers
                 </h2>
                 {/* <div className="col-12 col-md-10 my-3">
@@ -68,7 +70,7 @@ export default function HomeDev() {
             </div>
             <div className='articleSection'>
                 <h1 className="mainh1">*Articles on how you can improve your online presence*</h1>
-                <p className='pmain'>Here are some testimonials from developers and companies that have worked with us in the past.</p>
+                <p className='pmain'>[] [] [] [] [] []</p>
             </div>                     
         </div>
         
