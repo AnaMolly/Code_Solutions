@@ -12,6 +12,7 @@ import ProfileDev from './pages/ProfileDev'
 import ProfileBuyer from './pages/ProfileBuyer'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import SearchDev from './pages/Search'
 
 
 const client = new ApolloClient({
@@ -31,6 +32,7 @@ function App() {
         <Route path="/signup" component={Signup} />
         <Route exact path="/profiledev" component={ProfileDev} />
         <Route exact path="/profilebuyer" component={ProfileBuyer} />
+        <Route exact path="/search" component={SearchDev} />
         <Footer />
       </div>
     </Router>

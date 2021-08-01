@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import { Form, Col, Row, Button, Modal} from "react-bootstrap"
+import { Form, Col, Row, Button, Modal, FormGroup} from "react-bootstrap"
+
 
 
 export default function ProfileDev() {
@@ -56,6 +57,21 @@ export default function ProfileDev() {
                 <Col sm="30">
                 <Form.Control type="password" placeholder="Password" />
                 </Col>
+            </Form.Group>
+            <Form.Group>
+            <Form.Label >
+                What type of developer are you?
+                </Form.Label>
+                {['Front-end', 'Back-end','Full-stack'].map((type) => (
+                
+                <div key={`${type}`} className="mb-3">
+                <Form.Check 
+                    type='radio'
+                    id={`${type}`}
+                    label={`${type}`}
+                />
+                </div>
+            ))} 
             </Form.Group>
             <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
                 <Form.Label>

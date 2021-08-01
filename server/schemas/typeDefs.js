@@ -14,7 +14,7 @@ const typeDefs = gql`
         sampleProjectURL: String
         resumeURL: String
         primaryFocus: String
-        skillSet: [String]
+        skillSet: String
         hourlyRate: Int
         linkedIn: String
         gitHub: String
