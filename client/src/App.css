@@ -79,6 +79,7 @@ code {
   font-weight: 200;
   padding:30px 10px 30px 10px;
   letter-spacing: 2px;
+  margin:0px
 }
 .devmain{
   display:flex;
@@ -108,7 +109,12 @@ code {
 
 }
 
-.profiledevcont, .contentPage{
+.profiledevcont{
+  display: flex;
+  flex-direction: column; 
+}
+
+.contentPage{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -173,4 +179,28 @@ background-color: var(--seagreen);
 color:white;
 box-shadow: 1px 1px 23px 5px rgba(57, 223, 223, 0.5);
 
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--marigold);
+}
+.profile-info{
+  background-color: var(--marigold);
+  color: white;
+  padding:60px;
+
+}
+
+.profiletitles{
+  font-weight: 200;
+  font-size: 25px;
+  color:black
+}
+
+.profiletext{
+  font-size: 20px;
+  font-weight: 200;
+ 
 }

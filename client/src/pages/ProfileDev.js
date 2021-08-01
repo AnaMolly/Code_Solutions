@@ -9,7 +9,6 @@ import { QUERY_DEVELOPERS } from "../utils/queries";
 import { QUERY_SINGLE_DEVELOPER } from "../utils/queries";
 
 export default function ProfileDev() {
-
   let {developerId} = useParams();
 
   const { loading, data } = useQuery(QUERY_SINGLE_DEVELOPER, {
@@ -25,12 +24,38 @@ export default function ProfileDev() {
 
 	return (
 		<div className="profiledevcont" style={{ backgroundColor: "#f2f7f2" }}>
-			<h1 className="mainh1">{developer.username}</h1>
+			<h1 className="mainh1" style={{ backgroundColor: '#F0A202', paddingTop:'50px' }}>PROFILE:</h1>
 			<img
 				src={developer.profileImage}
 				style={{ maxWidth: "500px" }}
 			></img>
-			<Button
+            <div className='profile'>
+            <div className="profile-info">
+            <h2 className='profiletitles'>Name:</h2>
+            <p className='profiletext'> *This is my name*</p>
+            <h2 className='profiletitles'>Description:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Type of developer:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Skills:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Hourly rate:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Company:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Project name:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Project URL:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Linkedin URL:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Github URL</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Services:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Contact Info:</h2>
+            <p className='profiletext'>{developer.email}</p>
+            <Button
 				variant="primary"
 				onClick={handleShow}
 				style={{
@@ -43,7 +68,9 @@ export default function ProfileDev() {
 			>
 				Edit Profile
 			</Button>
-
+            </div>
+            </div>
+      
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
 					<Modal.Title>Edit Profile</Modal.Title>
@@ -58,7 +85,7 @@ export default function ProfileDev() {
 					<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
 						<Form.Label className="formlabel">Name</Form.Label>
 						<Col sm="30">
-							<Form.Control type="text" placeholder="Name" value={developer.fullName} />
+							<Form.Control type="text" name='name' placeholder="Name" value={developer.fullName} />
 						</Col>
 					</Form.Group>
 					<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
@@ -105,21 +132,7 @@ export default function ProfileDev() {
 							<Form.Control type="skills" placeholder="Skills" value={developer.skillSet} />
 						</Col>
 					</Form.Group>
-                    <Form.Group>
-            <Form.Label >
-                What type of developer are you?
-                </Form.Label>
-                {['Front-end', 'Back-end','Full-stack'].map((type) => (
-                
-                <div key={`${type}`} className="mb-3">
-                <Form.Check 
-                    type='radio'
-                    id={`${type}`}
-                    label={`${type}`}
-                />
-                </div>
-            ))} 
-            </Form.Group>
+                    
 					<Form.Group
 						as={Row}
 						className="mb-3"
