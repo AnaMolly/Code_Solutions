@@ -1,96 +1,70 @@
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-    type Developer {
-        _id: ID
-        username: String
-        email: String
-        password: String
-        fullName: String
-        company: String
-        profileImage: String
-        userDescription: String
-        sampleProjectName: String
-        sampleProjectURL: String
-        resumeURL: String
-        primaryFocus: String
-        skillSet: String
-        hourlyRate: Int
-        linkedIn: String
-        gitHub: String
-        servicesOffered: String
-    }
+  type User {
+    _id: ID
+     email: String
+     password: String
+     role: String
+     fullName: String
+     company: String
+     profileImage: String
+     userDescription: String
+     sampleProjectName: String
+     sampleProjectURL: String
+     resumeURL: String
+     primaryFocus: String
+     skillSet: String
+     hourlyRate: Int
+     linkedIn: String
+     gitHub: String
+     servicesOffered: String
+  }
 
-    type Buyer {
-        _id: ID
-        username: String
-        email: String
-        password: String
-        fullName: String
-        company: String
-    }
-
-    type AuthDeveloper {
-      token: ID!
-      developer: Developer
-    }
+  type Auth {
+    token: ID!
+    user: User
+  }
     
-    type AuthBuyer {
-      token: ID!
-      buyer: Buyer
-    }
+  type Query {
+    users: [User]
+    user(userId: ID!): User
+  }
 
-    type Query {
-      developers: [Developer]
-      buyers: [Buyer]
-      developer(developerId: ID!): Developer
-      buyer(buyerId: ID!): Buyer
-    }
+  input UserInput {
+    email: String
+    role: String
+    fullName: String
+    company: String
+    profileImage: String
+    userDescription: String
+    sampleProjectName: String
+    sampleProjectURL: String
+    resumeURL: String
+    primaryFocus: String
+    skillSet: String
+    hourlyRate: Int
+    linkedIn: String
+    gitHub: String
+    servicesOffered: String
+  }
 
-    input DeveloperInput {
-            username: String
-            email: String
-            fullName: String
-            company: String
-            profileImage: String
-            userDescription: String
-            sampleProjectName: String
-            sampleProjectURL: String
-            resumeURL: String
-            primaryFocus: String
-            skillSet: [String]
-            hourlyRate: Int
-            linkedIn: String
-            gitHub: String
-            servicesOffered: String
-    }
-
-    type Mutation {
-      addDeveloper(
-            username: String!
-            email: String!
-            password: String!
-            fullName: String
-            company: String
-        ): AuthDeveloper
+  type Mutation {
+    addUser(
+      email: String!
+      password: String!
+      role: String
+      fullName: String
+      company: String
+    ): Auth
         
-      loginDeveloper(email: String!, password:String!): AuthDeveloper
-
-      addBuyer(
-          username: String!
-          email: String!
-          password: String!
-          fullName: String
-          company: String
-      ): AuthBuyer
-
-      loginBuyer(email: String!, password:String!): AuthBuyer
+    login(email: String!, password:String!): Auth
       
-      updateDeveloper(
-          developerId: ID!
-          developerData:DeveloperInput
-      ): Developer
-    }
+    updateUser(
+      userId: ID!
+      userData: UserInput
+    ): User
+  }
 `;
 
 module.exports = typeDefs;

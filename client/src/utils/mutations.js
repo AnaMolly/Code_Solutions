@@ -1,66 +1,39 @@
 import { gql } from '@apollo/client';
 
-export const LOGIN_DEVELOPER = gql`
-  mutation {
-    loginDeveloper(username: $username, password: $password) {
+export const LOGIN_USER = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
       token
-      developer {
+      user {
         _id
-        username
-      }
-    }
-  }
-`;
-
-export const LOGIN_BUYER = gql`
-  mutation {
-    loginBuyer(username: $username, password: $password) {
-      token
-      buyer {
-        _id
-        username
-      }
-    }
-  }
-`;
-
-export const ADD_DEVELOPER = gql`
-  mutation {
-    addDeveloper(username: $username, email: $email, password: $password, fullName: $fullName) {
-      token
-      developer {
-        _id
-        username
         email
-        password
-        fullName
       }
     }
   }
 `;
 
-export const ADD_BUYER = gql`
+export const ADD_USER = gql`
   mutation {
-    addBuyer(username: $username, email: $email, password: $password, fullName: $fullName) {
+    addUser(email: $email, password: $password, role: $role, fullName: $fullName, company: $company) {
       token
-      buyer {
+      user {
         _id
-        username
         email
-        password
+        role
         fullName
+        company
       }
     }
   }
 `;
 
-export const UPDATE_DEVELOPER = gql`
-mutation updateDeveloper($developerId: ID!, $developerData: DeveloperInput) {
-  updateDeveloper(developerId:$developerId,developerData:$developerData) {
-    username
+export const UPDATE_USER = gql`
+mutation updateUser($userId: ID!, $userData: UserInput) {
+  updateUser(userId:$userId,userData:$userData) {
     email
+    role
+    fullName
     company
-    resumeURL
   } 
 }
 `;

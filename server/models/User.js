@@ -1,13 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const developerSchema = new Schema({
-  username: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-  },
+const userSchema = new Schema({
   email: {
     type: String,
     required: true,
@@ -18,6 +12,11 @@ const developerSchema = new Schema({
     type: String,
     required: true,
     minlength: 5,
+  },
+  role: {
+    type: String,
+    required: true,
+    trim: true,
   },
   fullName: {
     type: String,
@@ -47,7 +46,7 @@ const developerSchema = new Schema({
     type: String
   },
   skillSet: {
-    type: [String]
+    type: String
   },
   hourlyRate: {
     type: Number
@@ -63,7 +62,7 @@ const developerSchema = new Schema({
   }
 });
 
-developerSchema.pre('save', async function (next) {
+userSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;
     this.password = await bcrypt.hash(this.password, saltRounds);
@@ -72,10 +71,10 @@ developerSchema.pre('save', async function (next) {
   next();
 });
 
-developerSchema.methods.isCorrectPassword = async function (password) {
+userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-const Developer = model('Developer', developerSchema);
+const User = model('User', userSchema);
 
-module.exports = Developer;
+module.exports = User;

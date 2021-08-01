@@ -1,11 +1,11 @@
 import { gql } from "@apollo/client";
 
-export const QUERY_DEVELOPERS = gql`
+export const QUERY_USERS = gql`
 	query {
-		developers {
+		users {
 			_id
-			username
 			email
+      role
 			fullName
 			company
 			profileImage
@@ -23,12 +23,12 @@ export const QUERY_DEVELOPERS = gql`
 	}
 `;
 
-export const QUERY_SINGLE_DEVELOPER = gql`
-	query getSingleDeveloper($developerId: ID!) {
-		developer(developerId: $developerId) {
+export const QUERY_SINGLE_USER = gql`
+	query getSingleUser($userId: ID!) {
+		user(userId: $userId) {
 			_id
-			username
 			email
+      role
 			fullName
 			company
 			profileImage
@@ -42,28 +42,6 @@ export const QUERY_SINGLE_DEVELOPER = gql`
 			linkedIn
 			gitHub
 			servicesOffered
-		}
-	}
-`;
-
-export const QUERY_BUYERS = gql`
-	query {
-		buyers {
-			username
-			email
-			fullName
-			company
-		}
-	}
-`;
-
-export const QUERY_SINGLE_BUYER = gql`
-	query {
-		buyer(buyerId: ID) {
-			username
-			email
-			fullName
-			company
 		}
 	}
 `;

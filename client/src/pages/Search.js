@@ -1,13 +1,13 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import {QUERY_DEVELOPERS } from '../utils/queries';
+import {QUERY_USERS } from '../utils/queries';
 import DeveloperList from '../components/DeveloperList';
 
 export default function SearchDev() {
 
-    const { loading, data } = useQuery(QUERY_DEVELOPERS);
+    const { loading, data } = useQuery(QUERY_USERS);
     console.log(data)
-    const developers = data?.developers || [];
+    const users = data?.users || [];
 
     return(
         <div className="searchdiv">
@@ -24,7 +24,7 @@ export default function SearchDev() {
             <div>Loading...</div>
           ) : (
             <DeveloperList
-              developers={developers}
+              users={users}
             />
           )}
         </div>
