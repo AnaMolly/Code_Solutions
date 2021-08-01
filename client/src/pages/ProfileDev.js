@@ -15,9 +15,7 @@ export default function ProfileDev() {
   const { loading, data } = useQuery(QUERY_SINGLE_DEVELOPER, {
     variables: { developerId: developerId },
   });
-  console.log("data", data)
   const developer = data?.developer || {};
-  console.log(data)
   console.log(developer)
 
 	const [show, setShow] = useState(false);
@@ -27,7 +25,7 @@ export default function ProfileDev() {
 
 	return (
 		<div className="profiledevcont" style={{ backgroundColor: "#f2f7f2" }}>
-			<h1 className="mainh1">YOUR PROFILE:</h1>
+			<h1 className="mainh1">{developer.username}</h1>
 			<img
 				src="https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg"
 				style={{ maxWidth: "500px" }}
@@ -60,19 +58,19 @@ export default function ProfileDev() {
 					<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
 						<Form.Label className="formlabel">Name</Form.Label>
 						<Col sm="30">
-							<Form.Control type="text" placeholder="Name" />
+							<Form.Control type="text" placeholder="Name" value={developer.fullName} />
 						</Col>
 					</Form.Group>
 					<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
 						<Form.Label className="formlabel">Username</Form.Label>
 						<Col sm="30">
-							<Form.Control type="text" placeholder="Username" />
+							<Form.Control type="text" placeholder="Username" value={developer.username} />
 						</Col>
 					</Form.Group>
 					<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
 						<Form.Label className="formlabel">Email</Form.Label>
 						<Col sm="30">
-							<Form.Control type="email" placeholder="Email" />
+							<Form.Control type="email" placeholder="Email" value={developer.email} />
 						</Col>
 					</Form.Group>
 
@@ -93,17 +91,18 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Profile description</Form.Label>
 						<Col sm="30">
-							<Form.Control type="text" placeholder="Description" />
+							<Form.Control type="text" placeholder="Description" value={developer.userDescription} />
 						</Col>
 					</Form.Group>
 					<Form.Group
 						as={Row}
 						className="mb-3"
 						controlId="formPlaintextPassword"
+            
 					>
 						<Form.Label>Skills</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Dkills" />
+							<Form.Control type="skills" placeholder="Skills" value={developer.skillSet} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -113,7 +112,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Hourly rate</Form.Label>
 						<Col sm="30">
-							<Form.Control type="text" placeholder="Hourly rate" />
+							<Form.Control type="text" placeholder="Hourly rate" value={developer.hourlyRate} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -123,7 +122,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Company (optional)</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Company" />
+							<Form.Control type="skills" placeholder="Company" value= {developer.company} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -133,7 +132,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Project example URL</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Project example url" />
+							<Form.Control type="skills" placeholder="Project example url" value={developer.sampleProjectURL} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -143,7 +142,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Project example name</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Project example name" />
+							<Form.Control type="skills" placeholder="Project example name" value={developer.sampleProjectName} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -153,7 +152,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Your Linkedin URL</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Linkedin url" />
+							<Form.Control type="skills" placeholder="Linkedin url" value={developer.linkedIn} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -163,7 +162,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Your GitHub URL</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Github url" />
+							<Form.Control type="skills" placeholder="Github url" value={developer.gitHub} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -173,7 +172,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Services</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Services you offer" />
+							<Form.Control type="skills" placeholder="Services you offer" value={developer.servicesOffered} />
 						</Col>
 					</Form.Group>
 				</Form>
