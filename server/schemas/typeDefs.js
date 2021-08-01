@@ -73,21 +73,23 @@ const typeDefs = gql`
             fullName: String
             company: String
         ): AuthDeveloper
-        # TO DO: Likely need to create login mutation for buyer Auth type once created
-        login(email: String!, password:String!): AuthDeveloper
+        
+      loginDeveloper(email: String!, password:String!): AuthDeveloper
 
-        addBuyer(
-            username: String!
-            email: String!
-            password: String!
-            fullName: String
-            company: String
-        ): AuthBuyer
+      addBuyer(
+          username: String!
+          email: String!
+          password: String!
+          fullName: String
+          company: String
+      ): AuthBuyer
+
+      loginBuyer(email: String!, password:String!): AuthBuyer
       
-        updateDeveloper(
-            developerId: ID!
-            developerData:DeveloperInput
-        ): Developer
+      updateDeveloper(
+          developerId: ID!
+          developerData:DeveloperInput
+      ): Developer
     }
 `;
 
