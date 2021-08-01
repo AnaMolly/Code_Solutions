@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_DEVELOPERS } from "../utils/queries";
-// import { UPDATE_DEVELOPER } from "../utils/mutations";
+import { UPDATE_DEVELOPER } from "../utils/mutations";
 import { QUERY_SINGLE_DEVELOPER } from "../utils/queries";
 
 export default function ProfileDev() {
@@ -16,7 +16,28 @@ export default function ProfileDev() {
     variables: { developerId: developerId },
   });
   const developer = data?.developer || {};
-  console.log(developer)
+  
+  const [updateDeveloper, { error, developerData }] = useMutation(UPDATE_DEVELOPER);
+
+  const [modalData, setModalData] = useState()
+
+  const handleInputChange = (event) => {
+    const { name,value } = event.target;
+    setModalData({ ...modalData, [name]: value })
+  }
+  console.log(modalData)
+  const handleModalSubmit = async (event) => {
+    event.preventDefault();
+    console.log(modalData)
+    try {
+      const {data} = await updateDeveloper({
+        variables: {...modalData}
+      })
+      console.log(data)
+    } catch (error) {
+      console.error(error)
+    }
+  }
 
 	const [show, setShow] = useState(false);
 
@@ -58,19 +79,19 @@ export default function ProfileDev() {
 					<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
 						<Form.Label className="formlabel">Name</Form.Label>
 						<Col sm="30">
-							<Form.Control type="text" placeholder="Name" value={developer.fullName} />
+							<Form.Control type="text" placeholder="Name" value={developer.fullName} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
 						<Form.Label className="formlabel">Username</Form.Label>
 						<Col sm="30">
-							<Form.Control type="text" placeholder="Username" value={developer.username} />
+							<Form.Control type="text" placeholder="Username" value={developer.username} onChange={handleInputChange}/>
 						</Col>
 					</Form.Group>
 					<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
 						<Form.Label className="formlabel">Email</Form.Label>
 						<Col sm="30">
-							<Form.Control type="email" placeholder="Email" value={developer.email} />
+							<Form.Control type="email" placeholder="Email" value={developer.email} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 
@@ -91,7 +112,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Profile description</Form.Label>
 						<Col sm="30">
-							<Form.Control type="text" placeholder="Description" value={developer.userDescription} />
+							<Form.Control type="text" placeholder="Description" value={developer.userDescription} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -102,7 +123,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Skills</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Skills" value={developer.skillSet} />
+							<Form.Control type="skills" placeholder="Skills" value={developer.skillSet} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -112,7 +133,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Hourly rate</Form.Label>
 						<Col sm="30">
-							<Form.Control type="text" placeholder="Hourly rate" value={developer.hourlyRate} />
+							<Form.Control type="text" placeholder="Hourly rate" value={developer.hourlyRate} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -122,7 +143,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Company (optional)</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Company" value= {developer.company} />
+							<Form.Control type="skills" placeholder="Company" value= {developer.company} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -132,7 +153,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Project example URL</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Project example url" value={developer.sampleProjectURL} />
+							<Form.Control type="skills" placeholder="Project example url" value={developer.sampleProjectURL} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -142,7 +163,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Project example name</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Project example name" value={developer.sampleProjectName} />
+							<Form.Control type="skills" placeholder="Project example name" value={developer.sampleProjectName} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -152,7 +173,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Your Linkedin URL</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Linkedin url" value={developer.linkedIn} />
+							<Form.Control type="skills" placeholder="Linkedin url" value={developer.linkedIn} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -162,7 +183,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Your GitHub URL</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Github url" value={developer.gitHub} />
+							<Form.Control type="skills" placeholder="Github url" value={developer.gitHub} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -172,13 +193,14 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Services</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Services you offer" value={developer.servicesOffered} />
+							<Form.Control type="skills" placeholder="Services you offer" value={developer.servicesOffered} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 				</Form>
 				<Button
 					variant="primary"
 					onClick={handleClose}
+          onSubmit={handleModalSubmit}
 					style={{
 						margin: "0px 45px 45px 45px",
 						backgroundColor: "#4AB8B1",

@@ -1,7 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import { Form, Col, Row, Button, Modal} from "react-bootstrap"
-
+import { useParams } from 'react-router-dom';
+import { useQuery, useMutation } from "@apollo/client";
+import { QUERY_DEVELOPERS } from "../utils/queries";
+import { QUERY_SINGLE_DEVELOPER } from "../utils/queries";
 
 
 export default function ProfileBuyer() {

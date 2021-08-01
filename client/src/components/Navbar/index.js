@@ -12,6 +12,7 @@ const AppNavbar = () => {
     <ReactBootStrap.Navbar.Collapse id="basic-navbar-nav">
       <ReactBootStrap.Nav className="me-auto">
         <ReactBootStrap.Nav.Link href="/">Home</ReactBootStrap.Nav.Link>        
+        <ReactBootStrap.Nav.Link href="/homedev">Our Developers</ReactBootStrap.Nav.Link>        
         <ReactBootStrap.Nav.Link href="/about">About</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link href="/login">Login</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link href="/signup">Sign Up</ReactBootStrap.Nav.Link>
