@@ -9,7 +9,6 @@ import { UPDATE_DEVELOPER } from "../utils/mutations";
 import { QUERY_SINGLE_DEVELOPER } from "../utils/queries";
 
 export default function ProfileDev() {
-
   let {developerId} = useParams();
 
   const { loading, data } = useQuery(QUERY_SINGLE_DEVELOPER, {
@@ -46,12 +45,38 @@ export default function ProfileDev() {
 
 	return (
 		<div className="profiledevcont" style={{ backgroundColor: "#f2f7f2" }}>
-			<h1 className="mainh1">{developer.username}</h1>
+			<h1 className="mainh1" style={{ backgroundColor: '#F0A202', paddingTop:'50px' }}>PROFILE:</h1>
 			<img
-				src="https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg"
+				src={developer.profileImage}
 				style={{ maxWidth: "500px" }}
 			></img>
-			<Button
+            <div className='profile'>
+            <div className="profile-info">
+            <h2 className='profiletitles'>Name:</h2>
+            <p className='profiletext'> *This is my name*</p>
+            <h2 className='profiletitles'>Description:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Type of developer:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Skills:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Hourly rate:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Company:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Project name:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Project URL:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Linkedin URL:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Github URL</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Services:</h2>
+            <p className='profiletext'></p>
+            <h2 className='profiletitles'>Contact Info:</h2>
+            <p className='profiletext'>{developer.email}</p>
+            <Button
 				variant="primary"
 				onClick={handleShow}
 				style={{
@@ -64,10 +89,12 @@ export default function ProfileDev() {
 			>
 				Edit Profile
 			</Button>
-
+            </div>
+            </div>
+      
 			<Modal show={show} onHide={handleClose}>
 				<Modal.Header closeButton>
-					<Modal.Title>Contact Developer</Modal.Title>
+					<Modal.Title>Edit Profile</Modal.Title>
 				</Modal.Header>
 				<Form className="profileform">
 					<Form.Group controlId="formFile" className="mb-3">
@@ -126,6 +153,7 @@ export default function ProfileDev() {
 							<Form.Control type="skills" placeholder="Skills" value={developer.skillSet} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
+                    
 					<Form.Group
 						as={Row}
 						className="mb-3"

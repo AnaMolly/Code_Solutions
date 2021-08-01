@@ -14,6 +14,7 @@ import ProfileBuyer from './pages/ProfileBuyer'
 import HomeDev from './pages/HomeDev'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import SearchDev from './pages/Search'
 import About from './pages/About'
 
 const httpLink = createHttpLink({
@@ -48,6 +49,7 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/profiledev/:developerId" component={ProfileDev} />
         <Route exact path="/profilebuyer" component={ProfileBuyer} />
+        <Route exact path="/search" component={SearchDev} />
         <Footer />
       </div>
     </Router>

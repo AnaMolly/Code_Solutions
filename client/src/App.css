@@ -38,7 +38,7 @@ code {
   flex: 1;
 }
 
-.hero button{
+.hero .but2{
   position: absolute;
   top: 70%;
   left: 22.5%;
@@ -51,8 +51,9 @@ code {
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  text-decoration: none;
 }
-.hero .but{
+.hero .but1{
   position: absolute;
   top: 70%;
   left: 33%;
@@ -78,6 +79,7 @@ code {
   font-weight: 200;
   padding:30px 10px 30px 10px;
   letter-spacing: 2px;
+  margin:0px
 }
 .devmain{
   display:flex;
@@ -107,7 +109,12 @@ code {
 
 }
 
-.profiledevcont, .contentPage{
+.profiledevcont{
+  display: flex;
+  flex-direction: column; 
+}
+
+.contentPage{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -131,4 +138,69 @@ code {
   padding: 15px;
   margin: auto;  
   height: 100%;
+}
+.searchdiv{
+  margin:65px
+}
+.front-end-but{
+  text-decoration: none;
+  background-color: var(--marigold);
+  color: white;
+  padding:50px 30px 50px 30px;
+  border: thin solid var(--marigold);
+  border-radius: 50%;
+  font-size: 30px;
+  font-weight: 200;
+  margin:45px;
+  box-shadow: 1px 1px 16px 8px rgba(223, 146, 57, 0.5)
+}
+
+.front-end-but:hover{
+  background-color: var(--seagreen);
+  color:white;
+  border: thin solid var(--seagreen);
+  box-shadow: 1px 1px 16px 8px rgba(57, 223, 223, 0.5);
+}
+.searchbuttons{
+  display:flex;
+  justify-content: center;
+}
+
+.infobut{
+  background-color:#F0A202; 
+  border:none;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.infobut:hover{
+background-color: var(--seagreen);
+color:white;
+box-shadow: 1px 1px 23px 5px rgba(57, 223, 223, 0.5);
+
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--marigold);
+}
+.profile-info{
+  background-color: var(--marigold);
+  color: white;
+  padding:60px;
+
+}
+
+.profiletitles{
+  font-weight: 200;
+  font-size: 25px;
+  color:black
+}
+
+.profiletext{
+  font-size: 20px;
+  font-weight: 200;
+ 
 }

@@ -17,8 +17,8 @@ export default function Main() {
       <div className="contentpages">
         <div className="hero" style={{ position:'relative', textAlign:'center', backgroundColor: '#F0A202'}}> 
                 <img src={heroimg} alt="coder" style={{maxWidth: '100%', height:'auto', padding: '20px'}}/>
-                <a href="/signup" className="but">Sign Up</a>
-                <button className="but1">Login</button>
+                <a className="but2"href="/signup">Sign Up</a>
+                <a className="but1" href='/login'>Login</a>
         </div>
         <div className="aboutus">
             <h1 className="mainh1">About <span style={{fontStyle:"italic", fontWeight:'400'}}>Find My Coder</span></h1>

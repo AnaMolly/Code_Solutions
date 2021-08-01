@@ -16,6 +16,7 @@ const AppNavbar = () => {
         <ReactBootStrap.Nav.Link href="/about">About</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link href="/login">Login</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link href="/signup">Sign Up</ReactBootStrap.Nav.Link>
+        <ReactBootStrap.Nav.Link href="/search">Search</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link href="/profiledev">Profile1</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link href="/profilebuyer">Profile2</ReactBootStrap.Nav.Link>
         {/* <ReactBootStrap.NavDropdown title="Dropdown" id="basic-nav-dropdown">
