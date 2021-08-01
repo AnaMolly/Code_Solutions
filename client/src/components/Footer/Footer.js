@@ -39,7 +39,7 @@ const Footer = () => {
             <hr/>
             <div className="row">
                 <p className='col-sm'>
-                    &copy;{new Date().getFullYear()} K.A.D.D. Development | All rights reserved | Terms of Service | Privacy
+                    &copy;{new Date().getFullYear()} Find Your Coder | K.A.D.D. Development Inc | All rights reserved 
                 </p>
             </div>
         </div>

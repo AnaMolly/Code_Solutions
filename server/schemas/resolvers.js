@@ -36,7 +36,7 @@ const resolvers = {
 
 			return { token, developer};
 		},
-    login: async (parent, { email, password }) => {
+    loginDeveloper: async (parent, { email, password }) => {
       const developer = await Developer.findOne({ email });
 
       if (!developer) {
@@ -62,6 +62,23 @@ const resolvers = {
 
 			return { token, buyer};
 		},
+
+    loginBuyer: async (parent, { email, password }) => {
+      const buyer = await Buyer.findOne({ email });
+
+      if (!buyer) {
+        throw new AuthenticationError('No buyer with this email found!');
+      }
+
+      const correctPw = await buyer.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect password!');
+      }
+
+      const token = signToken(buyer);
+      return { token, buyer };
+    },
 
     updateDeveloper: async (
       parent, {developerId,developerData}
