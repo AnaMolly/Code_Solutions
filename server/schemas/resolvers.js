@@ -1,92 +1,52 @@
 const { AuthenticationError } = require('apollo-server-express');
-
-// TO DO: What is argsToArgsCong? 
-const { argsToArgsConfig } = require("graphql/type/definition");
-
-const { Developer, Buyer } = require("../models/");
+const { User } = require("../models/");
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
 
 	Query: {
-		developers: async () => {
-			return await Developer.find();
+		users: async () => {
+			return await User.find();
 		},
 
-		developer: async (parent, { developerId }) => {
-			return await Developer.findOne({ _id: developerId });
-		},
-
-		buyers: async () => {
-			return await Buyer.find();
-		},
-
-		buyer: async (parent, { buyerId }) => {
-			return await Buyer.findOne({ _id: buyerId });
-		},
+		user: async (parent, { userId }) => {
+			return await User.findOne({ _id: userId });
+		}
 	},
 
 	Mutation: {
-		addDeveloper: async (
+		addUser: async (
 			parent,
-			{ username, email, password, fullName, company }
+			{ email, password, role, fullName, company }
 		) => {
-      const developer = await Developer.create({ username, email, password, fullName, company });
-      const token = signToken(developer);
+      const user = await User.create({ email, password, role, fullName, company });
+      const token = signToken(user);
 
-			return { token, developer};
+			return { token, user };
 		},
-    loginDeveloper: async (parent, { email, password }) => {
-      const developer = await Developer.findOne({ email });
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
 
-      if (!developer) {
-        throw new AuthenticationError('No developer with this email found!');
+      if (!user) {
+        throw new AuthenticationError('No user with this email found!');
       }
 
-      const correctPw = await developer.isCorrectPassword(password);
+      const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
         throw new AuthenticationError('Incorrect password!');
       }
 
-      const token = signToken(developer);
-      return { token, developer };
+      const token = signToken(user);
+      return { token, user };
     },
 
-		addBuyer: async (
-			parent,
-			{ username, email, password, fullName, company }
-		) => {
-      const buyer = await Buyer.create({ username, email, password, fullName, company });
-      const token = signToken(buyer);
-
-			return { token, buyer};
-		},
-
-    loginBuyer: async (parent, { email, password }) => {
-      const buyer = await Buyer.findOne({ email });
-
-      if (!buyer) {
-        throw new AuthenticationError('No buyer with this email found!');
-      }
-
-      const correctPw = await buyer.isCorrectPassword(password);
-
-      if (!correctPw) {
-        throw new AuthenticationError('Incorrect password!');
-      }
-
-      const token = signToken(buyer);
-      return { token, buyer };
-    },
-
-    updateDeveloper: async (
-      parent, {developerId,developerData}
+    updateUser: async (
+      parent, {userId, userData}
     ) => {
-      console.log(developerData)
+      console.log(userData)
       // if(username || email || fullName || profileImage || userDescription || sampleProjectName || sampleProjectURL || resumeURL || primaryFocus || skillSet || hourlyRate || linkedIn || gitHub || servicesOffered) {
-        return await Developer.findByIdAndUpdate(developerId ,{$set:developerData}, {new: true})
-      
+      return await User.findByIdAndUpdate(userId ,{$set:userData}, {new: true})
     }
 	},
 };

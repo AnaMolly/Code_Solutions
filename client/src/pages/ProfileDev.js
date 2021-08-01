@@ -4,19 +4,19 @@ import { Form, Col, Row, Button, Modal } from "react-bootstrap";
 import { useParams } from 'react-router-dom';
 
 import { useQuery, useMutation } from "@apollo/client";
-import { QUERY_DEVELOPERS } from "../utils/queries";
-import { UPDATE_DEVELOPER } from "../utils/mutations";
-import { QUERY_SINGLE_DEVELOPER } from "../utils/queries";
+import { QUERY_USERS } from "../utils/queries";
+import { UPDATE_USER } from "../utils/mutations";
+import { QUERY_SINGLE_USER } from "../utils/queries";
 
 export default function ProfileDev() {
-  let {developerId} = useParams();
+  let {userId} = useParams();
 
-  const { loading, data } = useQuery(QUERY_SINGLE_DEVELOPER, {
-    variables: { developerId: developerId },
+  const { loading, data } = useQuery(QUERY_SINGLE_USER, {
+    variables: { userId: userId },
   });
-  const developer = data?.developer || {};
+  const user = data?.user || {};
   
-  const [updateDeveloper, { error, developerData }] = useMutation(UPDATE_DEVELOPER);
+  const [updateUser, { error, userData }] = useMutation(UPDATE_USER);
 
   const [modalData, setModalData] = useState()
 
@@ -29,7 +29,7 @@ export default function ProfileDev() {
     event.preventDefault();
     console.log(modalData)
     try {
-      const {data} = await updateDeveloper({
+      const {data} = await updateUser({
         variables: {...modalData}
       })
       console.log(data)
@@ -47,7 +47,7 @@ export default function ProfileDev() {
 		<div className="profiledevcont" style={{ backgroundColor: "#f2f7f2" }}>
 			<h1 className="mainh1" style={{ backgroundColor: '#F0A202', paddingTop:'50px' }}>PROFILE:</h1>
 			<img
-				src={developer.profileImage}
+				src={user.profileImage}
 				style={{ maxWidth: "500px" }}
 			></img>
             <div className='profile'>
@@ -75,7 +75,7 @@ export default function ProfileDev() {
             <h2 className='profiletitles'>Services:</h2>
             <p className='profiletext'></p>
             <h2 className='profiletitles'>Contact Info:</h2>
-            <p className='profiletext'>{developer.email}</p>
+            <p className='profiletext'>{user.email}</p>
             <Button
 				variant="primary"
 				onClick={handleShow}
@@ -106,19 +106,19 @@ export default function ProfileDev() {
 					<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
 						<Form.Label className="formlabel">Name</Form.Label>
 						<Col sm="30">
-							<Form.Control type="text" placeholder="Name" value={developer.fullName} onChange={handleInputChange} />
+							<Form.Control type="text" placeholder="Name" value={user.fullName} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
 						<Form.Label className="formlabel">Username</Form.Label>
 						<Col sm="30">
-							<Form.Control type="text" placeholder="Username" value={developer.username} onChange={handleInputChange}/>
+							<Form.Control type="text" placeholder="Username" value={user.username} onChange={handleInputChange}/>
 						</Col>
 					</Form.Group>
 					<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
 						<Form.Label className="formlabel">Email</Form.Label>
 						<Col sm="30">
-							<Form.Control type="email" placeholder="Email" value={developer.email} onChange={handleInputChange} />
+							<Form.Control type="email" placeholder="Email" value={user.email} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 
@@ -139,7 +139,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Profile description</Form.Label>
 						<Col sm="30">
-							<Form.Control type="text" placeholder="Description" value={developer.userDescription} onChange={handleInputChange} />
+							<Form.Control type="text" placeholder="Description" value={user.userDescription} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -150,7 +150,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Skills</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Skills" value={developer.skillSet} onChange={handleInputChange} />
+							<Form.Control type="skills" placeholder="Skills" value={user.skillSet} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
                     
@@ -161,7 +161,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Hourly rate</Form.Label>
 						<Col sm="30">
-							<Form.Control type="text" placeholder="Hourly rate" value={developer.hourlyRate} onChange={handleInputChange} />
+							<Form.Control type="text" placeholder="Hourly rate" value={user.hourlyRate} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -171,7 +171,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Company (optional)</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Company" value= {developer.company} onChange={handleInputChange} />
+							<Form.Control type="skills" placeholder="Company" value= {user.company} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -181,7 +181,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Project example URL</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Project example url" value={developer.sampleProjectURL} onChange={handleInputChange} />
+							<Form.Control type="skills" placeholder="Project example url" value={user.sampleProjectURL} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -191,7 +191,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Project example name</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Project example name" value={developer.sampleProjectName} onChange={handleInputChange} />
+							<Form.Control type="skills" placeholder="Project example name" value={user.sampleProjectName} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -201,7 +201,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Your Linkedin URL</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Linkedin url" value={developer.linkedIn} onChange={handleInputChange} />
+							<Form.Control type="skills" placeholder="Linkedin url" value={user.linkedIn} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -211,7 +211,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Your GitHub URL</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Github url" value={developer.gitHub} onChange={handleInputChange} />
+							<Form.Control type="skills" placeholder="Github url" value={user.gitHub} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 					<Form.Group
@@ -221,7 +221,7 @@ export default function ProfileDev() {
 					>
 						<Form.Label>Services</Form.Label>
 						<Col sm="30">
-							<Form.Control type="skills" placeholder="Services you offer" value={developer.servicesOffered} onChange={handleInputChange} />
+							<Form.Control type="skills" placeholder="Services you offer" value={user.servicesOffered} onChange={handleInputChange} />
 						</Col>
 					</Form.Group>
 				</Form>

@@ -1,4 +1,3 @@
-const Buyer = require('./Buyer');
-const Developer = require('./Developer');
+const User = require('./User');
 
-module.exports = { Buyer, Developer };
+module.exports = { User };

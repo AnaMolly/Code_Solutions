@@ -2,12 +2,12 @@ import React from 'react';
 import { Col, Row, Button, Card } from 'react-bootstrap';
 
 import { useQuery } from '@apollo/client';
-import {QUERY_DEVELOPERS } from '../utils/queries';
+import { QUERY_USERS } from '../utils/queries';
 import DeveloperList from '../components/DeveloperList';
 
 export default function About() {
     
-    const { loading, data } = useQuery(QUERY_DEVELOPERS);
+    const { loading, data } = useQuery(QUERY_USERS);
     console.log(data)
     const developers = data?.developers || [];
 

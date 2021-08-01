@@ -3,12 +3,12 @@ import { useState } from 'react';
 import { Form, Col, Row, Button, Modal} from "react-bootstrap"
 import { useParams } from 'react-router-dom';
 import { useQuery, useMutation } from "@apollo/client";
-import { QUERY_DEVELOPERS } from "../utils/queries";
-import { QUERY_SINGLE_DEVELOPER } from "../utils/queries";
+import { QUERY_USERS } from "../utils/queries";
+import { QUERY_SINGLE_USER } from "../utils/queries";
 
 
 export default function ProfileBuyer() {
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
