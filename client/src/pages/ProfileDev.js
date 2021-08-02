@@ -118,25 +118,22 @@ export default function ProfileDev() {
             <Form.Label className="formlabel">
               Choose a Profile picture to display:{" "}
             </Form.Label>
-            <Form.Control type="file" />
+            <Form.Control type="file" onChange={fileSelectedHandler} />
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-            <Form.Label className="formlabel">Name</Form.Label>
+            <Form.Label className="formlabel">Full Name</Form.Label>
             <Col sm="30">
               <Form.Control type="text" placeholder={user.fullName} value={modalData.fullName} name="fullName" onChange={handleInputChange} />
             </Col>
           </Form.Group>
-          <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-            <Form.Label className="formlabel">Email</Form.Label>
-            <Col sm="30">
-              <Form.Control type="email" placeholder={user.email} name='email' value={modalData.email} onChange={handleInputChange} />
-            </Col>
-          </Form.Group>
-          <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-            <Form.Label className="formlabel">Type of Developer</Form.Label>
-            <Col sm="30">
-              <Form.Control type="text" placeholder={user.primaryFocus} name='primaryFocus' value={modalData.primaryFocus} onChange={handleInputChange} />
-            </Col>
+          <Form.Group as={Row} style={{paddingBottom:'10px'}} className="mb-3" controlId="formPlaintextEmail">
+            <Form.Label>What type of web developer are you?</Form.Label>
+            <Form.Select aria-label="Floating label select example">
+                <option style={{color:'lightgray'}} value={modalData.primaryFocus}>Open this menu to select</option>
+                  <option value="Front-End">Front-End</option>
+                  <option value="Back-End">Back-End</option>
+                  <option value="Full-Stack">Full-Stack</option>
+            </Form.Select>
           </Form.Group>
           <Form.Group
             as={Row}
@@ -173,7 +170,7 @@ export default function ProfileDev() {
             className="mb-3"
             controlId="formPlaintextPassword"
           >
-            <Form.Label>Company (optional)</Form.Label>
+            <Form.Label>Company</Form.Label>
             <Col sm="30">
               <Form.Control type="skills" placeholder="Company" name="company" value={user.company} onChange={handleInputChange} />
             </Col>
@@ -213,6 +210,16 @@ export default function ProfileDev() {
             className="mb-3"
             controlId="formPlaintextPassword"
           >
+            <Form.Label>Your Resume URL</Form.Label>
+            <Col sm="30">
+              <Form.Control type="skills" name="resumeURL" placeholder="Resume url" value={user.resumeURL} onChange={handleInputChange} />
+            </Col>
+          </Form.Group>
+          <Form.Group
+            as={Row}
+            className="mb-3"
+            controlId="formPlaintextPassword"
+          >
             <Form.Label>Your GitHub URL</Form.Label>
             <Col sm="30">
               <Form.Control type="skills" name="gitHub" placeholder="Github url" value={user.gitHub} onChange={handleInputChange} />
@@ -245,3 +252,4 @@ export default function ProfileDev() {
       </Modal>
     </div>
   );
+}
