@@ -43,8 +43,8 @@ function App() {
       <Router>
       <div>
         <Navbar />
-        <HomeDev /> 
-        {/* <Route exact path="/" component={Main} />
+        {/* <About />  */}
+        <Route exact path="/" component={Main} />
         <Route exact path="/homedev" component={HomeDev} />
         <Route exact path="/login" component={Login} />  
         <Route exact path="/signup" component={Signup} />
@@ -52,7 +52,6 @@ function App() {
         <Route exact path="/profilebuyer" component={ProfileBuyer} />
         <Route exact path="/search" component={SearchDev} />
         <Route exact path="/">Logout</Route>
-
         <Footer />
       </div>
     </Router>
