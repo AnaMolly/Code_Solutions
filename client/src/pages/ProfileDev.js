@@ -1,14 +1,17 @@
 import React from "react";
 import { useState } from "react";
-import { Form, Col, Row, Button, Modal } from "react-bootstrap";
+import { Form, Col, Row, Button, Modal, FloatingLabel } from "react-bootstrap";
 import { useParams } from 'react-router-dom';
 
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USERS } from "../utils/queries";
 import { UPDATE_USER } from "../utils/mutations";
 import { QUERY_SINGLE_USER } from "../utils/queries";
+import { SingleFieldSubscriptionsRule } from "graphql";
 
 export default function ProfileDev() {
+  
+
   let {userId} = useParams();
 
   const { loading, data } = useQuery(QUERY_SINGLE_USER, {
@@ -24,7 +27,7 @@ export default function ProfileDev() {
     const { name,value } = event.target;
     setModalData({ ...modalData, [name]: value })
   }
-  console.log(modalData)
+
   const handleModalSubmit = async (event) => {
     event.preventDefault();
     console.log(modalData)
@@ -38,10 +41,21 @@ export default function ProfileDev() {
     }
   }
 
+
 	const [show, setShow] = useState(false);
 
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
+
+    const fileSelectedHandler = (event) => {
+
+        const state = {
+            selectedFile: null
+        }
+        this.setState({
+            selectedFile: event.target.files[0]
+        })
+    }
 
 	return (
 		<div className="profiledevcont" style={{ backgroundColor: "#f2f7f2" }}>
@@ -101,18 +115,12 @@ export default function ProfileDev() {
 						<Form.Label className="formlabel">
 							Choose a Profile picture to display:{" "}
 						</Form.Label>
-						<Form.Control type="file" />
+						<Form.Control type="file" onChange={fileSelectedHandler}/>
 					</Form.Group>
 					<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
 						<Form.Label className="formlabel">Name</Form.Label>
 						<Col sm="30">
 							<Form.Control type="text" placeholder="Name" value={user.fullName} onChange={handleInputChange} />
-						</Col>
-					</Form.Group>
-					<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-						<Form.Label className="formlabel">Username</Form.Label>
-						<Col sm="30">
-							<Form.Control type="text" placeholder="Username" value={user.username} onChange={handleInputChange}/>
 						</Col>
 					</Form.Group>
 					<Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
@@ -132,6 +140,17 @@ export default function ProfileDev() {
 							<Form.Control type="password" placeholder="Password" />
 						</Col>
 					</Form.Group>
+                    <Form.Group style={{paddingBottom:'10px'}}>
+                        <Form.Label>What type of web developer are you?</Form.Label>
+                            <Form.Select aria-label="Floating label select example">
+                                <option style={{color:'lightgray'}}>Open this menu to select</option>
+                                <option value="1">Front-End</option>
+                                <option value="2">Back-End</option>
+                                <option value="3">Full-Stack</option>
+                            </Form.Select>
+
+                    </Form.Group>
+                    
 					<Form.Group
 						as={Row}
 						className="mb-3"

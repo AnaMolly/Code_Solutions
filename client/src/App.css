@@ -140,30 +140,35 @@ code {
   height: 100%;
 }
 .searchdiv{
-  margin:65px
+  margin:65px;
+  border:thin solid var(--seagreen);
+  border-radius: 3rem;
+  background-color:var(--indigo-dye);
 }
-.front-end-but{
+.search-but{
   text-decoration: none;
-  background-color: var(--marigold);
+  background-color: var(--indigo-dye);
   color: white;
   padding:50px 30px 50px 30px;
-  border: thin solid var(--marigold);
+  border: thin solid var(--indigo-dye);
   border-radius: 50%;
   font-size: 30px;
   font-weight: 200;
   margin:45px;
-  box-shadow: 1px 1px 16px 8px rgba(223, 146, 57, 0.5)
+  box-shadow: 1px 1px 16px 8px rgba(48, 100, 214, 0.5);
 }
 
-.front-end-but:hover{
-  background-color: var(--seagreen);
+.search-but:hover{
+  background-color: var(--marigold);
   color:white;
-  border: thin solid var(--seagreen);
-  box-shadow: 1px 1px 16px 8px rgba(57, 223, 223, 0.5);
+  border: thin solid var(--marigold);
+  box-shadow: 1px 1px 16px 8px rgba(240, 150, 48, 0.5);
+  cursor: pointer;
 }
 .searchbuttons{
   display:flex;
   justify-content: center;
+  padding-bottom:50px
 }
 
 .infobut{
