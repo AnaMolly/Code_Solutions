@@ -39,7 +39,7 @@ export default function ProfileDev() {
         variables: { userId: user._id,userData: {...modalData} }
       })
       handleClose()
-      setRedirect(true)
+      window.location.reload()
       console.log(data)
     } catch (error) {
       console.error(error)
