@@ -19,6 +19,7 @@ import About from './pages/About'
 
 const httpLink = createHttpLink({
   uri: '/graphql',
+  cache: new InMemoryCache(),
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -47,7 +48,7 @@ function App() {
         <Route exact path="/homedev" component={HomeDev} />
         <Route exact path="/login" component={Login} />  
         <Route exact path="/signup" component={Signup} />
-        <Route exact path="/profiledev/:developerId" component={ProfileDev} />
+        <Route exact path="/profiledev/:userId" component={ProfileDev} />
         <Route exact path="/profilebuyer" component={ProfileBuyer} />
         <Route exact path="/search" component={SearchDev} />
         <Footer />

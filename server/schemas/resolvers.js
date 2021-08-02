@@ -47,11 +47,12 @@ const resolvers = {
     },
 
     updateUser: async (
-      parent, {userId, userData}
+      parent, args
     ) => {
-      console.log(userData)
+      console.log("success")
+      console.log(args)
       // if(username || email || fullName || profileImage || userDescription || sampleProjectName || sampleProjectURL || resumeURL || primaryFocus || skillSet || hourlyRate || linkedIn || gitHub || servicesOffered) {
-      return await User.findByIdAndUpdate(userId ,{$set:userData}, {new: true})
+      return await User.findByIdAndUpdate(args.userId ,{$set:args.userData}, {new: true})
     }
 	},
 };
