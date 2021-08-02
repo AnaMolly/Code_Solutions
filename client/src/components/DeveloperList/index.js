@@ -8,7 +8,7 @@ const DeveloperList = ({ developers }) => {
             <Row className="developersmain" style={{padding:'10px 30px 30px 30px', display:'flex',justifyContent:'center'}}> 
             
             {developers.slice(0,5).map((developer) => (
-            <Card className="m-4" style={{ width: "18em" }} key={developer.id}>
+            <Card className="m-4" style={{ width: "18em", border: '2px solid var(--marigold)', backgroundColor:'var(--mint-cream)' }} key={developer.id}>
               <Card.Body style={{ textAlign:'center', padding:'30px 30px 40px 30px'}}>
                   <Card.Title  style={{ color:'black', padding:'10px'}}>{developer.fullName}</Card.Title>
                   <Card.Img variant="top" src={developer.profileImage} style={{maxWidth:'284px'}}/>

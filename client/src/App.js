@@ -12,6 +12,7 @@ import Main from './pages/Main'
 import ProfileDev from './pages/ProfileDev'
 import ProfileBuyer from './pages/ProfileBuyer'
 import HomeDev from './pages/HomeDev'
+import HomeCli from './pages/HomeClient'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import SearchDev from './pages/Search'
@@ -44,6 +45,7 @@ function App() {
         <Navbar />
         {/* <HomeDev />  */}
         <Route exact path="/" component={Main} />
+        <Route exact path="/homecli" component={HomeCli} />
         <Route exact path="/homedev" component={HomeDev} />
         <Route exact path="/login" component={Login} />  
         <Route exact path="/signup" component={Signup} />

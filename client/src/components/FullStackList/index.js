@@ -7,7 +7,7 @@ const FSDeveloperList = ({ fsdevelopers }) => {
         <div>
             <Row className="developersmain" style={{padding:'10px 30px 30px 30px', display:'flex',justifyContent:'center'}}> 
             
-            {fedevelopers.slice(0,5).map((fsdeveloper) => (
+            {fsdevelopers.slice(0,5).map((fsdeveloper) => (
             <Card className="m-4" style={{ width: "18em" }} key={fsdeveloper.id}>
               <Card.Body style={{ textAlign:'center', padding:'30px 30px 40px 30px'}}>
                   <Card.Title  style={{ color:'black', padding:'10px'}}>{fsdeveloper.fullName}</Card.Title>

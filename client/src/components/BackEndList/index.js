@@ -7,7 +7,7 @@ const BEDeveloperList = ({ bedevelopers }) => {
         <div>
             <Row className="developersmain" style={{padding:'10px 30px 30px 30px', display:'flex',justifyContent:'center'}}> 
             
-            {fedevelopers.slice(0,5).map((bedeveloper) => (
+            {bedevelopers.slice(0,5).map((bedeveloper) => (
             <Card className="m-4" style={{ width: "18em" }} key={bedeveloper.id}>
               <Card.Body style={{ textAlign:'center', padding:'30px 30px 40px 30px'}}>
                   <Card.Title  style={{ color:'black', padding:'10px'}}>{bedeveloper.fullName}</Card.Title>
