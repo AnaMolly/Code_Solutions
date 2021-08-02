@@ -44,7 +44,7 @@ export default function HomeDev() {
                 <div className='article-cards bottom-0'>
                     <Row style={{justifyContent:'space-evenly', textAlign: 'center'}}>
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={article1} alt="Card image" />
+                            <Card.Img variant="top" src={article1} alt="article image" />
                             <Card.Body>
                                 <a href='https://localbizguru.com/blog/improve-business-online-presence-in-2021/' style={{textDecoration:'none', color: 'black'}}>
                                 <Card.Title>12 Effective Ways To Improve Your Business’s Online Presence In 2021</Card.Title>                                
@@ -53,7 +53,7 @@ export default function HomeDev() {
                         </Card>
 
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={article2} alt="Card image" />
+                            <Card.Img variant="top" src={article2} alt="article image" />
                             <Card.Body>
                                 <a href='https://www.omnesgroup.com/online-presence-as-junior-developer/' style={{textDecoration:'none', color: 'black'}}>
                                 <Card.Title>Build an Online Presence and Make Connections as a Junior Developer: How to Start?</Card.Title>                                
@@ -62,7 +62,7 @@ export default function HomeDev() {
                         </Card>   
 
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={article3} alt="Card image" />
+                            <Card.Img variant="top" src={article3} alt="article image" />
                             <Card.Body>
                                 <a href='https://eightfold.io/blog/tips-for-a-junior-front-end-developer/' style={{textDecoration:'none', color: 'black'}}>
                                 <Card.Title>Tips for a Junior Front End Developer</Card.Title>                               
@@ -71,7 +71,7 @@ export default function HomeDev() {
                         </Card> 
 
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={article4} alt="Card image" />
+                            <Card.Img variant="top" src={article4} alt="article image" />
                             <Card.Body>
                                 <a href='https://coder-coder.com/uncommonly-good-web-developer/' style={{textDecoration:'none', color: 'black'}}>
                                 <Card.Title>How to be an uncommonly good web developer</Card.Title>                               

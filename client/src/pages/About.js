@@ -22,16 +22,22 @@ export default function About() {
 
             <div className="aboutDev">
                 <h1  className="mainh1">About Developers</h1>
-                <hr style={{opacity:'0.1'}}/>
-                <div className="col-12 col-md-10 my-3">
-                {loading ? (
-                    <div>Loading...</div>
-                ) : (
-                    <DeveloperList
-                    developers={developers}
-                    />
-                )}
-                </div>              
+                <div className='about-cards'>
+                    <Row style={{justifyContent: 'space-evenly'}}>
+                        <Card style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src="holder.js/100px180" />
+                            <Card.Body>
+                                <Card.Title>Card Title</Card.Title>
+                                <Card.Text>
+                                Some quick example text to build on the card title and make up the bulk of
+                                the card's content.
+                                </Card.Text>
+                                <Button variant="primary">Go somewhere</Button>                                
+                            </Card.Body>
+                        </Card>
+                        
+                    </Row>
+                </div>                            
             </div>
         </div>
     )
