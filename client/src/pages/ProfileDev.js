@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect} from "react";
-import { Form, Col, Row, Button, Modal } from "react-bootstrap";
-import { useParams,Redirect } from 'react-router-dom';
+import { Form, Col, Row, Button, Modal, FloatingLabel } from "react-bootstrap";
+import { useParams, Redirect } from 'react-router-dom';
 
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USERS } from "../utils/queries";
@@ -10,30 +10,24 @@ import { QUERY_SINGLE_USER, QUERY_ME } from "../utils/queries";
 
 export default function ProfileDev() {
   let { userId } = useParams();
-
+  
   const { loading, data } = useQuery(QUERY_SINGLE_USER, {
     variables: { userId: userId },
   });
   console.log(data)
+  
   const user = data?.user || {};
   console.log(user)
-  const [modalData, setModalData] = useState({
-    
-  })
-
-  const[redirect,setRedirect]=useState(false)
   
-  
+  const [modalData, setModalData] = useState({})
+  const[redirect,setRedirect]=useState(false);  
   const [updateUser, { error }] = useMutation(UPDATE_USER);
-
   
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     console.log(value)
     setModalData({ ...modalData, [name]: value, })
   }
-
 
   const handleModalSubmit = async (event) => {
     event.preventDefault();
@@ -60,6 +54,11 @@ export default function ProfileDev() {
   if(redirect){
     return<Redirect to="/"/>
   }
+    
+  const fileSelectedHandler = (event) => {
+    const state = { selectedFile: null }
+    this.setState({ selectedFile: event.target.files[0] })
+  }
 
   return (
     <div className="profiledevcont" style={{ backgroundColor: "#f2f7f2" }}>
@@ -75,7 +74,7 @@ export default function ProfileDev() {
           <h2 className='profiletitles'>Description:</h2>
           <p className='profiletext'>{user.userDescription}</p>
           <h2 className='profiletitles'>Type of developer:</h2>
-          <p className='profiletext'>{user.role}</p>
+          <p className='profiletext'>{user.primaryFocus}</p>
           <h2 className='profiletitles'>Skills:</h2>
           <p className='profiletext'>{user.skillSet}</p>
           <h2 className='profiletitles'>Hourly rate:</h2>
@@ -134,9 +133,9 @@ export default function ProfileDev() {
             </Col>
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
-            <Form.Label className="formlabel">Role</Form.Label>
+            <Form.Label className="formlabel">Type of Developer</Form.Label>
             <Col sm="30">
-              <Form.Control type="text" placeholder="Role" name='role' value={modalData.role} onChange={handleInputChange} />
+              <Form.Control type="text" placeholder={user.primaryFocus} name='primaryFocus' value={modalData.primaryFocus} onChange={handleInputChange} />
             </Col>
           </Form.Group>
           <Form.Group
@@ -246,4 +245,3 @@ export default function ProfileDev() {
       </Modal>
     </div>
   );
-}

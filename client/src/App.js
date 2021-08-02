@@ -51,6 +51,7 @@ function App() {
         <Route exact path="/profiledev/:userId" component={ProfileDev} />
         <Route exact path="/profilebuyer" component={ProfileBuyer} />
         <Route exact path="/search" component={SearchDev} />
+        <Route exact path="/">Logout</Route>
         <Footer />
       </div>
     </Router>
