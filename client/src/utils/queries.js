@@ -45,3 +45,26 @@ export const QUERY_SINGLE_USER = gql`
 		}
 	}
 `;
+
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+			email
+      role
+			fullName
+			company
+			profileImage
+			userDescription
+			sampleProjectName
+			sampleProjectURL
+			resumeURL
+			primaryFocus
+			skillSet
+			hourlyRate
+			linkedIn
+			gitHub
+			servicesOffered
+    }
+  }
+`;

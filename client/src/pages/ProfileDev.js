@@ -6,8 +6,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USERS } from "../utils/queries";
 import { UPDATE_USER } from "../utils/mutations";
-import { QUERY_SINGLE_USER } from "../utils/queries";
-import { SingleFieldSubscriptionsRule } from "graphql";
+import { QUERY_SINGLE_USER, QUERY_ME } from "../utils/queries";
 
 export default function ProfileDev() {
   

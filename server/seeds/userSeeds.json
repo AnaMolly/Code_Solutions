@@ -2,7 +2,7 @@
   {
     "email": "crawfordkevin101@gmail.com",
     "password": "password12345",
-    "role": "developer",
+    "role": "Developer",
     "fullName": "Kevin Crawford",
     "company": "Kevin Inc.",
     "userDescription": "Dog loving web developer",
@@ -19,7 +19,7 @@
   {
     "email": "darylnauman@gmail.com",
     "password": "password12345",
-    "role": "developer",
+    "role": "Developer",
     "fullName": "Daryl Nauman",
     "company": "Daryl Web Solutions",
     "userDescription":"Web developer leveraging technology to improve lives",
@@ -53,7 +53,7 @@
   {
     "email": "danielogunlana23@gmail.com",
     "password": "password12345",
-    "role": "developer",
+    "role": "Developer",
     "fullName": "Daniel Ogunlana",
     "userDescription":"Web developer with super powers",
     "sampleProjectName":"Film Dimension",
@@ -68,7 +68,7 @@
   },
   {
     "email": "fbillow@gmail.com",
-    "role": "buyer",
+    "role": "Client",
     "password": "password12345",
     "fullName": "Frank Billow",
     "company": "Franks Repairs"
@@ -76,21 +76,21 @@
   {
     "email": "sbistle@gmail.com",
     "password": "password12345",
-    "role": "buyer",
+    "role": "Client",
     "fullName": "Samantha Bistle",
     "company": "IBM"
   },
   {
     "email": "jboyer@gmail.com",
     "password": "password12345",
-    "role": "buyer",
+    "role": "Client",
     "fullName": "John Boyer",
     "company": "Remax"
   },
   {
     "email": "abowers@gmail.com",
     "password": "password12345",
-    "role": "buyer",
+    "role": "Client",
     "fullName": "Amanda Bowers",
     "company": "Amanda's Daycare"
   }
