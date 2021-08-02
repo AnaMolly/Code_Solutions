@@ -10,7 +10,8 @@ export default function Main() {
 
     const { loading, data } = useQuery(QUERY_USERS);
     console.log(data)
-    const developers = data?.developers || [];
+    const users = data?.users || [];
+    const developers = users.filter(user => user.role === "developer")
    
 
     return (
