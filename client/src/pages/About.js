@@ -1,6 +1,11 @@
 import React from 'react';
 import { Col, Row, Button, Card } from 'react-bootstrap';
 
+import picdefault from '../images/DefaultProfile.jpg'
+import kevin from '../images/kevin.jpg'
+import daniel from '../images/daniel.png'
+import Image from 'react-bootstrap/Image'
+
 import { useQuery } from '@apollo/client';
 import { QUERY_USERS } from '../utils/queries';
 import DeveloperList from '../components/DeveloperList';
@@ -25,10 +30,43 @@ export default function About() {
                 <div className='about-cards'>
                     <Row style={{justifyContent: 'space-evenly'}}>
                         <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src="holder.js/100px180" />
+                            <Image variant="top" src={kevin} className= 'p-3' roundedCircle/>
                             <Card.Body>
-                                <Card.Title>Card Title</Card.Title>
-                                <Card.Text>
+                                <Card.Title style={{color: 'black'}}>Kevin Crawford | <span style={{fontSize: '18px'}}>Front-End</span></Card.Title>
+                                <Card.Text style={{color: 'black'}} >
+                                Some quick example text to build on the card title and make up the bulk of
+                                the card's content.
+                                </Card.Text>
+                                <Button variant="primary">Go somewhere</Button>                                
+                            </Card.Body>
+                        </Card>
+                        <Card style={{ width: '18rem' }}>
+                            <Image variant="top" src={picdefault} className= 'p-3' roundedCircle/>
+                            <Card.Body>
+                                <Card.Title style={{color: 'black'}}>Daryl Nauman | <span style={{fontSize: '18px'}}>Front-End</span></Card.Title>
+                                <Card.Text style={{color: 'black'}} >
+                                Some quick example text to build on the card title and make up the bulk of
+                                the card's content.
+                                </Card.Text>
+                                <Button variant="primary">Go somewhere</Button>                                
+                            </Card.Body>
+                        </Card>
+                        <Card style={{ width: '18rem' }}>
+                            <Image variant="top" src={picdefault} className= 'p-3' roundedCircle/>
+                            <Card.Body>
+                                <Card.Title style={{color: 'black'}}>Analia Molly | <span style={{fontSize: '18px'}}>Front-End</span></Card.Title>
+                                <Card.Text style={{color: 'black'}} >
+                                Some quick example text to build on the card title and make up the bulk of
+                                the card's content.
+                                </Card.Text>
+                                <Button variant="primary">Go somewhere</Button>                                
+                            </Card.Body>
+                        </Card>
+                        <Card style={{ width: '18rem' }}>
+                            <Image variant="top" src={daniel} className= 'p-3' roundedCircle/>
+                            <Card.Body>
+                                <Card.Title style={{color: 'black'}}>Daniel Ogunlana | <span style={{fontSize: '18px'}}>Front-End</span></Card.Title>
+                                <Card.Text style={{color: 'black'}} >
                                 Some quick example text to build on the card title and make up the bulk of
                                 the card's content.
                                 </Card.Text>
