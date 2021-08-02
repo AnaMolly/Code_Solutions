@@ -2,7 +2,8 @@ import React from 'react';
 import * as ReactBootStrap from "react-bootstrap";
 
 const AppNavbar = () => {   
-  
+  //query user and sdend token back
+  //authenticated the token with the auth in the the front end utils 
     return (
       <>
         <ReactBootStrap.Navbar style={{backgroundColor:'#4AB8B1'}}>
@@ -17,8 +18,9 @@ const AppNavbar = () => {
         <ReactBootStrap.Nav.Link href="/login">Login</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link href="/signup">Sign Up</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link href="/search">Search</ReactBootStrap.Nav.Link>
-        <ReactBootStrap.Nav.Link href="/profiledev">Profile1</ReactBootStrap.Nav.Link>
+        <ReactBootStrap.Nav.Link href="/profiledev/:userId">Profile1</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link href="/profilebuyer">Profile2</ReactBootStrap.Nav.Link>
+        <ReactBootStrap.Nav.Link href="/">Logout</ReactBootStrap.Nav.Link>
         {/* <ReactBootStrap.NavDropdown title="Dropdown" id="basic-nav-dropdown">
           <ReactBootStrap.NavDropdown.Item href="#action/3.1">Action</ReactBootStrap.NavDropdown.Item>
           <ReactBootStrap.NavDropdown.Item href="#action/3.2">Another action</ReactBootStrap.NavDropdown.Item>
