@@ -49,7 +49,9 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/profiledev/:developerId" component={ProfileDev} />
         <Route exact path="/profilebuyer" component={ProfileBuyer} />
-        <Route exact path="/search" component={SearchDev} /> */}
+        <Route exact path="/search" component={SearchDev} />
+        <Route exact path="/">Logout</Route>
+
         <Footer />
       </div>
     </Router>
