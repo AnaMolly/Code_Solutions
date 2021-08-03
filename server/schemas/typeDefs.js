@@ -62,7 +62,6 @@ const typeDefs = gql`
     login(email: String!, password:String!): Auth
       
     updateUser(
-      userId: ID!
       userData: UserInput
     ): User
   }
