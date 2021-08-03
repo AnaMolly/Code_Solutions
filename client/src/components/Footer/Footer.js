@@ -10,7 +10,7 @@ const Footer = () => {
                 <Row style={{textAlign:'center'}}>
                     {/* Column1 */}
                     <Col>
-                        <h3>Contact:</h3>
+                        <h3>Find My Coder</h3>
                         <ul className='footer-items'>
                             <li>
                                 <a style={{color: '#ffff', fontSize: '20px', textDecoration: 'none'}} href=''>
@@ -41,19 +41,19 @@ const Footer = () => {
                     </Col> */}
                         
                     {/* Column3 */}
-                    <Col>
+                    {/* <Col>
                         <h4>Find My Coder</h4>
                         <ul className='list-unstyled'>
                             <li>123-456-7890</li>
                             <li>Toronto, Canada</li>
                             <li> 6 Queen's Park Cres W</li>
                         </ul>
-                    </Col>
+                    </Col> */}
                 </Row>
             <hr/>
             <Row style={{textAlign:'center'}} >
                 <p>
-                    &copy;{new Date().getFullYear()} Find Your Coder | K.A.D.D. Development Inc | All rights reserved 
+                    &copy;{new Date().getFullYear()} Find My Coder | K.A.D.D. Development Inc | All rights reserved 
                 </p>           
             </Row>
         </div>

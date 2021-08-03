@@ -3,6 +3,8 @@ import * as ReactBootStrap from "react-bootstrap";
 import { Button } from 'react-bootstrap';
 import Auth from '../../utils/auth';
 
+import { CgCodeSlash } from "react-icons/cg";
+
 import Login from '../../pages/Login';
 import Signup from '../../pages/Signup';
 
@@ -21,7 +23,7 @@ const AppNavbar = () => {
     <>
       <ReactBootStrap.Navbar style={{ backgroundColor: '#4AB8B1' }}>
         <ReactBootStrap.Container>
-          <ReactBootStrap.Navbar.Brand href="/">Find My Coder</ReactBootStrap.Navbar.Brand>
+          <ReactBootStrap.Navbar.Brand href="/"><span style={{fontSize: '30px'}}><CgCodeSlash/></span> Find My Coder</ReactBootStrap.Navbar.Brand>
           <ReactBootStrap.Navbar.Toggle aria-controls="basic-navbar-nav" />
           <ReactBootStrap.Navbar.Collapse id="basic-navbar-nav">
             <ReactBootStrap.Nav className="me-auto">

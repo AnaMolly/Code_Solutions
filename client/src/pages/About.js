@@ -30,7 +30,7 @@ export default function About() {
                 <h1 className="mainh1">About Developers</h1>
                 <div className='about-cards'>
                     <Row style={{ justifyContent: 'space-evenly' }}>
-                        <Card style={{ width: '18rem', padding: '0' }}>
+                        <Card style={{ width: '18rem', padding: '10px' }}>
                             <Image variant="top" src={kevin} className='p-3' roundedCircle />
                             <Card.Body>
                                 <Card.Title style={{ color: 'black' }}>Kevin Crawford | <span style={{ fontSize: '18px' }}>Front-End</span></Card.Title>
@@ -50,7 +50,7 @@ export default function About() {
                                 </Row>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem', padding: '0' }}>
+                        <Card style={{ width: '18rem', padding: '10' }}>
                             <Image variant="top" src={daryl} className='p-3' roundedCircle />
                             <Card.Body>
                                 <Card.Title style={{ color: 'black' }}>Daryl Nauman | <span style={{ fontSize: '18px' }}>Front-End</span></Card.Title>
@@ -70,7 +70,7 @@ export default function About() {
                                 </Row>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem', padding: '0' }}>
+                        <Card style={{ width: '18rem', padding: '10' }}>
                             <Image variant="top" src={analia} className='p-3' roundedCircle />
                             <Card.Body>
                                 <Card.Title style={{ color: 'black' }}>Analia Molly | <span style={{ fontSize: '18px' }}>Front-End</span></Card.Title>
@@ -90,7 +90,7 @@ export default function About() {
                                 </Row>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem', padding: '0' }}>
+                        <Card style={{ width: '18rem', padding: '10' }}>
                             <Image variant="top" src={daniel} className='p-3' roundedCircle />
                             <Card.Body>
                                 <Card.Title style={{ color: 'black' }}>Daniel Ogunlana | <span style={{ fontSize: '18px' }}>Front-End</span></Card.Title>
