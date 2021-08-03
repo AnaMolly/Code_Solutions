@@ -51,10 +51,9 @@ function App() {
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/profiledev/:userId" component={ProfileDev} />
         <Route exact path="/me" component={ProfileDev} />
-        <Route exact path="/profilebuyer/:userId" component={ProfileClient} />
+        <Route exact path="/profileclient/:userId" component={ProfileClient} />
         <Route exact path="/search" component={SearchDev} />
         <Route exact path="/about" component={About} />
-        {/* <Route exact path="/">Logout</Route> */}
         <Footer />
       </div>
     </Router>

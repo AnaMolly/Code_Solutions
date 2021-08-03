@@ -16,7 +16,7 @@ export default function HomeDev() {
     console.log(data)
     const developers = data?.developers || [];
     const user = Auth.getProfile()
-    console.log(user)
+    // console.log(user)
     return (
         <div className='contentPage'>
             <div style={{textAlign: 'center', padding: '20px 0'}}>
