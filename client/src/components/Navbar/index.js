@@ -27,7 +27,7 @@ const AppNavbar = () => {
         <ReactBootStrap.Nav.Link href="/signup">Sign Up</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link href="/search">Search</ReactBootStrap.Nav.Link>
         <ReactBootStrap.Nav.Link href="/me">Profile1</ReactBootStrap.Nav.Link>
-        <ReactBootStrap.Nav.Link href="/profilebuyer">Profile2</ReactBootStrap.Nav.Link>
+        <ReactBootStrap.Nav.Link href="/profileClient/userId">Profile2</ReactBootStrap.Nav.Link>
         <Button style={{backgroundColor:'#F0A202', border:'none'}} onClick={logout}>Logout</Button>
         {/* <ReactBootStrap.NavDropdown title="Dropdown" id="basic-nav-dropdown">
           <ReactBootStrap.NavDropdown.Item href="#action/3.1">Action</ReactBootStrap.NavDropdown.Item>
