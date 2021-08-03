@@ -15,12 +15,10 @@ const userSchema = new Schema({
   },
   role: {
     type: String,
-    required: true,
     trim: true,
   },
   fullName: {
     type: String,
-    required: true,
     trim: true,
   },
   company: {
