@@ -89,8 +89,4 @@ const AppNavbar = () => {
   );
 };
 
-<<<<<<< HEAD
 export default AppNavbar;
-=======
-export default AppNavbar;
->>>>>>> ab2154c3a33dd53b83c702012e52350d5b165442
