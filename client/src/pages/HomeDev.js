@@ -17,8 +17,8 @@ export default function HomeDev() {
     const users = data?.users || [];
     const developers = users.filter(user => user.role === "developer")
     const user = Auth.getProfile()
-    console.log(user)
-    
+    // console.log(user)
+
     return (
         <div className='contentPage'>
             <div style={{backgroundColor: '#294a66ff', width: '100%'}} >

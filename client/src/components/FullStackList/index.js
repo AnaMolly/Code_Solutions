@@ -14,7 +14,7 @@ const FSDeveloperList = ({ fsdevelopers }) => {
                   <Card.Img variant="top" src={fsdeveloper.profileImage} style={{maxWidth:'284px'}}/>
                   <Card.Text  style={{ color:'black', paddingTop:'16px'}}>{fsdeveloper.userDescription}</Card.Text>
                   <Card.Subtitle style={{  padding:'20px 20px 30px 20px'}}className="mb-2 text-muted">Hourly rate: ${fsdeveloper.hourlyRate}/hr</Card.Subtitle>
-                  <a className="infobut" variant="primary" target="_blank" style={{ margin: '10px'}} href={`/profiledev/${fsdeveloper._id}`}>
+                  <a className="infobut" variant="primary" style={{ margin: '10px'}} href={`/profileclient/${fsdeveloper._id}`}>
                   View profile
                   </a>
               </Card.Body>
