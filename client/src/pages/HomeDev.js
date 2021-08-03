@@ -49,7 +49,7 @@ export default function HomeDev() {
                 <h1 className="mainh1">Articles on how you can improve your online presence</h1>
                 <div className='article-cards bottom-0'>
                     <Row style={{ justifyContent: 'space-evenly', textAlign: 'center' }}>
-                        <Card style={{ width: '18rem' }}>
+                        <Card style={{ width: '18rem', padding: '0' }}>
                             <Card.Img variant="top" src={article1} alt="article image" />
                             <Card.Body>
                                 <a href='https://localbizguru.com/blog/improve-business-online-presence-in-2021/' style={{ textDecoration: 'none', color: 'black' }}>
@@ -58,7 +58,7 @@ export default function HomeDev() {
                             </Card.Body>
                         </Card>
 
-                        <Card style={{ width: '18rem' }}>
+                        <Card style={{ width: '18rem', padding: '0' }}>
                             <Card.Img variant="top" src={article2} alt="article image" />
                             <Card.Body>
                                 <a href='https://www.omnesgroup.com/online-presence-as-junior-developer/' style={{ textDecoration: 'none', color: 'black' }}>
@@ -67,7 +67,7 @@ export default function HomeDev() {
                             </Card.Body>
                         </Card>
 
-                        <Card style={{ width: '18rem' }}>
+                        <Card style={{ width: '18rem', padding: '0' }}>
                             <Card.Img variant="top" src={article3} alt="article image" />
                             <Card.Body>
                                 <a href='https://eightfold.io/blog/tips-for-a-junior-front-end-developer/' style={{ textDecoration: 'none', color: 'black' }}>
@@ -76,7 +76,7 @@ export default function HomeDev() {
                             </Card.Body>
                         </Card>
 
-                        <Card style={{ width: '18rem' }}>
+                        <Card style={{ width: '18rem', padding: '0' }}>
                             <Card.Img variant="top" src={article4} alt="article image" />
                             <Card.Body>
                                 <a href='https://coder-coder.com/uncommonly-good-web-developer/' style={{ textDecoration: 'none', color: 'black' }}>
