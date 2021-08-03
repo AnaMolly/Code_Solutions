@@ -2,15 +2,14 @@ import React from 'react';
 import { useState } from 'react';
 import { Form, Col, Row, Button, Modal} from "react-bootstrap"
 import { useParams } from 'react-router-dom';
-import { useQuery, useMutation } from "@apollo/client";
-import { QUERY_USERS } from "../utils/queries";
+import { useQuery} from "@apollo/client";
 import { QUERY_SINGLE_USER } from "../utils/queries";
 
 
 export default function ProfileBuyer() {
   let { userId } = useParams();
   
-  const { loading, data } = useQuery(QUERY_SINGLE_USER, {
+  const { data } = useQuery(QUERY_SINGLE_USER, {
     variables: { userId: userId },
   });
   console.log(data)
@@ -24,8 +23,8 @@ export default function ProfileBuyer() {
   const handleShow = () => setShow(true);
     return (
         <div className='profiledevcont' style={{backgroundColor:'#f2f7f2'}}>
-        <h1 className="mainh1">DEVERLOPER'S PROFILE:</h1>
-        <img src={user.profileImage} style={{maxWidth:"500px"}}></img>         
+        <h1 className="mainh1" style={{backgroundColor:'#f0a202'}}>DEVERLOPER'S PROFILE:</h1>
+        <img src={user.profileImage} style={{maxWidth:"500px"}} alt='boy or girl'></img>         
 
         <div className='profile'>
         <div className="profile-info">
