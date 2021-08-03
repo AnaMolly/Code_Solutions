@@ -30,10 +30,10 @@ export default function Login(props) {
       Auth.login(data.login.token);
       // console.log(data);
       
-      if (data.login.user.role === "Developer") {
+      if (data.login.user.role === "developer") {
         window.location.assign('/homedev');
       } else {
-        window.location.assign('/homebuyer');
+        window.location.assign('/homecli');
       }
 
     } catch (e) {
