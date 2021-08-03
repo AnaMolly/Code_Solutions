@@ -18,11 +18,7 @@ const AppNavbar = () => {
     event.preventDefault();
     Auth.logout();
   };
-
-
-
-  // {Auth.getProfile().data.user.role === "developer" ? (
-
+  
   return (
     <>
 
