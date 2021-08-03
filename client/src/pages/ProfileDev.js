@@ -40,8 +40,6 @@ export default function ProfileDev() {
     );
   }
   
-  
-  
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     console.log(value)
@@ -63,24 +61,18 @@ export default function ProfileDev() {
       const { data } = await updateUser({
         variables: { userData: {...modalData} }
       })
-      console.log(data)
+      
       handleClose()
-      // window.location.reload()
-      console.log(data)
+      window.location.reload()
+      
     } catch (error) {
       console.error(error)
     }
   }
 
-  
-
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true);
 
-  // if(redirect){
-  //   return<Redirect to="/"/>
-  // }
-    
   const fileSelectedHandler = (event) => {
     const state = { selectedFile: null }
     this.setState({ selectedFile: event.target.files[0] })
