@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useQuery } from '@apollo/client';
 import {QUERY_USERS } from '../utils/queries';
-import DeveloperList from '../components/DeveloperList';
+import HomeDevList from '../components/HomeDevList';
 
 export default function HomeBuyer() {
 
@@ -16,11 +16,11 @@ export default function HomeBuyer() {
         <div className="homeclientpage">
           <h1 className="mainh1" style={{paddingTop:'85px',color:'white'}}>Our Web Developers</h1>
           
-              <div className="col-12 col-md-10 my-3">
+              <div className="col-12 col-md-10 my-3 devs">
                 {loading ? (
                   <div>Loading...</div>
                 ) : (
-                  <DeveloperList
+                  <HomeDevList
                     developers={developers}
                   />
                 )}

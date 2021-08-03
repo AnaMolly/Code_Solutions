@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const url = 'https://moonvillageassociation.org/wp-content/uploads/2018/06/default-profile-picture1.jpg'
 
 const userSchema = new Schema({
   email: {
@@ -26,7 +27,8 @@ const userSchema = new Schema({
     trim: true,
   },
   profileImage: {
-    type: String
+    type: String, 
+    default: url
   },
   userDescription: {
     type: String,
