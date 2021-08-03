@@ -22,8 +22,8 @@ export default function ProfileDev() {
   console.log(user)
   const [modalData, setModalData] = useState({})
   const [updateUser, { error }] = useMutation(UPDATE_USER);
-
   const [show, setShow] = useState(false);
+  
 
   if (Auth.loggedIn() && Auth.getProfile().data._id === userParam) {
     return <Redirect to="/me" />
