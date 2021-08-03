@@ -7,21 +7,42 @@ import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USERS } from "../utils/queries";
 import { UPDATE_USER } from "../utils/mutations";
 import { QUERY_SINGLE_USER, QUERY_ME } from "../utils/queries";
+import Auth from "../utils/auth"
 
 export default function ProfileDev() {
-  let { userId } = useParams();
+  const { userId: userParam } = useParams();
   
-  const { loading, data } = useQuery(QUERY_SINGLE_USER, {
-    variables: { userId: userId },
+  const { loading, data } = useQuery( userParam ? QUERY_SINGLE_USER : QUERY_ME, {
+    variables: { userId: userParam },
   });
   console.log(data)
-  
-  const user = data?.user || {};
+  const user = data?.me || data?.user || {};
+  console.log(data)
   console.log(user)
-  
   const [modalData, setModalData] = useState({})
-  const[redirect,setRedirect]=useState(false);  
+  // const[redirect,setRedirect]=useState(false);  
   const [updateUser, { error }] = useMutation(UPDATE_USER);
+  const [show, setShow] = useState(false);
+  
+
+  if (Auth.loggedIn() && Auth.getProfile().data._id === userParam) {
+    return <Redirect to="/me" />
+  }
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+
+  if(!user?.fullName) {
+    return (
+      <h4>
+        You need to be logged in to see your profile page. Use the navigation
+        links above to sign up or log in!
+      </h4>
+    );
+  }
+  
+  
   
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -38,6 +59,7 @@ export default function ProfileDev() {
       const { data } = await updateUser({
         variables: { userData: {...modalData} }
       })
+      console.log(data)
       handleClose()
       window.location.reload()
       console.log(data)
@@ -46,14 +68,14 @@ export default function ProfileDev() {
     }
   }
 
-  const [show, setShow] = useState(false);
+  
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true);
 
-  if(redirect){
-    return<Redirect to="/"/>
-  }
+  // if(redirect){
+  //   return<Redirect to="/"/>
+  // }
     
   const fileSelectedHandler = (event) => {
     const state = { selectedFile: null }
