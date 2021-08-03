@@ -18,57 +18,6 @@ export default function SearchDev() {
     const fsdevelopers = users.filter(user => user.primaryFocus === "Full-Stack")
 
    
-    
-    // const HandleSearch = (e) => {
-    
-    //     const { target } = e;
-    //     const inputType = target.name;
-       
-    //     console.log(inputType)
-
-    //     if (inputType==='frontend'){
-    //         return(
-    //                     <div>
-    //                     {
-    //                         <FEDeveloperList
-    //                         fedevelopers={fedevelopers}
-    //                         />
-    //                     }
-    //                     </div> 
-    //         )
-    //     } else if (inputType==='backend'){
-    //         return(
-
-    //             <div>{
-    //                 <BEDeveloperList
-    //                 bedevelopers={bedevelopers}
-    //                 />
-    //             }
-    //             </div>
-            
-        
-    // )
-    //     } else {
-    //         return(
-                
-    //                     <div>
-    //                         <h1 className="mainh1" style={{color:'white'}}>Search Results:</h1>
-    //                         {loading ? (
-    //                         <div>Loading...</div>
-    //                     ) : (
-    //                         <FSDeveloperList
-    //                         fsdevelopers={fsdevelopers}
-    //                         />
-    //                     )}
-    //                     </div>
-                
-                
-    //         )
-    //     }
-
-    // }
-    
-   
 
     return(
         <div style={{backgroundColor:'#f0a202', padding:'45px'}}>
