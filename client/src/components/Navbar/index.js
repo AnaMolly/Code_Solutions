@@ -27,8 +27,7 @@ const AppNavbar = () => {
           <ReactBootStrap.Navbar.Brand href="/"><span style={{fontSize: '30px'}}><CgCodeSlash/></span> Find My Coder</ReactBootStrap.Navbar.Brand>
           <ReactBootStrap.Navbar.Toggle aria-controls="basic-navbar-nav" />
           <ReactBootStrap.Navbar.Collapse id="basic-navbar-nav">
-            <ReactBootStrap.Nav className="me-auto">             
-              {/* <ReactBootStrap.Nav.Link href="/about">About</ReactBootStrap.Nav.Link> */}
+            <ReactBootStrap.Nav className="me-auto">
               
               {!Auth.loggedIn() ? ([
                 <ReactBootStrap.Nav.Link href="/about">About</ReactBootStrap.Nav.Link>,
@@ -38,7 +37,7 @@ const AppNavbar = () => {
                 <> 
                   <ReactBootStrap.Nav.Link href="/homedev">Home</ReactBootStrap.Nav.Link> {/* developer */}
                   <ReactBootStrap.Nav.Link href="/search">Search</ReactBootStrap.Nav.Link>
-                  <ReactBootStrap.Nav.Link href="/me">Profile1-Dev</ReactBootStrap.Nav.Link>
+                  <ReactBootStrap.Nav.Link href="/me">Profile</ReactBootStrap.Nav.Link>
                   <ReactBootStrap.Nav.Link href="/about">About</ReactBootStrap.Nav.Link>
                   <Button style={{ backgroundColor: '#F0A202', border: 'none' }} onClick={logout}>Logout</Button>
                 </>
@@ -46,7 +45,7 @@ const AppNavbar = () => {
                 <> 
                   <ReactBootStrap.Nav.Link href="/homecli">Home</ReactBootStrap.Nav.Link> {/* client */}
                   <ReactBootStrap.Nav.Link href="/search">Search</ReactBootStrap.Nav.Link>
-                  <ReactBootStrap.Nav.Link href="/me">Profile1-Dev</ReactBootStrap.Nav.Link>
+                  <ReactBootStrap.Nav.Link href="/me">Profile</ReactBootStrap.Nav.Link>
                   <ReactBootStrap.Nav.Link href="/about">About</ReactBootStrap.Nav.Link>
                   <Button style={{ backgroundColor: '#F0A202', border: 'none' }} onClick={logout}>Logout</Button>
                 </>
