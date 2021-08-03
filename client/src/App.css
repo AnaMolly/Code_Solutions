@@ -262,3 +262,20 @@ box-shadow: 1px 1px 23px 5px rgba(57, 223, 223, 0.5);
 .article-cards:hover{
   transform: scale(1.14);
 }
+
+.devs{
+  display: flex;
+  flex-direction: center;
+}
+
+.testimonialtext{
+  font-size: 40px;
+  font-weight: 200;
+  padding:40px 60px 40px 40px
+}
+
+.testname{
+  font-style:italic;
+  font-weight:400;
+  font-size: 25px;
+}
