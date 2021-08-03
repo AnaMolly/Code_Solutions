@@ -13,7 +13,7 @@ const BEDeveloperList = ({ bedevelopers }) => {
                   <Card.Title  style={{ color:'black', padding:'10px'}}>{bedeveloper.fullName}</Card.Title>
                   <Card.Img variant="top" src={bedeveloper.profileImage} style={{maxWidth:'284px'}}/>
                   <Card.Text  style={{ color:'black', paddingTop:'16px'}}>{bedeveloper.userDescription}</Card.Text>
-                  <Card.Subtitle style={{  padding:'20px 20px 30px 20px'}}className="mb-2 text-muted">Hourly rate: {bedeveloper.hourlyRate}</Card.Subtitle>
+                  <Card.Subtitle style={{  padding:'20px 20px 30px 20px'}}className="mb-2 text-muted">Hourly rate: ${bedeveloper.hourlyRate}/hr</Card.Subtitle>
                   <a className="infobut" variant="primary" target="_blank" style={{ margin: '10px'}} href={`/profiledev/${bedeveloper._id}`}>
                   View profile
                   </a>
