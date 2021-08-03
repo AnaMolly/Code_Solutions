@@ -9,17 +9,18 @@ import article4 from '../images/article4.jpg'
 import { useQuery } from '@apollo/client';
 import {QUERY_USERS } from '../utils/queries';
 import DeveloperList from '../components/DeveloperList';
-
+import Auth from "../utils/auth";
 export default function HomeDev() {
 
     const { loading, data } = useQuery(QUERY_USERS);
     console.log(data)
     const developers = data?.developers || [];
-
+    const user = Auth.getProfile()
+    console.log(user)
     return (
         <div className='contentPage'>
             <div style={{textAlign: 'center', padding: '20px 0'}}>
-                <Button style={{backgroundColor:'#F0A202', border:'none'}}>
+                <Button href={`/profiledev/${user.data._id}`} style={{backgroundColor:'#F0A202', border:'none'}}>
                     Finish Your Profile
                 </Button>
             </div>            

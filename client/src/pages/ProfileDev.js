@@ -36,7 +36,7 @@ export default function ProfileDev() {
 
     try {
       const { data } = await updateUser({
-        variables: { userId: user._id,userData: {...modalData} }
+        variables: { userData: {...modalData} }
       })
       handleClose()
       window.location.reload()
@@ -152,7 +152,7 @@ export default function ProfileDev() {
           >
             <Form.Label>Skills</Form.Label>
             <Col sm="30">
-              <Form.Control type="skills" placeholder="Skills" name="skillSet" value={user.skillSet} onChange={handleInputChange} />
+              <Form.Control type="skills" placeholder={user.skillSet} name="skillSet" value={modalData.skillSet} onChange={handleInputChange} />
             </Col>
           </Form.Group>
           <Form.Group
@@ -162,7 +162,7 @@ export default function ProfileDev() {
           >
             <Form.Label>Hourly rate</Form.Label>
             <Col sm="30">
-              <Form.Control type="text" placeholder="Hourly rate" name="hourlyRate" value={user.hourlyRate} onChange={handleInputChange} />
+              <Form.Control type="text" placeholder={user.hourlyRate} name="hourlyRate" value={modalData.hourlyRate} onChange={handleInputChange} />
             </Col>
           </Form.Group>
           <Form.Group
@@ -172,7 +172,7 @@ export default function ProfileDev() {
           >
             <Form.Label>Company</Form.Label>
             <Col sm="30">
-              <Form.Control type="skills" placeholder="Company" name="company" value={user.company} onChange={handleInputChange} />
+              <Form.Control type="skills" placeholder={user.company} name="company" value={modalData.company} onChange={handleInputChange} />
             </Col>
           </Form.Group>
           <Form.Group
@@ -182,7 +182,7 @@ export default function ProfileDev() {
           >
             <Form.Label>Project example URL</Form.Label>
             <Col sm="30">
-              <Form.Control type="skills" name="sampleProjectURL" placeholder="Project example url" value={user.sampleProjectURL} onChange={handleInputChange} />
+              <Form.Control type="skills" name="sampleProjectURL" placeholder={user.sampleProjectURL} value={modalData.sampleProjectURL} onChange={handleInputChange} />
             </Col>
           </Form.Group>
           <Form.Group
@@ -192,7 +192,7 @@ export default function ProfileDev() {
           >
             <Form.Label>Project example name</Form.Label>
             <Col sm="30">
-              <Form.Control type="skills" name="sampleProjectName" placeholder="Project example name" value={user.sampleProjectName} onChange={handleInputChange} />
+              <Form.Control type="skills" name="sampleProjectName" placeholder={user.sampleProjectName} value={modalData.sampleProjectName} onChange={handleInputChange} />
             </Col>
           </Form.Group>
           <Form.Group
@@ -202,7 +202,7 @@ export default function ProfileDev() {
           >
             <Form.Label>Your Linkedin URL</Form.Label>
             <Col sm="30">
-              <Form.Control type="skills" name="linkedIn" placeholder="Linkedin url" value={user.linkedIn} onChange={handleInputChange} />
+              <Form.Control type="skills" name="linkedIn" placeholder={user.linkedIn} value={modalData.linkedIn} onChange={handleInputChange} />
             </Col>
           </Form.Group>
           <Form.Group
@@ -212,7 +212,7 @@ export default function ProfileDev() {
           >
             <Form.Label>Your Resume URL</Form.Label>
             <Col sm="30">
-              <Form.Control type="skills" name="resumeURL" placeholder="Resume url" value={user.resumeURL} onChange={handleInputChange} />
+              <Form.Control type="skills" name="resumeURL" placeholder={user.resumeURL} value={modalData.resumeURL} onChange={handleInputChange} />
             </Col>
           </Form.Group>
           <Form.Group
@@ -222,7 +222,7 @@ export default function ProfileDev() {
           >
             <Form.Label>Your GitHub URL</Form.Label>
             <Col sm="30">
-              <Form.Control type="skills" name="gitHub" placeholder="Github url" value={user.gitHub} onChange={handleInputChange} />
+              <Form.Control type="skills" name="gitHub" placeholder={user.gitHub} value={modalData.gitHub} onChange={handleInputChange} />
             </Col>
           </Form.Group>
           <Form.Group
@@ -232,13 +232,12 @@ export default function ProfileDev() {
           >
             <Form.Label>Services</Form.Label>
             <Col sm="30">
-              <Form.Control type="skills" name="servicesOffered" placeholder="Services you offer" value={user.servicesOffered} onChange={handleInputChange} />
+              <Form.Control type="skills" name="servicesOffered" placeholder={user.servicesOffered} value={modalData.servicesOffered} onChange={handleInputChange} />
             </Col>
           </Form.Group>
           <Button 
           variant="primary"
           onClick={handleModalSubmit}
-          type="submit"
           style={{
             margin: "0px 45px 45px 45px",
             backgroundColor: "#4AB8B1",
