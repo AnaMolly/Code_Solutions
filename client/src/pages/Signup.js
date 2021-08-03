@@ -35,6 +35,13 @@ export default function Signup() {
       });
 
       Auth.login(data.addUser.token);
+
+      if (data.addUser.user.role === "developer") {
+        window.location.assign('/homedev');
+      } else {
+        window.location.assign('/homecli');
+      }
+
     } catch (e) {
       console.error(e);
     }

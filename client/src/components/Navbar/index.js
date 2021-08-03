@@ -19,8 +19,13 @@ const AppNavbar = () => {
     Auth.logout();
   };
 
+
+
+  // {Auth.getProfile().data.user.role === "developer" ? (
+
   return (
     <>
+
       <ReactBootStrap.Navbar style={{ backgroundColor: '#4AB8B1' }}>
         <ReactBootStrap.Container>
           <ReactBootStrap.Navbar.Brand href="/"><span style={{fontSize: '30px'}}><CgCodeSlash/></span> Find My Coder</ReactBootStrap.Navbar.Brand>
@@ -29,19 +34,24 @@ const AppNavbar = () => {
             <ReactBootStrap.Nav className="me-auto">             
               <ReactBootStrap.Nav.Link href="/about">About</ReactBootStrap.Nav.Link>
               
-              {/* <ReactBootStrap.Nav.Link href="/profileclient/:userId">Profile2-Client</ReactBootStrap.Nav.Link> */}
-              {Auth.loggedIn() ? ([
-                <>
-                  <ReactBootStrap.Nav.Link href="/homedev">Home(Dev)</ReactBootStrap.Nav.Link>
-                  <ReactBootStrap.Nav.Link href="/homecli">Home(Client)</ReactBootStrap.Nav.Link>
+              {!Auth.loggedIn() ? ([
+                
+                <ReactBootStrap.Nav.Link href="/signup">Sign Up</ReactBootStrap.Nav.Link>,
+                <ReactBootStrap.Nav.Link href="/login">Login</ReactBootStrap.Nav.Link>
+              ]) :Auth.getProfile().data.role==="developer"?([
+                <> 
+                  <ReactBootStrap.Nav.Link href="/homedev">Home</ReactBootStrap.Nav.Link> {/* developer */}
                   <ReactBootStrap.Nav.Link href="/search">Search</ReactBootStrap.Nav.Link>
                   <ReactBootStrap.Nav.Link href="/me">Profile1-Dev</ReactBootStrap.Nav.Link>
                   <Button style={{ backgroundColor: '#F0A202', border: 'none' }} onClick={logout}>Logout</Button>
                 </>
-              ]) : ([
-                
-                <ReactBootStrap.Nav.Link href="/signup">Sign Up</ReactBootStrap.Nav.Link>,
-                <ReactBootStrap.Nav.Link href="/login">Login</ReactBootStrap.Nav.Link>
+              ]):([
+                <> 
+                  <ReactBootStrap.Nav.Link href="/homecli">Home</ReactBootStrap.Nav.Link> {/* client */}
+                  <ReactBootStrap.Nav.Link href="/search">Search</ReactBootStrap.Nav.Link>
+                  <ReactBootStrap.Nav.Link href="/me">Profile1-Dev</ReactBootStrap.Nav.Link>
+                  <Button style={{ backgroundColor: '#F0A202', border: 'none' }} onClick={logout}>Logout</Button>
+                </>
               ])}
             </ReactBootStrap.Nav>
           </ReactBootStrap.Navbar.Collapse>
