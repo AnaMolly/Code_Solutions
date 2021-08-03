@@ -49,9 +49,6 @@ const resolvers = {
     updateUser: async (
       parent, args, context
     ) => {
-      console.log("success")
-      console.log(args)
-      // if(username || email || fullName || profileImage || userDescription || sampleProjectName || sampleProjectURL || resumeURL || primaryFocus || skillSet || hourlyRate || linkedIn || gitHub || servicesOffered) {
       return await User.findByIdAndUpdate(context.user._id ,{$set:args.userData}, {new: true})
     }
 	},
