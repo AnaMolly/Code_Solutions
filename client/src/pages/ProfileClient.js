@@ -8,6 +8,16 @@ import { QUERY_SINGLE_USER } from "../utils/queries";
 
 
 export default function ProfileBuyer() {
+  let { userId } = useParams();
+  
+  const { loading, data } = useQuery(QUERY_SINGLE_USER, {
+    variables: { userId: userId },
+  });
+  console.log(data)
+  
+  const user = data?.user || {};
+  console.log(user)
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -15,10 +25,36 @@ export default function ProfileBuyer() {
     return (
         <div className='profiledevcont' style={{backgroundColor:'#f2f7f2'}}>
         <h1 className="mainh1">DEVERLOPER'S PROFILE:</h1>
-        <img src="https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg" style={{maxWidth:"500px"}}></img>
-        <div className="profileform">           
-           
+        <img src={user.profileImage} style={{maxWidth:"500px"}}></img>         
+
+        <div className='profile'>
+        <div className="profile-info">
+          <h2 className='profiletitles'>Name:</h2>
+          <p className='profiletext'> {user.fullName}</p>
+          <h2 className='profiletitles'>Description:</h2>
+          <p className='profiletext'>{user.userDescription}</p>
+          <h2 className='profiletitles'>Type of developer:</h2>
+          <p className='profiletext'>{user.primaryFocus}</p>
+          <h2 className='profiletitles'>Skills:</h2>
+          <p className='profiletext'>{user.skillSet}</p>
+          <h2 className='profiletitles'>Hourly rate:</h2>
+          <p className='profiletext'>{user.hourlyRate}</p>
+          <h2 className='profiletitles'>Company:</h2>
+          <p className='profiletext'>{user.company}</p>
+          <h2 className='profiletitles'>Project name:</h2>
+          <p className='profiletext'>{user.sampleProjectName}</p>
+          <h2 className='profiletitles'>Project URL:</h2>
+          <p className='profiletext'>{user.sampleProjectURL}</p>
+          <h2 className='profiletitles'>Linkedin URL:</h2>
+          <p className='profiletext'>{user.linkedIn}</p>
+          <h2 className='profiletitles'>Github URL</h2>
+          <p className='profiletext'>{user.gitHub}</p>
+          <h2 className='profiletitles'>Services:</h2>
+          <p className='profiletext'>{user.servicesOffered}</p>
+          <h2 className='profiletitles'>Contact Info:</h2>
+          <p className='profiletext'>{user.email}</p>  
     <Button  variant="primary" onClick={handleShow} style={{backgroundColor:'#4AB8B1', border:'none', fontSize:'20px',padding:'12px 24px',marginTop:'15px'}}>Contact Developer</Button>
+      </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Contact Developer</Modal.Title>
