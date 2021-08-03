@@ -20,10 +20,8 @@ export default function ProfileDev() {
   console.log(data)
   console.log(user)
   const [modalData, setModalData] = useState({})
-  // const[redirect,setRedirect]=useState(false);  
   const [updateUser, { error }] = useMutation(UPDATE_USER);
   const [show, setShow] = useState(false);
-  
 
   if (Auth.loggedIn() && Auth.getProfile().data._id === userParam) {
     return <Redirect to="/me" />
@@ -42,12 +40,16 @@ export default function ProfileDev() {
     );
   }
   
-  
-  
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     console.log(value)
     setModalData({ ...modalData, [name]: value, })
+  }
+
+  const handleIntegerChange = (event) => {
+    const { name, value } = event.target;
+    console.log(value)
+    setModalData({ ...modalData, [name]: parseInt(value), })
   }
 
   const handleModalSubmit = async (event) => {
@@ -59,24 +61,18 @@ export default function ProfileDev() {
       const { data } = await updateUser({
         variables: { userData: {...modalData} }
       })
-      console.log(data)
+      
       handleClose()
       window.location.reload()
-      console.log(data)
+      
     } catch (error) {
       console.error(error)
     }
   }
 
-  
-
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true);
 
-  // if(redirect){
-  //   return<Redirect to="/"/>
-  // }
-    
   const fileSelectedHandler = (event) => {
     const state = { selectedFile: null }
     this.setState({ selectedFile: event.target.files[0] })
@@ -150,7 +146,7 @@ export default function ProfileDev() {
           </Form.Group>
           <Form.Group as={Row} style={{paddingBottom:'10px'}} className="mb-3" controlId="formPlaintextEmail">
             <Form.Label>What type of web developer are you?</Form.Label>
-            <Form.Select aria-label="Floating label select example">
+            <Form.Select aria-label="Floating label select example" name="primaryFocus" onChange={handleInputChange}>
                 <option style={{color:'lightgray'}} value={modalData.primaryFocus}>Open this menu to select</option>
                   <option value="Front-End">Front-End</option>
                   <option value="Back-End">Back-End</option>
@@ -184,7 +180,7 @@ export default function ProfileDev() {
           >
             <Form.Label>Hourly rate</Form.Label>
             <Col sm="30">
-              <Form.Control type="text" placeholder={user.hourlyRate} name="hourlyRate" value={modalData.hourlyRate} onChange={handleInputChange} />
+              <Form.Control type="text" placeholder={user.hourlyRate} name="hourlyRate" value={modalData.hourlyRate} onChange={handleIntegerChange} />
             </Col>
           </Form.Group>
           <Form.Group
