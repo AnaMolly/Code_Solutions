@@ -10,8 +10,9 @@ import Footer from './components/Footer/Footer';
 
 import Main from './pages/Main'
 import ProfileDev from './pages/ProfileDev'
-import ProfileBuyer from './pages/ProfileBuyer'
+import ProfileClient from './pages/ProfileClient'
 import HomeDev from './pages/HomeDev'
+import HomeCli from './pages/HomeClient'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import SearchDev from './pages/Search'
@@ -45,11 +46,12 @@ function App() {
         <Navbar />
         {/* <About />  */}
         <Route exact path="/" component={Main} />
+        <Route exact path="/homecli" component={HomeCli} />
         <Route exact path="/homedev" component={HomeDev} />
         <Route exact path="/login" component={Login} />  
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/profiledev/:userId" component={ProfileDev} />
-        <Route exact path="/profilebuyer" component={ProfileBuyer} />
+        <Route exact path="/profilebuyer/:userId" component={ProfileClient} />
         <Route exact path="/search" component={SearchDev} />
         <Route exact path="/">Logout</Route>
         <Footer />
