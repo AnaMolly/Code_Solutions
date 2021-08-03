@@ -10,6 +10,7 @@ export default function Signup() {
   const [formState, setFormState] = useState({
     fullName: '',
     email: '',
+    role: '',
     password: '',
     company: ''
   });
@@ -56,10 +57,10 @@ export default function Signup() {
                 <Form.Control name='password' type='password' placeholder='password' value={formState.password} onChange={handleChange}></Form.Control>
                 
                 <Form.Label style={{margin: '5px 0'}}>Developer/Client</Form.Label>
-                <Form.Select name="role">
+                <Form.Select name="role" onChange={handleChange}>
                     <option>Select user type</option>
                     <option value="developer">Developer</option>
-                    <option value="buyer">Buyer</option>
+                    <option value="client">Client</option>
                 </Form.Select>
 
                 <Form.Label style={{margin: '5px 0'}}>Company <span style={{fontStyle: 'italic'}}>(optional)</span></Form.Label>
