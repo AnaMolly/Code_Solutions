@@ -10,6 +10,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_USERS } from '../utils/queries';
 import DeveloperList from '../components/DeveloperList';
 import Auth from "../utils/auth";
+import HomeDevList from '../components/HomeDevList';
 export default function HomeDev() {
 
     const { loading, data } = useQuery(QUERY_USERS);
@@ -39,7 +40,7 @@ export default function HomeDev() {
                         {loading ? (
                             <div>Loading...</div>
                         ) : (
-                            <DeveloperList
+                            <HomeDevList
                                 developers={developers}
                             />
                         )}
