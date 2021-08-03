@@ -1,5 +1,4 @@
-import React, { Component }  from 'react';
-import {render} from 'react-dom'
+import React from 'react';
 import { useQuery } from '@apollo/client';
 import {QUERY_USERS } from '../utils/queries';
 import FEDeveloperList from '../components/FrontEndList';
@@ -11,7 +10,7 @@ import developerimg from '../images/developer.png'
 export default function SearchDev() {
 
 
-    const { loading, data } = useQuery(QUERY_USERS);
+    const {  data } = useQuery(QUERY_USERS);
     console.log(data)
     const users = data?.users || [];
     const fedevelopers = users.filter(user => user.primaryFocus === "Front-End")
@@ -85,7 +84,7 @@ export default function SearchDev() {
                         <a name='fullstack' className="search-but" href='#fullstackdevs'>  Full-stack</a>
                     </div>
                     <div style={{display:'flex', justifyContent:'center'}}>
-                    <img src={developerimg} alt='developer' style={{maxWidth:'500px'}}></img>
+                    <img src={developerimg} alt='developer' style={{maxWidth:'600px'}}></img>
                     </div>
                 </div>
                

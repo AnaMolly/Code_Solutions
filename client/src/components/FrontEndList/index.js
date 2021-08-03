@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Row, Button } from "react-bootstrap"
+import { Card, Row} from "react-bootstrap"
 
 const FEDeveloperList = ({ fedevelopers }) => {
 
@@ -14,7 +14,7 @@ const FEDeveloperList = ({ fedevelopers }) => {
                   <Card.Img variant="top" src={fedeveloper.profileImage} style={{maxWidth:'284px'}}/>
                   <Card.Text  style={{ color:'black', paddingTop:'16px'}}>{fedeveloper.userDescription}</Card.Text>
                   <Card.Subtitle style={{  padding:'20px 20px 30px 20px'}}className="mb-2 text-muted">Hourly rate: ${fedeveloper.hourlyRate}/hr</Card.Subtitle>
-                  <a className="infobut" variant="primary" target="_blank" style={{ margin: '10px'}} href={`/profiledev/${fedeveloper._id}`}>
+                  <a className="infobut" variant="primary" style={{ margin: '10px'}} href={`/profileclient/${fedeveloper._id}`}>
                   View profile
                   </a>
               </Card.Body>
