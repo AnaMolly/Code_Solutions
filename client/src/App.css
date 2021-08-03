@@ -137,13 +137,24 @@ code {
 }
 
 /* Login Form Styling */
-.login-container, .login-form {
-  width: 100%;
-  max-width: 330px;
+.login-container {
+  width: 50%;
+  /* max-width: 330px; */
+  /* padding: 15px 0 30px; */
+  margin: auto;  
+  /* height: 200%; */
+  margin-bottom: 150px;
+}
+
+.login-form {
+  width: 95%;
+  /* max-width: 330px; */
   padding: 15px;
   margin: auto;  
-  height: 100%;
+  /* height: 300%; */
+  line-height: 400%;
 }
+
 .searchdiv{
 
   padding-bottom:40px;
@@ -210,16 +221,16 @@ box-shadow: 1px 1px 23px 5px rgba(57, 223, 223, 0.5);
   background-color: var(--marigold);
 }
 .profile-info{
-  background-color: var(--mint-cream);
-  color: black;
+  background-color: var(--marigold);
+  color: white;
   padding:60px;
-  margin:45px
 
 }
 
 .profiletitles{
+  font-weight: 200;
   font-size: 25px;
-  color:var(--indigo-dye)
+  color:black
 }
 
 .profiletext{
@@ -229,9 +240,6 @@ box-shadow: 1px 1px 23px 5px rgba(57, 223, 223, 0.5);
 }
 
 .homeclientpage{
-  display:flex;
-  flex-direction: column;
-  align-items: center;
   padding:30px;
   background-color: var(--indigo-dye);
 
@@ -247,15 +255,10 @@ box-shadow: 1px 1px 23px 5px rgba(57, 223, 223, 0.5);
 }
 
 .article-cards{
-  border: thin solid var(--indigo-dye);
+  border: thin solid var(--marigold);
   transition: all 0.3s ease 0s;
 }
 
 .article-cards:hover{
   transform: scale(1.14);
-}
-
-.devs{
-  display: flex;
-  flex-direction: center;
 }
