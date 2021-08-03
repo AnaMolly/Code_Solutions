@@ -140,11 +140,21 @@ code {
   height: 100%;
 }
 .searchdiv{
-  margin:65px;
-  border:thin solid var(--seagreen);
-  border-radius: 3rem;
-  background-color:var(--indigo-dye);
+
+  padding-bottom:40px;
+
+  background-color: var(--marigold);
+
 }
+
+.sr{
+  border: thin solid var(--indigo-dye);
+  border-radius: 3rem;
+  margin:85px;
+  padding:30px;
+  background-color: var(--indigo-dye);
+}
+
 .search-but{
   text-decoration: none;
   background-color: var(--indigo-dye);
@@ -159,17 +169,20 @@ code {
 }
 
 .search-but:hover{
-  background-color: var(--marigold);
+  background-color: var(--seagreen);
   color:white;
-  border: thin solid var(--marigold);
-  box-shadow: 1px 1px 16px 8px rgba(240, 150, 48, 0.5);
+  border: thin solid var(--seagreen);
+  box-shadow: 1px 1px 16px 8px rgba(48, 100, 214, 0.5);
   cursor: pointer;
+  transform: scale(1.34);
 }
 .searchbuttons{
   display:flex;
   justify-content: center;
-  padding-bottom:50px
+
+
 }
+
 
 .infobut{
   background-color:#F0A202; 
@@ -208,4 +221,18 @@ box-shadow: 1px 1px 23px 5px rgba(57, 223, 223, 0.5);
   font-size: 20px;
   font-weight: 200;
  
+}
+
+.homeclientpage{
+  padding:30px;
+  background-color: var(--indigo-dye);
+
+}
+
+.m-4{
+  border: thin solid var(--marigold)
+}
+
+.m-4:hover{
+  transform: scale(1.14);
 }
