@@ -17,7 +17,7 @@ export default function Main() {
     return (
       <div className="contentpages">
         <div className="hero" style={{ position:'relative', textAlign:'center', backgroundColor: '#F0A202'}}> 
-                <img src={heroimg} alt="coder" style={{maxWidth: '100%', height:'auto', padding: '20px'}}/>
+                <img src={heroimg} alt="coder" style={{maxWidth: '100%', height:'auto', padding: '20px'}}/>                
                 <a className="but2"href="/signup">Sign Up</a>
                 <a className="but1" href='/login'>Login</a>
         </div>

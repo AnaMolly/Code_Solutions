@@ -11,6 +11,10 @@
   --mint-cream: #f2f7f2ff;
   }
 
+html, body {
+  height: 100%;
+}
+
 /* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -27,6 +31,7 @@ code {
 
 .App {
   text-align: center;
+  
 }
 
 .page-container {
