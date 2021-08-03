@@ -22,9 +22,14 @@ export default function ProfileBuyer() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
     return (
-        <div className='profiledevcont' style={{backgroundColor:'#f2f7f2'}}>
+        <div className='profiledevcont' style={{ backgroundColor: "#F0A202" }}>
         <h1 className="mainh1" style={{backgroundColor:'#f0a202'}}>DEVERLOPER'S PROFILE:</h1>
-        <img src={user.profileImage} style={{maxWidth:"500px"}} alt='boy or girl'></img>         
+        <div style={{display:'flex', justifyContent:'center'}}>
+      <img
+        src={user.profileImage}
+        style={{ maxWidth: "500px", display:'flex'}}
+      ></img>
+      </div>
 
         <div className='profile'>
         <div className="profile-info">
@@ -37,17 +42,17 @@ export default function ProfileBuyer() {
           <h2 className='profiletitles'>Skills:</h2>
           <p className='profiletext'>{user.skillSet}</p>
           <h2 className='profiletitles'>Hourly rate:</h2>
-          <p className='profiletext'>{user.hourlyRate}</p>
+          <p className='profiletext'>${user.hourlyRate}/hr</p>
           <h2 className='profiletitles'>Company:</h2>
           <p className='profiletext'>{user.company}</p>
           <h2 className='profiletitles'>Project name:</h2>
-          <p className='profiletext'>{user.sampleProjectName}</p>
+          <a className='profiletext' >{user.sampleProjectName}</a>
           <h2 className='profiletitles'>Project URL:</h2>
-          <p className='profiletext'>{user.sampleProjectURL}</p>
+          <a className='profiletext'href={user.sampleProjectURL} >{user.sampleProjectURL}</a>
           <h2 className='profiletitles'>Linkedin URL:</h2>
-          <p className='profiletext'>{user.linkedIn}</p>
+          <a className='profiletext' href={user.linkedIn}>{user.linkedIn}</a>
           <h2 className='profiletitles'>Github URL</h2>
-          <p className='profiletext'>{user.gitHub}</p>
+          <a className='profiletext' href={user.gitHub}>{user.gitHub}</a>
           <h2 className='profiletitles'>Services:</h2>
           <p className='profiletext'>{user.servicesOffered}</p>
           <h2 className='profiletitles'>Contact Info:</h2>

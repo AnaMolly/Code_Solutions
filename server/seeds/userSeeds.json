@@ -38,8 +38,7 @@
     "password": "password12345",
     "role": "developer",
     "fullName": "Analia Mohamdally",
-    "profileImage":"/Analia.jpeg",
-    "userDescription": "Web developer with an eye for style and a passion for changing the world.",
+    "userDescription": "Web developer with an eye for style and a passion for improving the world.",
     "sampleProjectName": "Simmer",
     "sampleProjectURL": "https://simmer-cookbook.herokuapp.com/",
     "resumeURL": "https://www.linkedin.com/in/analia-mohamdally-1a7438179/",
@@ -64,6 +63,22 @@
     "hourlyRate": 35,
     "linkedIn": "https://www.linkedin.com/in/daniel-ogunlana-1572a2211/",
     "gitHub": "https://github.com/Daniel-ipymb",
+    "servicesOffered":"I'll build a backend server and database for you!"
+  },
+  {
+    "email": "mel@gmail.com",
+    "password": "password12345",
+    "role": "developer",
+    "fullName": "Mel Gibs",
+    "userDescription":"Web developer with a passion for code.",
+    "sampleProjectName":"Film Dimension",
+    "sampleProjectURL":"https://andresaponte22.github.io/film-dimension/",
+    "resumeURL":"https://daniel-ipymb.github.io/My_Portfolio/#about",
+    "primaryFocus":"Back-End",
+    "skillSet": "mySQL, Node.js, MongoDB",
+    "hourlyRate": 35,
+    "linkedIn": "https://www.linkedin.com/",
+    "gitHub": "https://github.com/",
     "servicesOffered":"I'll build a backend server and database for you!"
   },
   {

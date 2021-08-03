@@ -1,12 +1,15 @@
 import React from "react";
-import { useState, useEffect} from "react";
-import { Form, Col, Row, Button, Modal, FloatingLabel } from "react-bootstrap";
+import { useState} from "react";
+import { Form, Col, Row, Button, Modal} from "react-bootstrap";
 import { useParams, Redirect } from 'react-router-dom';
 
 import { useQuery, useMutation } from "@apollo/client";
-import { QUERY_USERS } from "../utils/queries";
 import { UPDATE_USER } from "../utils/mutations";
-import { QUERY_SINGLE_USER, QUERY_ME } from "../utils/queries";
+import { QUERY_SINGLE_USER } from "../utils/queries";
+
+
+
+const axios = require('axios');
 
 export default function ProfileDev() {
   let { userId } = useParams();
@@ -22,7 +25,9 @@ export default function ProfileDev() {
   const [modalData, setModalData] = useState({})
   const[redirect,setRedirect]=useState(false);  
   const [updateUser, { error }] = useMutation(UPDATE_USER);
-  
+
+
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     console.log(value)
@@ -55,18 +60,18 @@ export default function ProfileDev() {
     return<Redirect to="/"/>
   }
     
-  const fileSelectedHandler = (event) => {
-    const state = { selectedFile: null }
-    this.setState({ selectedFile: event.target.files[0] })
-  }
 
   return (
-    <div className="profiledevcont" style={{ backgroundColor: "#f2f7f2" }}>
+    <div className="profiledevcont" style={{ backgroundColor: "#F0A202" }}>
       <h1 className="mainh1" style={{ backgroundColor: '#F0A202', paddingTop: '50px' }}>PROFILE:</h1>
+      <div style={{display:'flex', justifyContent:'center'}}>
       <img
         src={user.profileImage}
-        style={{ maxWidth: "500px" }}
+        style={{ maxWidth: "500px", display:'flex'}}
       ></img>
+      </div>
+
+      
       <div className='profile'>
         <div className="profile-info">
           <h2 className='profiletitles'>Name:</h2>
@@ -78,19 +83,19 @@ export default function ProfileDev() {
           <h2 className='profiletitles'>Skills:</h2>
           <p className='profiletext'>{user.skillSet}</p>
           <h2 className='profiletitles'>Hourly rate:</h2>
-          <p className='profiletext'>{user.hourlyRate}</p>
+          <p className='profiletext'>${user.hourlyRate}/hr</p>
           <h2 className='profiletitles'>Company:</h2>
           <p className='profiletext'>{user.company}</p>
           <h2 className='profiletitles'>Project name:</h2>
-          <p className='profiletext'>{user.sampleProjectName}</p>
+          <a className='profiletext' >{user.sampleProjectName}</a>
           <h2 className='profiletitles'>Project URL:</h2>
-          <p className='profiletext'>{user.sampleProjectURL}</p>
+          <a className='profiletext'href={user.sampleProjectURL} >{user.sampleProjectURL}</a>
           <h2 className='profiletitles'>Linkedin URL:</h2>
-          <p className='profiletext'>{user.linkedIn}</p>
+          <a className='profiletext' href={user.linkedIn}>{user.linkedIn}</a>
           <h2 className='profiletitles'>Github URL</h2>
-          <p className='profiletext'>{user.gitHub}</p>
+          <a className='profiletext' href={user.gitHub}>{user.gitHub}</a>
           <h2 className='profiletitles'>Services:</h2>
-          <p className='profiletext'>{user.servicesOffered}</p>
+          <p className='profiletext' >{user.servicesOffered}</p>
           <h2 className='profiletitles'>Contact Info:</h2>
           <p className='profiletext'>{user.email}</p>
           <Button
@@ -113,12 +118,12 @@ export default function ProfileDev() {
         <Modal.Header closeButton>
           <Modal.Title>Edit Profile</Modal.Title>
         </Modal.Header>
-        <Form className="profileform">
+        <Form className="profileform" action="/upload" method="POST" enctype="multipart/form-data">
           <Form.Group controlId="formFile" className="mb-3">
             <Form.Label className="formlabel">
-              Choose a Profile picture to display:{" "}
+              Choose an avatar:{" "}
             </Form.Label>
-            <Form.Control type="file" onChange={fileSelectedHandler} />
+            <br/>
           </Form.Group>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
             <Form.Label className="formlabel">Full Name</Form.Label>
