@@ -238,10 +238,20 @@ box-shadow: 1px 1px 23px 5px rgba(57, 223, 223, 0.5);
 }
 
 .m-4{
-  border: thin solid var(--marigold)
+  border: thin solid var(--marigold);
+  transition: all 0.3s ease 0s;
 }
 
 .m-4:hover{
+  transform: scale(1.14);
+}
+
+.article-cards{
+  border: thin solid var(--indigo-dye);
+  transition: all 0.3s ease 0s;
+}
+
+.article-cards:hover{
   transform: scale(1.14);
 }
 

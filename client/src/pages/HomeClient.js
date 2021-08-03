@@ -14,7 +14,7 @@ export default function HomeBuyer() {
 
     return (
         <div className="homeclientpage">
-          <h1 className="mainh1" style={{paddingTop:'85px',color:'white'}}>Our Web Developers:</h1>
+          <h1 className="mainh1" style={{paddingTop:'85px',color:'white'}}>Our Web Developers</h1>
           
               <div className="col-12 col-md-10 my-3 devs">
                 {loading ? (
@@ -24,11 +24,7 @@ export default function HomeBuyer() {
                     developers={developers}
                   />
                 )}
-              </div>
-              
-              
-    
+              </div>           
         </div>
       );
-
 }

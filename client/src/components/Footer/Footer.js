@@ -7,48 +7,27 @@ const Footer = () => {
     return(
         <div className='main-footer'>
             <div className='container'  >
-                <Row style={{textAlign:'center'}}>
-                    {/* Column1 */}
+                <Row style={{textAlign:'center'}}>                    
                     <Col>
                         <h3>Find My Coder</h3>
                         <ul className='footer-items'>
                             <li>
-                                <a style={{color: '#ffff', fontSize: '20px', textDecoration: 'none'}} href=''>
+                                <a style={{color: '#ffff', fontSize: '20px', textDecoration: 'none'}} href='https://github.com/AnaMolly/Code_Solutions'>
                                 Github <AiFillGithub style={{ marginRight: '15px' }} />
                                 </a>
                             </li>
                             <li>
-                                <a style={{color: '#ffff', fontSize: '20px', textDecoration: 'none'}} href=''>
+                                <a style={{color: '#ffff', fontSize: '20px', textDecoration: 'none'}} href='https://twitter.com/404'>
                                 Twitter <AiFillTwitterCircle style={{ marginRight: '15px' }} />
                                 </a>
                             </li>
                             <li>
-                                <a style={{color: '#ffff', fontSize: '20px', textDecoration: 'none'}} href=''>
+                                <a style={{color: '#ffff', fontSize: '20px', textDecoration: 'none'}} href='https://instagram.com/404'>
                                 Instagram <AiFillInstagram style={{ marginRight: '15px' }} />
                                 </a>                                
                             </li>
                         </ul>
-                    </Col>
-                                                
-                    {/* Column2 */}
-                    {/* <Col>
-                        <h4>Code Solutions</h4>
-                        <ul className='list-unstyled'>
-                            <li>123-456-7890</li>
-                            <li>Toronto, Canada</li>
-                            <li> 6 Queen's Park Cres W</li>
-                        </ul>
-                    </Col> */}
-                        
-                    {/* Column3 */}
-                    {/* <Col>
-                        <h4>Find My Coder</h4>
-                        <ul className='list-unstyled'>
-                            <li>123-456-7890</li>
-                            <li>Toronto, Canada</li>
-                            <li> 6 Queen's Park Cres W</li>
-                        </ul>
-                    </Col> */}
+                    </Col>                    
                 </Row>
             <hr/>
             <Row style={{textAlign:'center'}} >
@@ -60,5 +39,4 @@ const Footer = () => {
     </div>
     )
 }
-
 export default Footer;
