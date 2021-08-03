@@ -26,16 +26,18 @@ const AppNavbar = () => {
           <ReactBootStrap.Navbar.Collapse id="basic-navbar-nav">
             <ReactBootStrap.Nav className="me-auto">
               <ReactBootStrap.Nav.Link href="/homecli">Home(Client)</ReactBootStrap.Nav.Link>
-              <ReactBootStrap.Nav.Link href="/homedev">Home(Dev)</ReactBootStrap.Nav.Link>
+              
               <ReactBootStrap.Nav.Link href="/about">About</ReactBootStrap.Nav.Link>
               <ReactBootStrap.Nav.Link href="/search">Search</ReactBootStrap.Nav.Link>
               <ReactBootStrap.Nav.Link href="/profiledev/:userId">Profile1</ReactBootStrap.Nav.Link>
               <ReactBootStrap.Nav.Link href="/profilebuyer">Profile2</ReactBootStrap.Nav.Link>
-              {Auth.loggedIn() ? (
+              {Auth.loggedIn() ? ([
                 <>
+                  <ReactBootStrap.Nav.Link href="/homedev">Home(Dev)</ReactBootStrap.Nav.Link>
                   <Button style={{ backgroundColor: '#F0A202', border: 'none' }} onClick={logout}>Logout</Button>
                 </>
-              ) : ([
+              ]) : ([
+                
                 <ReactBootStrap.Nav.Link href="/signup">Sign Up</ReactBootStrap.Nav.Link>,
                 <ReactBootStrap.Nav.Link href="/login">Login</ReactBootStrap.Nav.Link>
               ])}
