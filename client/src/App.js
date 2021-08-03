@@ -44,16 +44,16 @@ function App() {
       <Router>
       <div>
         <Navbar />
-        {/* <About />  */}
         <Route exact path="/" component={Main} />
         <Route exact path="/homecli" component={HomeCli} />
         <Route exact path="/homedev" component={HomeDev} />
         <Route exact path="/login" component={Login} />  
         <Route exact path="/signup" component={Signup} />
         <Route exact path="/profiledev/:userId" component={ProfileDev} />
-        <Route exact path="/profilebuyer/:userId" component={ProfileClient} />
+        <Route exact path="/me" component={ProfileDev} />
+        <Route exact path="/profileclient/:userId" component={ProfileClient} />
         <Route exact path="/search" component={SearchDev} />
-        <Route exact path="/">Logout</Route>
+        <Route exact path="/about" component={About} />
         <Footer />
       </div>
     </Router>

@@ -1,6 +1,8 @@
 import React from 'react';
 import heroimg from '../images/codesolutions.png'
 
+import Auth from '../../src/utils/auth';
+
 import { useQuery } from '@apollo/client';
 import {QUERY_USERS } from '../utils/queries';
 import DeveloperList from '../components/DeveloperList';
@@ -17,9 +19,15 @@ export default function Main() {
     return (
       <div className="contentpages">
         <div className="hero" style={{ position:'relative', textAlign:'center', backgroundColor: '#F0A202'}}> 
-                <img src={heroimg} alt="coder" style={{maxWidth: '100%', height:'auto', padding: '20px'}}/>
-                <a className="but2"href="/signup">Sign Up</a>
-                <a className="but1" href='/login'>Login</a>
+                <img src={heroimg} alt="coder" style={{maxWidth: '100%', height:'auto', padding: '20px'}}/>                
+                {Auth.loggedIn() ? ([
+                  <>  
+                  </>
+                ]) : ([
+                  <a className="but2"href="/signup">Sign Up</a>,
+                  <a className="but1" href='/login'>Login</a>
+                ])}
+                
         </div>
         <div className="aboutus">
             <h1 className="mainh1">About <span style={{fontStyle:"italic", fontWeight:'400'}}>Find My Coder</span></h1>
