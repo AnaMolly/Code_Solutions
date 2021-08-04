@@ -34,7 +34,6 @@ const AppNavbar = () => {
                 ]) :Auth.getProfile().data.role==="developer"?([
                   <> 
                     <ReactBootStrap.Nav.Link href="/homedev">Home</ReactBootStrap.Nav.Link> {/* developer */}
-                    <ReactBootStrap.Nav.Link href="/search">Search</ReactBootStrap.Nav.Link>
                     <ReactBootStrap.Nav.Link href="/me">Profile</ReactBootStrap.Nav.Link>
                     <ReactBootStrap.Nav.Link href="/about">About</ReactBootStrap.Nav.Link>
                     <Button style={{ backgroundColor: '#F0A202', border: 'none', fontSize: '18px', padding: '6px', marginLeft: '8px' }} onClick={logout}>Logout</Button>
@@ -43,7 +42,7 @@ const AppNavbar = () => {
                   <> 
                     <ReactBootStrap.Nav.Link href="/homecli">Home</ReactBootStrap.Nav.Link> {/* client */}
                     <ReactBootStrap.Nav.Link href="/search">Search</ReactBootStrap.Nav.Link>
-                    <ReactBootStrap.Nav.Link href="/me">Profile</ReactBootStrap.Nav.Link>
+                    {/* <ReactBootStrap.Nav.Link href="/me">Profile</ReactBootStrap.Nav.Link> */}
                     <ReactBootStrap.Nav.Link href="/about">About</ReactBootStrap.Nav.Link>
                     <Button style={{ backgroundColor: '#F0A202', border: 'none' }} onClick={logout}>Logout</Button>
                   </>
