@@ -101,7 +101,7 @@ export default function ProfileDev() {
           <h2 className='profiletitles'>Company:</h2>
           <p className='profiletext'>{user.company}</p>
           <h2 className='profiletitles'>Project name:</h2>
-          <a className='profiletext' >{user.sampleProjectName}</a>
+          <p className='profiletext' >{user.sampleProjectName}</p>
           <h2 className='profiletitles'>Project URL:</h2>
           <a className='profiletext'href={user.sampleProjectURL} >{user.sampleProjectURL}</a>
           <h2 className='profiletitles'>Linkedin URL:</h2>
