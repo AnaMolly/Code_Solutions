@@ -9,7 +9,7 @@ const Footer = () => {
             <div className='container'  >
                 <Row style={{textAlign:'center'}}>                    
                     <Col>
-                        <h3>Find My Coder</h3>
+                        <h3 style={{fontWeight:'200'}}>Find My Coder</h3>
                         <ul className='footer-items'>
                             <li>
                                 <a style={{color: '#ffff', fontSize: '20px', textDecoration: 'none'}} href='https://github.com/AnaMolly/Code_Solutions'>
