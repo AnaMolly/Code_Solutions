@@ -22,12 +22,12 @@ export default function HomeDev() {
         <div>
             <div style={{backgroundColor: '#294a66ff', color: '#ffff', textAlign: 'center', width: '100%', padding: '0'}} >
                 <div style={{padding: '20px 0' }}>
-                    <Button href={`/profiledev/${user.data._id}`} style={{ backgroundColor: '#F0A202', border: 'none' }}>
+                    <Button className="finishprofile" href={`/profiledev/${user.data._id}`} style={{ backgroundColor: '#F0A202', border: 'none', padding:'15px', fontSize:'20px', marginTop:'20px' }}>
                         Finish Your Profile
                     </Button>
                 </div>
                 <div>
-                    <h1 >
+                    <h1 className='mainh1'>
                         Developers
                     </h1>
                     <div>

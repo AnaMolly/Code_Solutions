@@ -35,7 +35,7 @@ export default function ProfileDev() {
 
   if(!user?.fullName) {
     return (
-      <h4>
+      <h4 style={{padding:'40px', textAlign:'center', fontSize:'30px', margin:'65px', backgroundColor:'#4AB8B1', color:'white'}}>
         You need to be logged in to see your profile page. Use the navigation
         links above to sign up or log in!
       </h4>
@@ -101,7 +101,7 @@ export default function ProfileDev() {
           <h2 className='profiletitles'>Company:</h2>
           <p className='profiletext'>{user.company}</p>
           <h2 className='profiletitles'>Project name:</h2>
-          <a className='profiletext' >{user.sampleProjectName}</a>
+          <p className='profiletext' >{user.sampleProjectName}</p>
           <h2 className='profiletitles'>Project URL:</h2>
           <a className='profiletext'href={user.sampleProjectURL} >{user.sampleProjectURL}</a>
           <h2 className='profiletitles'>Linkedin URL:</h2>

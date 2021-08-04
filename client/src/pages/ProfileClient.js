@@ -23,7 +23,7 @@ export default function ProfileBuyer() {
   const handleShow = () => setShow(true);
     return (
         <div className='profiledevcont' style={{ backgroundColor: "#F0A202" }}>
-        <h1 className="mainh1" style={{backgroundColor:'#f0a202'}}>DEVERLOPER'S PROFILE:</h1>
+        <h1 className="mainh1" style={{backgroundColor:'#f0a202'}}>DEVELOPER'S PROFILE:</h1>
         <div style={{display:'flex', justifyContent:'center'}}>
       <img
         src={user.profileImage}
@@ -46,7 +46,7 @@ export default function ProfileBuyer() {
           <h2 className='profiletitles'>Company:</h2>
           <p className='profiletext'>{user.company}</p>
           <h2 className='profiletitles'>Project name:</h2>
-          <a className='profiletext' >{user.sampleProjectName}</a>
+          <p className='profiletext' >{user.sampleProjectName}</p>
           <h2 className='profiletitles'>Project URL:</h2>
           <a className='profiletext'href={user.sampleProjectURL} >{user.sampleProjectURL}</a>
           <h2 className='profiletitles'>Linkedin URL:</h2>

@@ -17,19 +17,23 @@ export default function About() {
         <div>
             <div style={{backgroundColor:'#294a66ff', color: 'white'}} >
                 <div style={{ textAlign: 'center', padding: '20px 0' }}>
-                    <h2>About <span style={{fontWeight:'bold'}}>Find My Coder</span></h2>
+                    <h2 className='mainh1'>About <span style={{fontWeight:'bold'}}>Find My Coder</span></h2>
                 </div>
-                <div style={{ textAlign: 'center', padding: '20px 0'}}>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div style={{ textAlign: 'center', padding: '0px 50px 50px 50px'}}>
+                <p className='pmain'>Find My Coder is a platform that connects web developers with potential clients or companies.</p>
+            <br/>
+            <p className='pmain'>Find My Coder allows developers to create and edit a profile that showcases their skills, while clients are able to search for and view web developers and their profiles.</p>
+            <p className='pmain'> <a href="/signup" style={{textDecoration:'none', color:'#f0a202', fontWeight:'400'}}>Sign up</a> to get started today!</p>
+               
                 </div>
             </div>
             
 
-            <div className="aboutDev">
-                <h1 className="mainh1">About Developers</h1>
+            <div className="aboutDev" style={{padding:' 50px'}}>
+                <h1 className="mainh1" style={{margin:'20px 50px 50px 50px'}}>About Developers</h1>
                 <div className='about-cards'>
-                    <Row style={{ justifyContent: 'space-evenly' }}>
-                        <Card style={{ backgroundColor:'#f2f7f2ff', width: '18rem', padding: '10px' }}>
+                    <Row style={{ justifyContent: 'space-evenly', margin:'30px' }}>
+                        <Card style={{ backgroundColor:'#f2f7f2ff', width: '18rem', padding: '10px', margin:'10px' }}>
                             <Image variant="top" src={kevin} className='p-3' roundedCircle />
                             <Card.Body>
                                 <Card.Title style={{ color: 'black' }}>Kevin Crawford | <span style={{ fontSize: '18px' }}>Full-Stack</span></Card.Title>
@@ -49,7 +53,7 @@ export default function About() {
                                 </Row>
                             </Card.Body>
                         </Card>
-                        <Card style={{ backgroundColor:'#f2f7f2ff', width: '18rem', padding: '10' }}>
+                        <Card style={{ backgroundColor:'#f2f7f2ff', width: '18rem', padding: '10', margin:'10px'  }}>
                             <Image variant="top" src={daryl} className='p-3' roundedCircle />
                             <Card.Body>
                                 <Card.Title style={{ color: 'black' }}>Daryl Nauman | <span style={{ fontSize: '18px' }}>Full-Stack</span></Card.Title>
@@ -69,7 +73,7 @@ export default function About() {
                                 </Row>
                             </Card.Body>
                         </Card>
-                        <Card style={{ backgroundColor:'#f2f7f2ff', width: '18rem', padding: '10' }}>
+                        <Card style={{ backgroundColor:'#f2f7f2ff', width: '18rem', padding: '10', margin:'10px'  }}>
                             <Image variant="top" src={analia} className='p-3' roundedCircle />
                             <Card.Body>
                                 <Card.Title style={{ color: 'black' }}>Analia Molly | <span style={{ fontSize: '18px' }}>Full-Stack</span></Card.Title>
@@ -88,7 +92,7 @@ export default function About() {
                                 </Row>
                             </Card.Body>
                         </Card>
-                        <Card style={{ backgroundColor:'#f2f7f2ff', width: '18rem', padding: '10' }}>
+                        <Card style={{ backgroundColor:'#f2f7f2ff', width: '18rem', padding: '10' , margin:'10px'  }}>
                             <Image variant="top" src={daniel} className='p-3' roundedCircle />
                             <Card.Body>
                                 <Card.Title style={{ color: 'black' }}>Daniel Ogunlana | <span style={{ fontSize: '18px' }}>Full-Stack</span></Card.Title>
