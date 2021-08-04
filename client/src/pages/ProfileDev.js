@@ -35,7 +35,7 @@ export default function ProfileDev() {
 
   if(!user?.fullName) {
     return (
-      <h4>
+      <h4 style={{padding:'40px', textAlign:'center', fontSize:'30px', margin:'65px', backgroundColor:'#4AB8B1', color:'white'}}>
         You need to be logged in to see your profile page. Use the navigation
         links above to sign up or log in!
       </h4>
