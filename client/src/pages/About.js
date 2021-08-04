@@ -1,7 +1,6 @@
 import React from 'react';
-import { Col, Row, Button, Card } from 'react-bootstrap';
+import { Row, Card } from 'react-bootstrap';
 
-import picdefault from '../images/DefaultProfile.jpg'
 import kevin from '../images/kevin.png'
 import daniel from '../images/daniel.png'
 import analia from '../images/analia.png'
@@ -30,13 +29,13 @@ export default function About() {
                 <h1 className="mainh1">About Developers</h1>
                 <div className='about-cards'>
                     <Row style={{ justifyContent: 'space-evenly' }}>
-                        <Card style={{ width: '18rem', padding: '10px' }}>
+                        <Card style={{ backgroundColor:'#f2f7f2ff', width: '18rem', padding: '10px' }}>
                             <Image variant="top" src={kevin} className='p-3' roundedCircle />
                             <Card.Body>
-                                <Card.Title style={{ color: 'black' }}>Kevin Crawford | <span style={{ fontSize: '18px' }}>Front-End</span></Card.Title>
-                                <Card.Text style={{ color: 'black' }} >
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                <Card.Title style={{ color: 'black' }}>Kevin Crawford | <span style={{ fontSize: '18px' }}>Full-Stack</span></Card.Title>
+                                <Card.Text style={{ color: 'black', fontStyle: 'italic' }} >
+                                    "How many programmers does it take to change a light bulb?
+                                    None – It’s a hardware problem "
                                 </Card.Text>
                                 <Row>
                                     <div style={{ color: 'black', fontSize: '50px', textAlign: 'center' }}>
@@ -50,13 +49,13 @@ export default function About() {
                                 </Row>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem', padding: '10' }}>
+                        <Card style={{ backgroundColor:'#f2f7f2ff', width: '18rem', padding: '10' }}>
                             <Image variant="top" src={daryl} className='p-3' roundedCircle />
                             <Card.Body>
-                                <Card.Title style={{ color: 'black' }}>Daryl Nauman | <span style={{ fontSize: '18px' }}>Front-End</span></Card.Title>
-                                <Card.Text style={{ color: 'black' }} >
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                <Card.Title style={{ color: 'black' }}>Daryl Nauman | <span style={{ fontSize: '18px' }}>Full-Stack</span></Card.Title>
+                                <Card.Text style={{ color: 'black', fontStyle: 'italic' }} >
+                                "Why do programmers always mix up Halloween and Christmas?
+                                Because Oct 31 equals Dec 25."
                                 </Card.Text>
                                 <Row>
                                     <div style={{ color: 'black', fontSize: '50px', textAlign: 'center' }}>
@@ -70,13 +69,12 @@ export default function About() {
                                 </Row>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem', padding: '10' }}>
+                        <Card style={{ backgroundColor:'#f2f7f2ff', width: '18rem', padding: '10' }}>
                             <Image variant="top" src={analia} className='p-3' roundedCircle />
                             <Card.Body>
-                                <Card.Title style={{ color: 'black' }}>Analia Molly | <span style={{ fontSize: '18px' }}>Front-End</span></Card.Title>
-                                <Card.Text style={{ color: 'black' }} >
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                <Card.Title style={{ color: 'black' }}>Analia Molly | <span style={{ fontSize: '18px' }}>Full-Stack</span></Card.Title>
+                                <Card.Text style={{ color: 'black', fontStyle: 'italic' }} >
+                                    "The computer is mightier than the pen, the sword, and usually, the programmer."
                                 </Card.Text>
                                 <Row>
                                     <div style={{ color: 'black', fontSize: '50px', textAlign: 'center' }}>
@@ -90,13 +88,12 @@ export default function About() {
                                 </Row>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem', padding: '10' }}>
+                        <Card style={{ backgroundColor:'#f2f7f2ff', width: '18rem', padding: '10' }}>
                             <Image variant="top" src={daniel} className='p-3' roundedCircle />
                             <Card.Body>
-                                <Card.Title style={{ color: 'black' }}>Daniel Ogunlana | <span style={{ fontSize: '18px' }}>Front-End</span></Card.Title>
-                                <Card.Text style={{ color: 'black' }} >
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                <Card.Title style={{ color: 'black' }}>Daniel Ogunlana | <span style={{ fontSize: '18px' }}>Full-Stack</span></Card.Title>
+                                <Card.Text style={{ color: 'black', fontStyle: 'italic' }} >
+                                    "Have you heard about the new Cray super computer?  It’s so fast, it executes an infinite loop in 6 seconds."
                                 </Card.Text>
                                 <Row>
                                     <div style={{ color: 'black', fontSize: '50px', textAlign: 'center' }}>

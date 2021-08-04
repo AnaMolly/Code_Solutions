@@ -4,34 +4,20 @@
   box-sizing: border-box;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 :root {
   --seagreen: #4AB8B1;;
   --marigold: #f0a202ff;
   --indigo-dye: #294a66ff;
   --mint-cream: #f2f7f2ff;
-  }
+}
 
 html, body {
   height: 100%;
 }
 
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
 .App {
-  text-align: center;
-  
+  text-align: center;  
 }
 
 .page-container {
@@ -39,6 +25,7 @@ code {
   flex-direction: column;
   min-height: 100vh;
 }
+
 .content-wrap {
   flex: 1;
 }
@@ -58,6 +45,7 @@ code {
   border-radius: 5px;
   text-decoration: none;
 }
+
 .hero .but1{
   position: absolute;
   top: 70%;
@@ -73,11 +61,13 @@ code {
   border-radius: 5px;
   text-decoration: none;
 }
+
 .aboutus{
 
   color: var(--indigo-dye);
   padding: 50px;
 }
+
 .mainh1{
   text-align: center;
   font-size: 50px;
@@ -86,6 +76,7 @@ code {
   letter-spacing: 2px;
   margin:0px
 }
+
 .devmain{
   display:flex;
   flex-direction: column;
@@ -94,12 +85,14 @@ code {
   color:white;
   padding: 50px;
 }
+
 .testimonials, .articleSection, .aboutDev{
   background-color: var(--marigold);
   color:white;
   padding: 50px;
   width: 100%;
 }
+
 .pmain{
   padding:0px 100px 10px 100px;
   font-weight: 200;
@@ -111,7 +104,6 @@ code {
 .profileform{
   padding:45px;
   font-size: 20px;
-
 }
 
 .profiledevcont{
@@ -136,31 +128,22 @@ code {
   margin-top:30px
 }
 
-/* Login Form Styling */
 .login-container {
   width: 50%;
-  /* max-width: 330px; */
-  /* padding: 15px 0 30px; */
   margin: auto;  
-  /* height: 200%; */
   margin-bottom: 150px;
 }
 
 .login-form {
   width: 95%;
-  /* max-width: 330px; */
   padding: 15px;
-  margin: auto;  
-  /* height: 300%; */
+  margin: auto;
   line-height: 400%;
 }
 
 .searchdiv{
-
   padding-bottom:40px;
-
   background-color: var(--marigold);
-
 }
 
 .sr{
@@ -182,6 +165,7 @@ code {
   font-weight: 200;
   margin:45px;
   box-shadow: 1px 1px 16px 8px rgba(48, 100, 214, 0.5);
+  transition: all 0.3s ease 0s;
 }
 
 .search-but:hover{
@@ -195,10 +179,7 @@ code {
 .searchbuttons{
   display:flex;
   justify-content: center;
-
-
 }
-
 
 .infobut{
   background-color:#F0A202; 
@@ -212,19 +193,19 @@ code {
 background-color: var(--seagreen);
 color:white;
 box-shadow: 1px 1px 23px 5px rgba(57, 223, 223, 0.5);
-
 }
+
 .profile {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--marigold);
 }
+
 .profile-info{
   background-color: var(--marigold);
   color: white;
   padding:60px;
-
 }
 
 .profiletitles{
@@ -236,13 +217,11 @@ box-shadow: 1px 1px 23px 5px rgba(57, 223, 223, 0.5);
 .profiletext{
   font-size: 20px;
   font-weight: 200;
- 
 }
 
 .homeclientpage{
   padding:30px;
   background-color: var(--indigo-dye);
-
 }
 
 .m-4{
