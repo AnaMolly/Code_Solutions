@@ -1,14 +1,13 @@
 import React from "react";
+import Axios from 'axios';
 import { useState} from "react";
 import { Form, Col, Row, Button, Modal} from "react-bootstrap";
 import { useParams, Redirect } from 'react-router-dom';
-
 import { useQuery, useMutation } from "@apollo/client";
 import { UPDATE_USER } from "../utils/mutations";
-
 import { QUERY_SINGLE_USER, QUERY_ME } from "../utils/queries";
-import Auth from "../utils/auth"
 
+import Auth from "../utils/auth"
 
 export default function ProfileDev() {
   const { userId: userParam } = useParams();
@@ -16,14 +15,15 @@ export default function ProfileDev() {
   const { loading, data } = useQuery( userParam ? QUERY_SINGLE_USER : QUERY_ME, {
     variables: { userId: userParam },
   });
-  console.log(data)
+  
+  // console.log(data)
   const user = data?.me || data?.user || {};
-  console.log(data)
-  console.log(user)
+  
+  // console.log(data)
+  // console.log(user)
   const [modalData, setModalData] = useState({})
   const [updateUser, { error }] = useMutation(UPDATE_USER);
   const [show, setShow] = useState(false);
-  
 
   if (Auth.loggedIn() && Auth.getProfile().data._id === userParam) {
     return <Redirect to="/me" />
@@ -44,21 +44,35 @@ export default function ProfileDev() {
   
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    console.log(value)
+    // console.log(value)
     setModalData({ ...modalData, [name]: value, })
   }
 
   const handleIntegerChange = (event) => {
     const { name, value } = event.target;
-    console.log(value)
+    // console.log(value)
     setModalData({ ...modalData, [name]: parseInt(value), })
   }
+
+  const uploadImage = (files) => {
+    const formData = new FormData();
+    formData.append("file", files[0]);
+    formData.append("upload_preset", "vylq4hww");
+
+    Axios.post("https://api.cloudinary.com/v1_1/darylnauman/image/upload", formData)
+      .then( (res) => {
+        const profileImageURL = res.data.secure_url;
+        setModalData({ ...modalData, profileImage: profileImageURL})
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  };
 
   const handleModalSubmit = async (event) => {
     event.preventDefault();
     
-    console.log(modalData)
-
+    // console.log(modalData)
     try {
       const { data } = await updateUser({
         variables: { userData: {...modalData} }
@@ -82,9 +96,9 @@ export default function ProfileDev() {
       <img
         src={user.profileImage}
         style={{ maxWidth: "500px", display:'flex'}}
+        alt={"user profile"}
       ></img>
       </div>
-
       
       <div className='profile'>
         <div className="profile-info">
@@ -134,11 +148,15 @@ export default function ProfileDev() {
         </Modal.Header>
         <Form className="profileform" action="/upload" method="POST" enctype="multipart/form-data">
           <Form.Group controlId="formFile" className="mb-3">
-            <Form.Label className="formlabel">
-              Choose an avatar:{" "}
-            </Form.Label>
-            <br/>
+            <Form.Label>Upload profile image file</Form.Label>
+            <Form.Control
+              type="file"
+              accept="image/*"
+              onChange={(event) => {
+                uploadImage(event.target.files);
+              }}/>
           </Form.Group>
+
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
             <Form.Label className="formlabel">Full Name</Form.Label>
             <Col sm="30">
