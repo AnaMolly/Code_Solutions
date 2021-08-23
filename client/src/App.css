@@ -225,7 +225,9 @@ box-shadow: 1px 1px 23px 5px rgba(57, 223, 223, 0.5);
 .profiletitles{
   font-weight: 400;
   font-size: 25px;
-  color: rgb(0, 67, 130)
+  color: rgb(0, 67, 130);
+  margin:0px;
+  padding-top:10px
 }
 
 .profiletext{
@@ -266,7 +268,7 @@ box-shadow: 1px 1px 23px 5px rgba(57, 223, 223, 0.5);
 }
 
 .testimonialtext{
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 200;
   padding:40px 60px 40px 40px
 }
@@ -275,6 +277,17 @@ box-shadow: 1px 1px 23px 5px rgba(57, 223, 223, 0.5);
   font-style:italic;
   font-weight:400;
   font-size: 25px;
+}
+
+@media screen and (max-width:1089px){
+  .testimonialcon{
+    flex-direction: column ;
+  }
+
+  .testimonialtext {
+    padding: 30px 60px 30px 40px;
+    margin:0px
+  }
 }
 
 @media screen and (max-width: 999px) {
