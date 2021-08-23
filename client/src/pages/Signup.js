@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-// import Form from 'react-bootstrap/Form'
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
 
@@ -47,6 +46,7 @@ export default function Signup() {
     }
   };
     return (
+      <div style={{backgroundColor:'#f2f7f2ff', padding: '10px'}}>
         <div className='login-container' style={{backgroundColor:'#294A66', border:'none', marginTop:'100px', padding:'30px 20px 50px'}}>
         <p style={{color:'#F0A202', textAlign:'center', fontSize: '30px'}}>
         Create your <span style={{fontWeight:'bold'}}>Find My Coder</span> account!
@@ -77,5 +77,6 @@ export default function Signup() {
             <Button style={{backgroundColor:'#294A66', border:'none', fontSize:'20px',padding:'12px 24px',marginTop:'15px'}} onClick={handleFormSubmit}>Sign Up</Button>   
         </Form>
         </div>
+    </div>
     );
   } 
