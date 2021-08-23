@@ -14,6 +14,9 @@
 
 html, body {
   height: 100%;
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
 }
 
 .App {
@@ -71,6 +74,16 @@ html, body {
 .mainh1{
   text-align: center;
   font-size: 50px;
+  font-weight: 200;
+  padding:30px 10px 30px 10px;
+  letter-spacing: 2px;
+  margin:0px
+}
+
+.mainh2{
+  font-size: 20px;
+  text-align: center;
+  font-size: 45px;
   font-weight: 200;
   padding:30px 10px 30px 10px;
   letter-spacing: 2px;
@@ -263,3 +276,34 @@ box-shadow: 1px 1px 23px 5px rgba(57, 223, 223, 0.5);
   font-weight:400;
   font-size: 25px;
 }
+
+@media screen and (max-width: 999px) {
+  .mainh1{
+    font-size: 30px;       
+  }
+  .mainh2{
+    font-size: 20px;
+    text-align: start; 
+  }
+
+  .pmain {    
+    font-size: 15px;
+    text-align: start;     
+    padding: 0;
+  }
+
+  .hero .but1{
+    left: 40%;
+    font-size: 15px;  
+  }
+
+  .hero .but2{
+    left: 15%;
+    font-size: 15px;   
+  }
+
+  .login-container {
+    width: 90%;
+  }
+}
+

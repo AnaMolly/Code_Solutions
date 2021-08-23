@@ -63,7 +63,7 @@ export default function Main() {
         <div className="testimonials">
             <h1 className="mainh1">Testimonials</h1>
             
-            <p className='pmain' style={{padding:'30px', color:'#294a66', fontSize:'35px', marginBottom:'30px'}}>Here are some testimonials from developers and companies that have worked with us in the past:</p>
+            <h2 className='mainh2'style={{color:'#294a66', marginBottom:'30px'}}>Here are some testimonials from developers and companies that have worked with us in the past:</h2>
             <div style={{display:'flex', alignItems:'center'}}>
                     <img src={testimonialimg} alt='thumbs up' style={{maxWidth:'600px'}}></img>
                     <div>
