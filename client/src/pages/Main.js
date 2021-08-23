@@ -66,7 +66,7 @@ export default function Main() {
             <p className='pmain' style={{padding:'30px', color:'#294a66', fontSize:'35px', marginBottom:'30px'}}>Here are some testimonials from developers and companies that have worked with us in the past:</p>
             <div style={{display:'flex', alignItems:'center'}}>
                     <img src={testimonialimg} alt='thumbs up' style={{maxWidth:'600px'}}></img>
-                    <div>
+                    <div className='testimonialcon'>
                     <p className="testimonialtext">
                       "Find My Coder is an absolutely amazing application! I was able to find and connect with a full-stack web developer who went above and beyond to complete my company's website!" <br/><span className="testname">-Chris Bogard, Pet Supplies Inc. </span>
                     </p>

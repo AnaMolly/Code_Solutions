@@ -34,7 +34,7 @@ export default function About() {
                 <h1 className="mainh1" style={{margin:'20px 50px 50px 50px'}}>About Developers</h1>
                 <div className='about-cards'>
                     <Row style={{ justifyContent: 'space-evenly', margin:'30px' }}>
-                        <Card style={{ width: '18rem', padding: '10px', margin:'10px' }}>
+                        <Card style={{ width: '20rem', padding: '10px', margin:'10px' }}>
                             <Image variant="top" src={kevin} className='p-3' roundedCircle />
                             <Card.Body>
                                 <Card.Title style={{ color: 'black' }}>Kevin Crawford | <span style={{ fontSize: '18px' }}>Front-End</span></Card.Title>
@@ -54,7 +54,7 @@ export default function About() {
                                 </Row>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem', padding: '10', margin:'10px'  }}>
+                        <Card style={{ width: '20rem', padding: '10', margin:'10px'  }}>
                             <Image variant="top" src={daryl} className='p-3' roundedCircle />
                             <Card.Body>
                                 <Card.Title style={{ color: 'black' }}>Daryl Nauman | <span style={{ fontSize: '18px' }}>Front-End</span></Card.Title>
@@ -74,10 +74,10 @@ export default function About() {
                                 </Row>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem', padding: '10', margin:'10px'  }}>
+                        <Card style={{ width: '20rem', padding: '10', margin:'10px'  }}>
                             <Image variant="top" src={analia} className='p-3' roundedCircle />
                             <Card.Body>
-                                <Card.Title style={{ color: 'black' }}>Analia Molly | <span style={{ fontSize: '18px' }}>Front-End</span></Card.Title>
+                                <Card.Title style={{ color: 'black' }}>Analia Mohamdally | <span style={{ fontSize: '18px' }}>Front-End</span></Card.Title>
                                 <Card.Text style={{ color: 'black' }} >
                                     Some quick example text to build on the card title and make up the bulk of
                                     the card's content.
@@ -94,7 +94,7 @@ export default function About() {
                                 </Row>
                             </Card.Body>
                         </Card>
-                        <Card style={{ width: '18rem', padding: '10' , margin:'10px'  }}>
+                        <Card style={{ width: '20rem', padding: '10' , margin:'10px'  }}>
                             <Image variant="top" src={daniel} className='p-3' roundedCircle />
                             <Card.Body>
                                 <Card.Title style={{ color: 'black' }}>Daniel Ogunlana | <span style={{ fontSize: '18px' }}>Front-End</span></Card.Title>
