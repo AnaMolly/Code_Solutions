@@ -63,11 +63,8 @@ export default function ProfileBuyer() {
         <div style={{padding:'25px'}}>
             <h2 className='profiletitles' style={{fontSize:'35px'}}></h2>
 
-            <h3 className='profiletitles'>Phone Number:</h3>
-            <p className='profiletext'>*number goes here*</p>  
-
             <h3 className='profiletitles'>Email:</h3>
-            <p className='profiletext'>{user.email}</p>  
+            <a  className='profiletext'>{user.email}</a>  
 
             <h2 className='profiletitles'>Company:</h2>
             <p className='profiletext'>{user.company}</p>
