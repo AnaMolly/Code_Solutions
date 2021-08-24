@@ -21,14 +21,14 @@ export default function HomeDev() {
     console.log(data)
     const users = data?.users || [];
     const developers = users.filter(user => user.role === "developer")
-    const buyers = users.filter(user => user.role === "client")
-    const user = Auth.getProfile()
-    
+    const clients = users.filter(user => user.role === "client")
+    const user = Auth.getProfile().data
+    console.log(user)
     return (
         <div>
             <div style={{backgroundColor: '#294a66ff', color: '#ffff', textAlign: 'center', width: '100%', padding: '0'}} >
                 <div style={{padding: '20px 0' }}>
-                    <Button className="finishprofile" href={`/profiledev/${user.data._id}`} style={{ backgroundColor: '#F0A202', border: 'none', padding:'15px', fontSize:'20px', marginTop:'20px' }}>
+                    <Button className="finishprofile" href={`/profiledev/${user._id}`} style={{ backgroundColor: '#F0A202', border: 'none', padding:'15px', fontSize:'20px', marginTop:'20px' }}>
                         Finish Your Profile
                     </Button>
                 </div>
@@ -42,6 +42,7 @@ export default function HomeDev() {
                         ) : (
                             <HomeDevList
                                 developers={developers}
+                                user={user}
                             />
                         )}
                     </div>                    
@@ -55,7 +56,7 @@ export default function HomeDev() {
                             <div>Loading...</div>
                         ) : (
                             <BuyersList
-                                buyers={buyers}
+                                clients={clients}
                             />
                         )}
                     </div>                    

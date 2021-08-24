@@ -42,7 +42,7 @@ const AppNavbar = () => {
                   <> 
                     <ReactBootStrap.Nav.Link href="/homecli">Home</ReactBootStrap.Nav.Link> {/* client */}
                     <ReactBootStrap.Nav.Link href="/search">Search</ReactBootStrap.Nav.Link>
-                    {/* <ReactBootStrap.Nav.Link href="/me">Profile</ReactBootStrap.Nav.Link> */}
+                    <ReactBootStrap.Nav.Link href="/client">Profile</ReactBootStrap.Nav.Link>
                     <ReactBootStrap.Nav.Link href="/about">About</ReactBootStrap.Nav.Link>
                     <Button style={{ backgroundColor: '#F0A202', border: 'none' }} onClick={logout}>Logout</Button>
                   </>
