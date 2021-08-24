@@ -64,7 +64,7 @@ export default function ProfileBuyer() {
             <h2 className='profiletitles' style={{fontSize:'35px'}}></h2>
 
             <h3 className='profiletitles'>Email:</h3>
-            <a  className='profiletext'>{user.email}</a>  
+            <a href={'mailto:'+ user.email} className='profiletext'>{user.email}</a>  
 
             <h2 className='profiletitles'>Company:</h2>
             <p className='profiletext'>{user.company}</p>
