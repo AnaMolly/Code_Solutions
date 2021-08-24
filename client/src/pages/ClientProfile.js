@@ -113,7 +113,7 @@ export default function ClientProfile() {
           <h2 className='profiletitles'>Services needed:</h2>
           <p className='profiletext'>{user.servicesOffered}</p>
           <h2 className='profiletitles'>Contact Info:</h2>
-          <p className='profiletext'>For more details contact me at {user.email}</p>
+          <p className='profiletext'>For more details contact me at <a href={'mailto:'+ user.email}> {user.email}</a></p>
           {Auth.getProfile().data._id === user._id ? 
           <Button
           variant="primary"
