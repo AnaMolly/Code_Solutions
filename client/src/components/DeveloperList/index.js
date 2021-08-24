@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Row, Button } from "react-bootstrap"
+import { Card, Row } from "react-bootstrap"
 
 const DeveloperList = ({ developers }) => {
 
@@ -13,10 +13,7 @@ const DeveloperList = ({ developers }) => {
                   <Card.Title  style={{ color:'black', padding:'10px'}}>{developer.fullName}</Card.Title>
                   <Card.Img variant="top" src={developer.profileImage} style={{maxWidth:'284px'}}/>
                   <Card.Text  style={{ color:'black', paddingTop:'16px'}}>{developer.userDescription}</Card.Text>
-                  <Card.Subtitle style={{  padding:'20px 20px 30px 20px'}}className="mb-2 text-muted">Hourly rate: ${developer.hourlyRate}/hr</Card.Subtitle>
-                  {/* <a className="infobut" variant="primary" style={{ margin: '10px'}} href={`/profileclient/${developer._id}`}>
-                  View profile
-                  </a> */}
+                  <Card.Subtitle style={{  padding:'20px 20px 30px 20px'}}className="mb-2 text-muted">Hourly rate: ${developer.hourlyRate}/hr</Card.Subtitle>                  
               </Card.Body>
           </Card>
       ))}

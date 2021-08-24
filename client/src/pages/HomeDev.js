@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css'
+
 import {Button, Card } from 'react-bootstrap';
 import article1 from '../images/article1.JPG'
 import article2 from '../images/article2.JPG'
@@ -8,7 +9,9 @@ import article4 from '../images/article4.jpg'
 
 import { useQuery } from '@apollo/client';
 import { QUERY_USERS } from '../utils/queries';
+
 import BuyersList from '../components/BuyersList'
+
 import Auth from "../utils/auth";
 import HomeDevList from '../components/HomeDevList';
 
@@ -20,15 +23,10 @@ export default function HomeDev() {
     const developers = users.filter(user => user.role === "developer")
     const buyers = users.filter(user => user.role === "client")
     const user = Auth.getProfile()
-    // console.log(user)
-
-    // className="mainh1" className='developer-section col-12 col-md-10 my-3'
-    // className="col-12 col-md-10 my-3"
-    // style={{paddingTop:'85px',color:'white'}}
-
+    
     return (
         <div>
-            <div style={{backgroundColor: '#294a66ff', color: '#ffff', textAlign: 'center' ,width: '100%'}} >
+            <div style={{backgroundColor: '#294a66ff', color: '#ffff', textAlign: 'center', width: '100%', padding: '0'}} >
                 <div style={{padding: '20px 0' }}>
                     <Button className="finishprofile" href={`/profiledev/${user.data._id}`} style={{ backgroundColor: '#F0A202', border: 'none', padding:'15px', fontSize:'20px', marginTop:'20px' }}>
                         Finish Your Profile
@@ -64,12 +62,11 @@ export default function HomeDev() {
                 </div>
             </div>
             
-            {/* Articles Section */}
             <div className='articleSection'>
                 <h1 className="mainh1" style={{margin:'30px 10px 50px 10px'}}>Articles on how you can improve your online presence</h1>
                 <div>
                     <div style= {{display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap'}}>                        
-                            <a href='https://localbizguru.com/blog/improve-business-online-presence-in-2021/' style={{ textDecoration: 'none', color: 'black', margin:'10px'}}>
+     <a href='https://localbizguru.com/blog/improve-business-online-presence-in-2021/' style={{ textDecoration: 'none', color: 'black', margin:'10px'}}>
                             <Card className='article-cards' style={{ width: '18rem', padding: '0' }}>
                                 <Card.Img variant="top" src={article1} alt="article image" />
                                 <Card.Body>
@@ -100,15 +97,26 @@ export default function HomeDev() {
                                 </Card>
                             </a>
                             <a href='https://coder-coder.com/uncommonly-good-web-developer/' style={{ textDecoration: 'none', color: 'black', margin:'10px' }}>
+
                             <Card className='article-cards' style={{ width: '18rem', padding: '0' }}>
-                                <Card.Img variant="top" src={article4} alt="article image" />
+                                <Card.Img variant="top" src={article3} alt="article image" />
                                 <Card.Body>
                                     
-                                        <Card.Title>How to be an uncommonly good web developer</Card.Title>
+                                        <Card.Title>Tips for a Junior Front End Developer</Card.Title>
                                     
                                 </Card.Body>
                             </Card>
-                            </a>                        
+                        </a>
+                        <a href='https://coder-coder.com/uncommonly-good-web-developer/' style={{ textDecoration: 'none', color: 'black' }}>
+                        <Card className='article-cards' style={{ width: '18rem', padding: '0' }}>
+                            <Card.Img variant="top" src={article4} alt="article image" />
+                            <Card.Body>
+                                
+                                    <Card.Title>How to be an uncommonly good web developer</Card.Title>
+                                
+                            </Card.Body>
+                        </Card>
+                        </a>                        
                     </div>
                 </div>
             </div>
