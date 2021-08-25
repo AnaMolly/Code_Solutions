@@ -67,7 +67,7 @@ export default function HomeDev() {
                 <h1 className="mainh1" style={{margin:'30px 10px 50px 10px'}}>Articles on how you can improve your online presence</h1>
                 <div>
                     <div style= {{display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap'}}>                        
-     <a href='https://localbizguru.com/blog/improve-business-online-presence-in-2021/' style={{ textDecoration: 'none', color: 'black', margin:'10px'}}>
+                        <a href='https://localbizguru.com/blog/improve-business-online-presence-in-2021/' style={{ textDecoration: 'none', color: 'black', margin:'10px'}}>
                             <Card className='article-cards' style={{ width: '18rem', padding: '0' }}>
                                 <Card.Img variant="top" src={article1} alt="article image" />
                                 <Card.Body>
@@ -76,8 +76,8 @@ export default function HomeDev() {
                                     
                                 </Card.Body>                            
                             </Card>
-                            </a>                        
-                            <a href='https://www.omnesgroup.com/online-presence-as-junior-developer/' style={{ textDecoration: 'none', color: 'black', margin:'10px' }}>
+                        </a>                        
+                        <a href='https://www.omnesgroup.com/online-presence-as-junior-developer/' style={{ textDecoration: 'none', color: 'black', margin:'10px' }}>
                             <Card className='article-cards' style={{ width: '18rem', padding: '0' }}>
                                 <Card.Img variant="top" src={article2} alt="article image" />
                                 <Card.Body>
@@ -86,7 +86,7 @@ export default function HomeDev() {
                                     
                                 </Card.Body>
                             </Card>
-                            </a>
+                        </a>
                             <a href='https://eightfold.io/blog/tips-for-a-junior-front-end-developer/' style={{ textDecoration: 'none', color: 'black', margin:'10px' }}>
                                 <Card className='article-cards' style={{ width: '18rem', padding: '0' }}>
                                     <Card.Img variant="top" src={article3} alt="article image" />
@@ -96,27 +96,16 @@ export default function HomeDev() {
                                         
                                     </Card.Body>
                                 </Card>
-                            </a>
-                            <a href='https://coder-coder.com/uncommonly-good-web-developer/' style={{ textDecoration: 'none', color: 'black', margin:'10px' }}>
-
+                            </a>                            
+                        <a href='https://coder-coder.com/uncommonly-good-web-developer/' style={{ textDecoration: 'none', color: 'black' }}>
                             <Card className='article-cards' style={{ width: '18rem', padding: '0' }}>
-                                <Card.Img variant="top" src={article3} alt="article image" />
+                                <Card.Img variant="top" src={article4} alt="article image" />
                                 <Card.Body>
                                     
-                                        <Card.Title>Tips for a Junior Front End Developer</Card.Title>
+                                        <Card.Title>How to be an uncommonly good web developer</Card.Title>
                                     
                                 </Card.Body>
                             </Card>
-                        </a>
-                        <a href='https://coder-coder.com/uncommonly-good-web-developer/' style={{ textDecoration: 'none', color: 'black' }}>
-                        <Card className='article-cards' style={{ width: '18rem', padding: '0' }}>
-                            <Card.Img variant="top" src={article4} alt="article image" />
-                            <Card.Body>
-                                
-                                    <Card.Title>How to be an uncommonly good web developer</Card.Title>
-                                
-                            </Card.Body>
-                        </Card>
                         </a>                        
                     </div>
                 </div>
