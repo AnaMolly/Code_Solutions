@@ -13,7 +13,7 @@ const HomeDevList = ({ clients }) => {
                   <Card.Title  style={{ color:'black', padding:'10px', fontSize:'30px', fontWeight:'200'}}>{client.fullName}</Card.Title>
                   <Card.Img variant="top" src={client.profileImage} style={{maxWidth:'284px'}}/>
                   <Card.Text  style={{ color:'black', padding:'20px 15px 10px 15px', fontSize:'20px'}}> <span style={{color:'gray'}}>Company: </span>{client.company}</Card.Text>
-                  <Card.Text  style={{ color:'black', padding:'20px 15px 10px 15px', fontSize:'20px'}}> <span style={{color:'gray'}}>Looking for: </span>{client.servicesOffered}</Card.Text>
+                  {/* <Card.Text  style={{ color:'black', padding:'20px 15px 10px 15px', fontSize:'20px'}}> <span style={{color:'gray'}}>Looking for: </span>{client.servicesOffered}</Card.Text> */}
                   <a className="infobut" variant="primary" style={{ margin: '10px'}} href={`/ClientProfile/${client._id}`}>
                   View profile
                   </a>
