@@ -1,14 +1,14 @@
 import React from 'react';
 import { Card, Row } from "react-bootstrap"
 
-const HomeDevList = ({ buyers }) => {
+const HomeDevList = ({ clients }) => {
 
   return (
         <div>
-            <Row className="buyers" style={{padding:'10px 30px 60px 30px', display:'flex',justifyContent:'center',fontWeight:'200'}}> 
+            <Row className="clients" style={{padding:'10px 30px 60px 30px', display:'flex',justifyContent:'center',fontWeight:'200'}}> 
             
-            {buyers.map((buyer) => (
-            <Card className="m-4" style={{ width: "18em", border: '2px solid var(--marigold)', backgroundColor:'var(--mint-cream)' }} key={buyer.id}>
+            {clients.map((client) => (
+            <Card className="m-4" style={{ width: "18em", border: '2px solid var(--marigold)', backgroundColor:'var(--mint-cream)' }} key={client.id}>
               <Card.Body style={{ textAlign:'center', padding:'30px 20px 40px 20px'}}>
                   <Card.Title  style={{ color:'black', padding:'10px', fontSize:'30px', fontWeight:'200'}}>{buyer.fullName}</Card.Title>
                   <Card.Img variant="top" src={buyer.profileImage} style={{maxWidth:'284px'}}/>
