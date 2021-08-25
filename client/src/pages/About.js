@@ -44,10 +44,10 @@ export default function About() {
                                 </Card.Text>
                                 <Row>
                                     <div style={{ color: 'black', fontSize: '50px', textAlign: 'center' }}>
-                                        <a href=''>
+                                        <a href='https://github.com/kcrawford101' target='_blank'>
                                             <AiFillGithub style={{ marginRight: '15px' }} />
                                         </a>
-                                        <a href=''>
+                                        <a href='https://www.linkedin.com/in/kcrawford117/' target='_blank'>
                                             <AiFillLinkedin style={{ marginLeft: '15px' }} />
                                         </a>
                                     </div>
@@ -66,10 +66,10 @@ export default function About() {
                                 </Card.Text>
                                 <Row>
                                     <div style={{ color: 'black', fontSize: '50px', textAlign: 'center' }}>
-                                        <a href=''>
+                                        <a href='https://github.com/darylnauman' target='_blank'>
                                             <AiFillGithub style={{ marginRight: '15px' }} />
                                         </a>
-                                        <a href=''>
+                                        <a href='https://www.linkedin.com/in/darylnauman/' target='_blank'>
                                             <AiFillLinkedin style={{ marginLeft: '15px' }} />
                                         </a>
                                     </div>
@@ -86,10 +86,10 @@ export default function About() {
                                 </Card.Text>
                                 <Row>
                                     <div style={{ color: 'black', fontSize: '50px', textAlign: 'center' }}>
-                                        <a href=''>
+                                        <a href='https://github.com/AnaMolly' target='_blank'>
                                             <AiFillGithub style={{ marginRight: '15px' }} />
                                         </a>
-                                        <a href=''>
+                                        <a href='https://www.linkedin.com/in/analia-mohamdally-1a7438179/' target='_blank'>
                                             <AiFillLinkedin style={{ marginLeft: '15px' }} />
                                         </a>
                                     </div>
@@ -106,10 +106,10 @@ export default function About() {
                                 </Card.Text>
                                 <Row>
                                     <div style={{ color: 'black', fontSize: '50px', textAlign: 'center' }}>
-                                        <a href=''>
+                                        <a href='https://github.com/Daniel-ipymb' target='_blank'>
                                             <AiFillGithub style={{ marginRight: '15px' }} />
                                         </a>
-                                        <a href=''>
+                                        <a href='https://www.linkedin.com/in/daniel-ogunlana-1572a2211/' target='_blank'>
                                             <AiFillLinkedin style={{ marginLeft: '15px' }} />
                                         </a>
                                     </div>
