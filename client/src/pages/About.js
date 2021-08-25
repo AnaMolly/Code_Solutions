@@ -82,8 +82,7 @@ export default function About() {
                             <Card.Body>
                                 <Card.Title style={{ color: 'black' }}>Analia Mohamdally | <span style={{ fontSize: '18px' }}>Front-End</span></Card.Title>
                                 <Card.Text style={{ color: 'black' }} >
-                                    Some quick example text to build on the card title and make up the bulk of
-                                    the card's content.
+                                    Front-end web developer with experience in digital marketing. Please feel free to reach out to me at analia.mohamdally@gmail.com!
                                 </Card.Text>
                                 <Row>
                                     <div style={{ color: 'black', fontSize: '50px', textAlign: 'center' }}>
